@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,7 @@ class SessionForm extends React.Component {
   handleChange(type) {
     return (event) => {
       event.preventDefault();
-      this.setState({[type]: event.target.value})
+      this.setState({[type]: event.currentTarget.value})
     }
   }
 
@@ -29,7 +30,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`${i}`}>
+          <li key={`error-${i}`}>
             {error}
           </li>
         ))}

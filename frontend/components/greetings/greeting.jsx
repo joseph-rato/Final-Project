@@ -11,10 +11,9 @@ const Greeting = ({currentUser, logout}) => {
   );
 
   const doctorIsOut = () => (
-    <div>
-      <Link to="signup">Sign Up</Link>
-      <br></br>
-      <Link to="login">Log In</Link>
+    <div className="header-div-signup-login">
+      <Link className="header-login" to="/login">LOG IN</Link>
+      <Link className="header-signup" to="/signup">SIGN UP</Link>
     </div>
   );
 
