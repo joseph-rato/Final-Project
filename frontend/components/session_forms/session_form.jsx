@@ -83,6 +83,12 @@ class SessionForm extends React.Component {
             <p className="please-do-form">{capitalLogin} to Product Escape </p>
             <p className="type-of-community">We're a community of product people here to geek out and discover new, interesting products.</p>
           {this.renderErrors()}
+          <div className='guest-login-options'>
+            <button className='guest-login-google'></button>
+            <button className='guest-login-facebook'></button>
+            <button className='guest-login-google'></button>
+            <button className='guest-login-google'></button>
+          </div>
           <div className='session-form-manual-login'>
               {
                 (this.props.formType === 'signup')
