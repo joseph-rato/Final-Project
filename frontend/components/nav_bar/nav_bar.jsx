@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+// import NavLinks from './nav_links';
+// import NavUserOptionsContainer from './nav_user_options_container'
 
 const NavBar = ({currentUser, logout, openModal}) => {
 
@@ -13,7 +15,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
           <i className="fas fa-search"></i>
           <p>Discover your next favorite thing ...</p>
          </div>
-        <div className="header-places-not-here">Ask Ship Makers Jobs Events ... </div>
+
         <div className="header-div-session-access">
           <div className="header-div-logout">
             <h1>{currentUser.username}</h1>

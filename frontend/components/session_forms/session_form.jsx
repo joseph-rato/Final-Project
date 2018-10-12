@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginAsGuest = this.loginAsGuest.bind(this);
   }
 
   handleSubmit(e) {
@@ -21,8 +22,8 @@ class SessionForm extends React.Component {
   }
 
   loginAsGuest() {
-    const emailArr = 'guest@guest.com'.split('');
-    const passwordArr = 'hunter2'.split('');
+    const emailArr = 'test1@gmail.com'.split('');
+    const passwordArr = 'password'.split('');
     const button = document.getElementById('login');
     this.setState({email: '', password: ''}, () =>
       this.loginAsGuestHelper(emailArr, passwordArr, button)
@@ -61,7 +62,7 @@ class SessionForm extends React.Component {
       <ul>
         {
           this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="session-errors" key={`error-${i}`}>
             {error}
           </li>
         ))
@@ -75,25 +76,40 @@ class SessionForm extends React.Component {
   render () {
     const capitalLogin = this.props.formType.slice(0, 1).toUpperCase() + this.props.formType.slice(1)
     return (
-      <div className="modal-screen">
+      <div className="modal-screen animated fadeInDown">
         <form className="modal-session-form"onSubmit={this.handleSubmit}>
           <br/>
-            <img className="session-form-img" src="../../../app/assets/images/product_escape_session_form.jpeg"></img>
-            <label className="session-form-img-desc">Product Hunt</label>
+            <img className="session-form-img" src={window.images.sessionForm}></img>
+            <label className="session-form-img-desc outlineme">Product Escape</label>
+
             <p className="please-do-form">{capitalLogin} to Product Escape </p>
             <p className="type-of-community">We're a community of product people here to geek out and discover new, interesting products.</p>
           {this.renderErrors()}
+          <div className="signup-question">Use our demo logins</div>
           <div className='guest-login-options'>
-            <button className='guest-login-google'></button>
-            <button className='guest-login-facebook'></button>
-            <button className='guest-login-google'></button>
-            <button className='guest-login-google'></button>
+            <button className='demo-login twitter' onClick={this.loginAsGuest}>
+              <i className="fab fa-twitter"></i>
+              <p className="demo-login-des">LOG IN WITH TWITTER</p>
+            </button>
+            <button className='demo-login facebook' onClick={this.loginAsGuest}>
+              <i className="fab fa-facebook-f"></i>
+              <p className="demo-login-des">LOG IN WITH FACEBOOK</p>
+            </button>
+            <button className='demo-login google' onClick={this.loginAsGuest}>
+              <i className="fab fa-google"></i>
+              <p className="demo-login-des">LOG IN WITH GOOGLE</p>
+            </button>
+            <button className='demo-login angelist' onClick={this.loginAsGuest}>
+              <i className="fab fa-angellist"></i>
+              <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
+            </button>
           </div>
+          <div className="signup-question">or</div>
           <div className='session-form-manual-login'>
               {
                 (this.props.formType === 'signup')
               ? (
-                <label> Username:
+                <label>USERNAME
                   <input
                     type="text"
                     value={this.state.username}
@@ -103,24 +119,22 @@ class SessionForm extends React.Component {
                 )
               : <div></div>
             }
-            <br />
-            <label> Email:
+            <label> EMAIL
               <input
                 type="text"
                 value={this.state.email}
                 onChange={this.handleChange('email')}
                 />
             </label>
-            <br/>
-              <label> Password:
+              <label> PASSWORD
                 <input
                   type="password"
                   value={this.state.password}
                   onChange={this.handleChange('password')}
                   />
               </label>
-              <br/>
-              <input className="session-submit" type="submit" value={this.props.formType}/>
+              <br></br>
+              <input id="login" className="session-submit" type="submit" value={this.props.formType.toUpperCase()}/>
           </div>
         </form>
       </div>

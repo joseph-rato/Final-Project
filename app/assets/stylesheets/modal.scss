@@ -17,7 +17,7 @@
 
   .modal-child {
     position: absolute;
-    top: 32%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -30,42 +30,146 @@
 
       .modal-session-form{
         text-align: center;
-        height: 375px;
+        height: auto;
         width: 820px;
         margin: 5px;
         background-color: white;
-      }
 
+
+        .session-form-img {
+          height: 69px;
+          position: relative;
+        }
+
+        .session-form-img-desc{
+          font-family: 'Italianno', cursive;
+          font-size: 29px;
+          font-weight: 900;
+          position: absolute;
+          right: 43%;
+          top: 21%;
+          transform: rotate(-10deg);
+
+          .outlineme {
+            color: white;
+            text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+          }
+        }
+
+        .please-do-form {
+          text-align: center;
+          font-size: 20px;
+          font-weight: 550;
+          font-family: sans-serif;
+          margin-top: 39px;
+          margin-bottom: 15px;
+        }
+
+        .type-of-community{
+          max-width: 500px;
+          margin: 0 auto;
+          display: inline-block;
+          font-family: sans-serif;
+          font-weight: 300;
+          color: darkgrey;
+          font-size: 17px;
+          margin-bottom: 18px;
+        }
+        .guest-login-options{
+          padding-left: 5px;
+          padding-right: 5px;
+
+          .demo-login{
+            width: 180px;
+            height: 35px;
+            border-radius: 5px;
+            margin: 0px 8px
+          }
+        }
+
+      }
     }
   }
 }
 
-.session-form-img {
-  height: 50px;
+.demo-login-des {
+  display: inline;
+  margin-left: 15px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-.session-form-img-desc{
-  font-family: cursive;
-  font-size: 15px;
-  font-weight: 300;
+.fa-twitter {
+  font-size: 15px
 }
 
-.please-do-form {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 550;
+.fa-facebook-f {
+  font-size: 15px
+}
+
+.fa-google {
+  font-size: 15px
+}
+
+.fa-angellist {
+  font-size: 15px
+}
+
+.twitter {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.facebook {
+  background-color: #2121afc7;
+  color: white;
+}
+
+.google{
+  color: black;
+}
+
+
+.angelist {
+  color: white;
+  background-color: black;
+}
+
+.session-form-manual-login label{
+  display: inline;
+  margin: 0px 20px;
   font-family: sans-serif;
+  font-weight: 500;
 }
 
-.type-of-community{
-  max-width: 500px;
-  margin: 0 auto;
-  display: inline-block;
-  font-family: sans-serif;
-  font-weight: 300;
-  color: darkgrey;
-  font-size: 17px;
+.session-submit{
+  background-color: #DA552F;
+  color: white;
+  padding: 7px 18px;
+  text-decoration: none;
+  margin: 5px;
+  margin-top: 15px;
+  font-size: 12px;
+  border-radius: 3px;
+  padding-bottom: 23px;
+  margin-bottom: 16px;
 }
+
+.session-form-manual-login input{
+  border-radius: 5px;
+  height: 16px;
+  width: 120px;
+  margin-left: 10px;
+}
+
+.signup-question {
+  margin: 9px 5px;
+}
+
 
 .js-modal-open {
   display: block;
