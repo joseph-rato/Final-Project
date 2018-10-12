@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.loginAsGuest = this.loginAsGuest.bind(this);
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state)
@@ -104,6 +105,7 @@ class SessionForm extends React.Component {
               <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
             </button>
           </div>
+          <div className="session-discliamer">We'll never post to any of your accounts without your permission.</div>
           <div className="signup-question">or</div>
           <div className='session-form-manual-login'>
               {

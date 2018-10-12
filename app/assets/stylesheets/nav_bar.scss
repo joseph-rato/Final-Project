@@ -1,0 +1,31 @@
+
+
+.links-to-nowhere a {
+  text-decoration: none;
+
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+}
+
+
+.openDropDown {
+  position: relative;
+  display: flex;
+  // align-items: flex-start;
+  flex-direction: column;
+  width: 150px;
+  height: auto;
+  border: solid black;
+}
+
+.openDropDown a{
+  text-decoration: none;
+  color: #999
+}
+
+
+.closeDropDown {
+  display: none;
+}

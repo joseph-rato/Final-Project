@@ -73,7 +73,14 @@ body {
   margin: 5px;
   font-size: 21px;
   display: flex;
+
+
 }
+.header-places-not-here a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .header-div-session-access {
   width: 33%;

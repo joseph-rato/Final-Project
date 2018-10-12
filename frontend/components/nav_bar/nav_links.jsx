@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const NavLinks = () => {
   return(
-    <div className="links-to-nowhere">
+    <div className="header-places-not-here">
       <Link to="/notdoneyet">Ask</Link>
       <Link to="/notdoneyet">Ship</Link>
       <Link to="/notdoneyet">Makers</Link>

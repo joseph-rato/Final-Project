@@ -9,8 +9,11 @@ const mapStateToProps = ({ session, entities}) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
-})
+const mapDispatchToProps = (dispatch) => {
+  debugger;
+  return({
+    logout: () => dispatch(logout())
+  })
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavUserOptions)

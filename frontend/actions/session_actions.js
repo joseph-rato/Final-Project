@@ -3,6 +3,11 @@ import * as APIUtil from '../util/session_api_util'
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
 export const DESTROY_CURRENT_USER = 'DESTROY_CURRENT_USER'
 export const ERRORS_CURRENT_USER = "ERRORS_CURRENT_USER"
+export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+
+export const clearErrors = () => ({
+ type: CLEAR_SESSION_ERRORS
+})
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
