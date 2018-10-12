@@ -1,16 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const NavBar = ({currentUser, logout}) => {
+const NavBar = ({currentUser, logout, openModal}) => {
 
   const doctorIsIn = () => (
     <div className="header-container">
       <Link to="/" className="header-link">
-        <i class="fab fa-product-hunt"></i>
+        <i className="fab fa-product-hunt"></i>
       </Link>
       <div className="header-not-link">
         <div className="header-search-bar">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <p>Discover your next favorite thing ...</p>
          </div>
         <div className="header-places-not-here">Ask Ship Makers Jobs Events ... </div>
@@ -28,13 +28,13 @@ const NavBar = ({currentUser, logout}) => {
     <div className="header-container">
 
       <Link to="/" className="header-link">
-        <i class="fab fa-product-hunt"></i>
+        <i className="fab fa-product-hunt"></i>
       </Link>
 
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <p>Discover your next favorite thing ...</p>
         </div>
 
@@ -42,8 +42,8 @@ const NavBar = ({currentUser, logout}) => {
 
         <div className="header-div-session-access">
           <div className="header-div-signup-login">
-            <Link className="header-login" to="/login">LOG IN</Link>
-            <Link className="header-signup" to="/signup">SIGN UP</Link>
+            <button className="header-login"onClick={() => openModal('login')}>LOG IN</button>
+            <button className="header-signup" onClick={() => openModal('signup')}>SIGN UP</button>
           </div>
         </div>
 

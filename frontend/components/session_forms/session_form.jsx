@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, withRouter} from 'react-router-dom';
 
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,36 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state)
-    this.props.processForm(user)
+    this.props.processForm(user).then(this.props.closeModal)
+  }
+
+  loginAsGuest() {
+    const emailArr = 'guest@guest.com'.split('');
+    const passwordArr = 'hunter2'.split('');
+    const button = document.getElementById('login');
+    this.setState({email: '', password: ''}, () =>
+      this.loginAsGuestHelper(emailArr, passwordArr, button)
+    );
+  }
+
+  loginAsGuestHelper(emailArr, passwordArr, button){
+    if (emailArr.length > 0) {
+      this.setState(
+        { email: this.state.email + emailArr.shift() }, () => {
+          window.setTimeout( () =>
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 75);
+        }
+      );
+    } else if (passwordArr.length > 0) {
+      this.setState(
+        { password: this.state.password + passwordArr.shift() }, () => {
+          window.setTimeout( () =>
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 100);
+        }
+      );
+    } else {
+      button.click();
+    }
   }
 
   handleChange(type) {
@@ -29,11 +59,13 @@ class SessionForm extends React.Component {
   renderErrors () {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {
+          this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
-        ))}
+        ))
+      }
       </ul>
     );
   }
@@ -41,13 +73,17 @@ class SessionForm extends React.Component {
 
 
   render () {
+    const capitalLogin = this.props.formType.slice(0, 1).toUpperCase() + this.props.formType.slice(1)
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit}>
+      <div className="modal-screen">
+        <form className="modal-session-form"onSubmit={this.handleSubmit}>
           <br/>
-          Please {this.props.formType}
+            <img className="session-form-img" src="../../../app/assets/images/product_escape_session_form.jpeg"></img>
+            <label className="session-form-img-desc">Product Hunt</label>
+            <p className="please-do-form">{capitalLogin} to Product Escape </p>
+            <p className="type-of-community">We're a community of product people here to geek out and discover new, interesting products.</p>
           {this.renderErrors()}
-          <div>
+          <div className='session-form-manual-login'>
               {
                 (this.props.formType === 'signup')
               ? (
