@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginAsGuest = this.loginAsGuest.bind(this);
+    this.loginAsGuestHelper = this.loginAsGuestHelper.bind(this);
   }
 
 
@@ -46,16 +47,13 @@ class SessionForm extends React.Component {
             this.loginAsGuestHelper(emailArr, passwordArr, button), 100);
         }
       );
-    } else {
-      button.click();
-    }
+    } else { button.click()}
   }
 
   handleChange(type) {
-    return (event) => {
-      event.preventDefault();
-      this.setState({[type]: event.currentTarget.value})
-    }
+    return (event) => this.setState({
+      [type]: event.currentTarget.value
+    });mk
   }
 
   renderErrors () {

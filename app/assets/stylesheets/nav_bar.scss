@@ -6,7 +6,23 @@
 }
 
 .profile-dropdown-menu {
-  position: absolute;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.profile-avatar{
+  display: flex;
+}
+
+.profile-avatar-self-made {
+  display: flex;
+}
+
+
+
+.profile-menu-wrapper{
+  width: 33%;
+  justify-content: flex-end;
 }
 
 
@@ -25,6 +41,9 @@
   color: #999
 }
 
+.openDropDown a:hover {
+  text-decoration: underline;
+}
 
 .closeDropDown {
   display: none;

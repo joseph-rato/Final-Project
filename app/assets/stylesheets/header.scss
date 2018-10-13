@@ -34,8 +34,13 @@ body {
   width: 100%;
   height: 43px;
   display: flex;
-  justify-content: space-between;
   padding: 9px;
+}
+
+.header-not-link:first-child {
+  margin: 0px 15px;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .header-search-bar{
@@ -65,7 +70,7 @@ body {
 .header-places-not-here {
   font-family: sans-serif;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 33%;
   color: #999;
   padding: 8px 5px;
