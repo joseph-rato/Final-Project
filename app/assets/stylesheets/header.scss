@@ -44,7 +44,7 @@ body {
 }
 
 .header-search-bar{
-  width: 33%;
+  width: 30%;
   background-color: white;
   color: #999;
   padding: 8px 14px;
@@ -71,7 +71,7 @@ body {
   font-family: sans-serif;
   align-items: center;
   justify-content: flex-start;
-  width: 33%;
+  width: 42%;
   color: #999;
   padding: 8px 5px;
   text-decoration: none;
@@ -84,6 +84,8 @@ body {
 .header-places-not-here a {
   text-decoration: none;
   color: inherit;
+  font-size: 17px;
+  margin: 0px 9px;
 }
 
 

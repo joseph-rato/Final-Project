@@ -10,8 +10,14 @@
   display: flex;
 }
 
+.profile-dropdown-menu-options {
+  position: absolute;
+  transform: translate(-25%);
+}
+
 .profile-avatar{
   display: flex;
+  position: relative;
 }
 
 .profile-avatar-self-made {
@@ -34,6 +40,15 @@
   width: 150px;
   height: auto;
   border: solid black;
+  padding: 15px 10px;
+}
+
+.profile-letter-self-made {
+  position: absolute;
+  top: 5%;
+  right: 41%;
+  font-size: 36px;
+  font-family: sans-serif;
 }
 
 .openDropDown a{

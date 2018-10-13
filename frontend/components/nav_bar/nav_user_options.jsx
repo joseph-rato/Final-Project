@@ -33,23 +33,24 @@ class NavUserOptions extends React.Component{
       <div className="profile-menu-wrapper">
         <div className="profile-dropdown-menu" >
 
-          <div className="profile-avatar" onClick={this.toggleList}>
+          <div className="profile-avatar-button" onClick={this.toggleList}>
             <div className="profie-avatar-self-made">
               <svg className="avatar-background" height="47" width="47">
                 <circle cx="23" cy="23" r="23" stroke="lightgrey" strokeWidth="3" fill="red" />
               </svg>
               <div className="profile-letter-self-made">{this.props.currentUser.username.slice(0, 1)}</div>
             </div>
+
+            <div id="user-option-list" className="profile-dropdown-menu-options closeDropDown">
+              <Link to="/notdoneyet">MY PROFILE</Link>
+              <Link to="/notdoneyet">MY COLLECTION</Link>
+              <Link to="/notdoneyet">MY INVITES</Link>
+              <Link to="/notdoneyet">SETTINGS</Link>
+              <Link to="/notdoneyet">API DASHBOARD</Link>
+              <button className="button" onClick={this.props.logout}>LOGOUT</button>
+            </div>
           </div>
 
-          <div id="user-option-list" className="profile-dropdown-menu-options closeDropDown">
-            <Link to="/notdoneyet">MY PROFILE</Link>
-            <Link to="/notdoneyet">MY COLLECTION</Link>
-            <Link to="/notdoneyet">MY INVITES</Link>
-            <Link to="/notdoneyet">SETTINGS</Link>
-            <Link to="/notdoneyet">API DASHBOARD</Link>
-            <button className="button" onClick={this.props.logout}>LOGOUT</button>
-          </div>
 
         </div>
       </div>
