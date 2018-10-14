@@ -5,7 +5,7 @@ import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import {Link} from 'react-router-dom';
 
-const Modal = ({modal, closeModal}) => {
+const Modal = ({product, modal, closeModal}) => {
   if (!modal) {
     return null;
   }
@@ -16,6 +16,9 @@ const Modal = ({modal, closeModal}) => {
       break;
     case 'signup':
       component = <SignupFormContainer />;
+      break;
+    case 'product':
+      component = <ProductShowContainer product={product} />;
       break;
     default:
       return null;
@@ -35,7 +38,8 @@ const Modal = ({modal, closeModal}) => {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.modalType,
+    product: state.ui.modal.product
   };
 };
 

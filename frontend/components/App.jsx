@@ -5,7 +5,8 @@ import LoginFormContainer from './session_forms/login_form_container'
 import SignupFormContainer from './session_forms/signup_form_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import PlaceHolderContainer from './place_holder_container'
-import Modal from './modal'
+import Modal from './modal';
+import ProductsContainer from './products/products_container'
 
 const App = () => (
   <div>
@@ -18,7 +19,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
-      <Route exact path="/" component={PlaceHolderContainer} />
+      <Route exact path="/" component={ProductsContainer} />
       <Redirect to="/" />
     </Switch>
 
