@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   # namespace :api do
+  #   get 'products/index'
+  #   get 'products/show'
+  #   get 'products/create'
+  #   get 'products/update'
+  # end
+  # namespace :api do
   #   get 'session/create'
   #   get 'session/destroy'
   # end
@@ -9,7 +15,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "static_pages#root"
   namespace :api, default: {format: :json} do
-    resources :users, only: [:create]
+    resources :users, only: [:create] do
+      resources :products, only: [:create, :update]
+    end
     resource :sessions, only: [:create, :destroy, :show]
+    resources :products, only: [:index, :show]
   end
 end

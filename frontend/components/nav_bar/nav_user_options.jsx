@@ -12,11 +12,19 @@ class NavUserOptions extends React.Component{
   toggleList(){
     const hiddenChart = document.getElementById('user-option-list')
     if (hiddenChart.classList.contains('openDropDown')){
+      // debugger;
        hiddenChart.classList.remove('openDropDown');
-       return hiddenChart.classList.add('closeDropDown')
+       return hiddenChart.classList.add('closeDropDown');
+       // return document.removeEventListener('click', () => {
+       //   return this.togglelist();
+       // })
     } else {
-      hiddenChart.classList.add('openDropDown')
-      return hiddenChart.classList.remove('closeDropDown')
+      // debugger;
+      hiddenChart.classList.add('openDropDown');
+      return hiddenChart.classList.remove('closeDropDown');
+      // return document.addEventListener('click', () =>{
+      //   return this.toggleList();
+      // })
     }
   }
 

@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginAsGuest = this.loginAsGuest.bind(this);
     this.loginAsGuestHelper = this.loginAsGuestHelper.bind(this);
+    // this.clearErrors = this.
   }
 
 
@@ -23,20 +24,18 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal)
   }
 
-  loginAsGuest() {
-    // const guestEmail = 'test1@gmail.com'.split('');
-    // const guestPassword = 'password'.split('');
-    const button = document.getElementById('login');
+  componentDidMount(){
+    this.props.clearErrors()
+  }
 
-    const guestEmail = 'test1@gmail.com';
-    const guestPassword = 'password';
-    this.setState({email: '', password: ''})
-    this.setState({email: guestEmail, password: guestPassword})
-    const user = Object.assign({}, this.state)
-    this.props.processForm(user).then(this.props.closeModal)
-    // this.setState({email: '', password: ''}, () =>
-    //   this.loginAsGuestHelper(guestEmail, guestPassword, button)
-    // );
+  loginAsGuest(e) {
+    e.preventDefault();
+    const button = document.getElementById('login');
+    const guestEmail = 'test1@gmail.com'.split('');
+    const guestPassword = 'password'.split('');
+    this.setState({email: '', password: ''}, () =>
+      this.loginAsGuestHelper(guestEmail, guestPassword, button)
+    );
   }
 
   loginAsGuestHelper(guestEmail, guestPassword, button){
@@ -58,14 +57,12 @@ class SessionForm extends React.Component {
   }
 
   handleChange(type) {
-    return (event) => this.setState({
-      [type]: event.currentTarget.value
-    });
-  }
-
-  changeModals () {
-    this.props.closeModal();
-    this.props.openModal();
+    return (event) => {
+      event.preventDefault();
+      this.setState({
+        [type]: event.currentTarget.value
+      });
+    }
   }
 
   renderErrors () {
@@ -101,7 +98,7 @@ class SessionForm extends React.Component {
           {
             (this.props.formType === 'signup')
             ?
-            <button onClick={this.changeModals}>LOGIN</button>
+            <button className="login-option" onClick={this.props.openModal}>LOGIN</button>
             :
             <div>
               <div className='guest-login-options'>
@@ -158,7 +155,7 @@ class SessionForm extends React.Component {
                   />
               </label>
               <br></br>
-              <input id="login" className="session-submit" type="submit" value={this.props.formType.toUpperCase()}/>
+              <input id="login" className="session-submit" type="submit" onClick={this.handleSubmit} value={this.props.formType.toUpperCase()}/>
           </div>
         </form>
       </div>
