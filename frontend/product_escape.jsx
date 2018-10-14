@@ -3,6 +3,7 @@ import React from 'react';
 import {login, logout, signup} from './actions/session_actions';
 import configureStore from './store/store'
 import Root from './components/root'
+import {fetchProduct, fetchProducts, createProduct, updateProduct} from './actions/product_actions'
 
 document.addEventListener('DOMContentLoaded', () =>{
   let store ;
@@ -27,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () =>{
   window.logout = logout;
   window.signup = signup;
   window.store = store;
+  window.fetchProduct = fetchProduct;
+  window.fetchProducts = fetchProducts;
+  window.createProduct = createProduct;
+  window.updateProduct = updateProduct;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
