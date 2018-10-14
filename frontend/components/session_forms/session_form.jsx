@@ -24,27 +24,34 @@ class SessionForm extends React.Component {
   }
 
   loginAsGuest() {
-    const emailArr = 'test1@gmail.com'.split('');
-    const passwordArr = 'password'.split('');
+    // const guestEmail = 'test1@gmail.com'.split('');
+    // const guestPassword = 'password'.split('');
     const button = document.getElementById('login');
-    this.setState({email: '', password: ''}, () =>
-      this.loginAsGuestHelper(emailArr, passwordArr, button)
-    );
+
+    const guestEmail = 'test1@gmail.com';
+    const guestPassword = 'password';
+    this.setState({email: '', password: ''})
+    this.setState({email: guestEmail, password: guestPassword})
+    const user = Object.assign({}, this.state)
+    this.props.processForm(user).then(this.props.closeModal)
+    // this.setState({email: '', password: ''}, () =>
+    //   this.loginAsGuestHelper(guestEmail, guestPassword, button)
+    // );
   }
 
-  loginAsGuestHelper(emailArr, passwordArr, button){
-    if (emailArr.length > 0) {
+  loginAsGuestHelper(guestEmail, guestPassword, button){
+    if (guestEmail.length > 0) {
       this.setState(
-        { email: this.state.email + emailArr.shift() }, () => {
+        { email: this.state.email + guestEmail.shift() }, () => {
           window.setTimeout( () =>
-            this.loginAsGuestHelper(emailArr, passwordArr, button), 75);
+            this.loginAsGuestHelper(guestEmail, guestPassword, button), 75);
         }
       );
-    } else if (passwordArr.length > 0) {
+    } else if (guestPassword.length > 0) {
       this.setState(
-        { password: this.state.password + passwordArr.shift() }, () => {
+        { password: this.state.password + guestPassword.shift() }, () => {
           window.setTimeout( () =>
-            this.loginAsGuestHelper(emailArr, passwordArr, button), 100);
+            this.loginAsGuestHelper(guestEmail, guestPassword, button), 100);
         }
       );
     } else { button.click()}
@@ -53,7 +60,12 @@ class SessionForm extends React.Component {
   handleChange(type) {
     return (event) => this.setState({
       [type]: event.currentTarget.value
-    });mk
+    });
+  }
+
+  changeModals () {
+    this.props.closeModal();
+    this.props.openModal();
   }
 
   renderErrors () {
@@ -76,7 +88,7 @@ class SessionForm extends React.Component {
     const capitalLogin = this.props.formType.slice(0, 1).toUpperCase() + this.props.formType.slice(1)
     return (
       <div className="modal-screen animated fadeInDown">
-        <form className="modal-session-form"onSubmit={this.handleSubmit}>
+        <form className="modal-session-form" onSubmit={this.handleSubmit}>
           <br/>
             <img className="session-form-img" src={window.images.sessionForm}></img>
             <label className="session-form-img-desc outlineme">Product Escape</label>
@@ -85,25 +97,34 @@ class SessionForm extends React.Component {
             <p className="type-of-community">We're a community of product people here to geek out and discover new, interesting products.</p>
           {this.renderErrors()}
           <div className="signup-question">Use our demo logins</div>
-          <div className='guest-login-options'>
-            <button className='demo-login twitter' onClick={this.loginAsGuest}>
-              <i className="fab fa-twitter"></i>
-              <p className="demo-login-des">LOG IN WITH TWITTER</p>
-            </button>
-            <button className='demo-login facebook' onClick={this.loginAsGuest}>
-              <i className="fab fa-facebook-f"></i>
-              <p className="demo-login-des">LOG IN WITH FACEBOOK</p>
-            </button>
-            <button className='demo-login google' onClick={this.loginAsGuest}>
-              <i className="fab fa-google"></i>
-              <p className="demo-login-des">LOG IN WITH GOOGLE</p>
-            </button>
-            <button className='demo-login angelist' onClick={this.loginAsGuest}>
-              <i className="fab fa-angellist"></i>
-              <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
-            </button>
-          </div>
-          <div className="session-discliamer">We'll never post to any of your accounts without your permission.</div>
+
+          {
+            (this.props.formType === 'signup')
+            ?
+            <button onClick={this.changeModals}>LOGIN</button>
+            :
+            <div>
+              <div className='guest-login-options'>
+                <button className='demo-login twitter' onClick={this.loginAsGuest}>
+                  <i className="fab fa-twitter"></i>
+                  <p className="demo-login-des">LOG IN WITH TWITTER</p>
+                </button>
+                <button className='demo-login facebook' onClick={this.loginAsGuest}>
+                  <i className="fab fa-facebook-f"></i>
+                  <p className="demo-login-des">LOG IN WITH FACEBOOK</p>
+                </button>
+                <button className='demo-login google' onClick={this.loginAsGuest}>
+                  <i className="fab fa-google"></i>
+                  <p className="demo-login-des">LOG IN WITH GOOGLE</p>
+                </button>
+                <button className='demo-login angelist' onClick={this.loginAsGuest}>
+                  <i className="fab fa-angellist"></i>
+                  <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
+                </button>
+              </div>
+              <div className="session-discliamer" > We'll never post to any of your accounts without your permission.</div>
+            </div>
+        }
           <div className="signup-question">or</div>
           <div className='session-form-manual-login'>
               {
@@ -114,6 +135,7 @@ class SessionForm extends React.Component {
                     type="text"
                     value={this.state.username}
                     onChange={this.handleChange('username')}
+                    required
                     />
                 </label>
                 )
@@ -124,6 +146,7 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.email}
                 onChange={this.handleChange('email')}
+                required
                 />
             </label>
               <label> PASSWORD
@@ -131,6 +154,7 @@ class SessionForm extends React.Component {
                   type="password"
                   value={this.state.password}
                   onChange={this.handleChange('password')}
+                  required
                   />
               </label>
               <br></br>

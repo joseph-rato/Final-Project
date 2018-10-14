@@ -8,6 +8,7 @@
 .profile-dropdown-menu {
   justify-content: flex-end;
   display: flex;
+  position: relative;
 }
 
 .profile-dropdown-menu-options {
@@ -33,7 +34,7 @@
 
 
 .openDropDown {
-  position: relative;
+  position: absolute;
   display: flex;
   // align-items: flex-start;
   flex-direction: column;
@@ -46,7 +47,7 @@
 .profile-letter-self-made {
   position: absolute;
   top: 5%;
-  right: 41%;
+  right: 6%;
   font-size: 36px;
   font-family: sans-serif;
 }

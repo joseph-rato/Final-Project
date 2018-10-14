@@ -12,10 +12,11 @@ const mapStateToProps = ({errors}) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
+  return{
     processForm: (data) => dispatch(signup(data)),
     clearErrors: () => dispatch(clearErrors()),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openModal: () => dispatch(openModal('login'))
   };
 };
 
