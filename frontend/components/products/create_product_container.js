@@ -12,7 +12,6 @@ const mapStateToProp = (state, ownProps) => {
 const mapDispatchToProp = (dispatch) => {
   return({
     createProduct: (product) => dispatch(createProduct(product)),
-
   })
 }
 

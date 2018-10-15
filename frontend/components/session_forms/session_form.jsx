@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
 
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     const user = Object.assign({}, this.state)
     this.props.processForm(user).then(this.props.closeModal)
   }
@@ -102,19 +102,19 @@ class SessionForm extends React.Component {
             :
             <div>
               <div className='guest-login-options'>
-                <button className='demo-login twitter' onClick={this.loginAsGuest}>
+                <button type="button" className='demo-login twitter' onClick={this.loginAsGuest}>
                   <i className="fab fa-twitter"></i>
                   <p className="demo-login-des">LOG IN WITH TWITTER</p>
                 </button>
-                <button className='demo-login facebook' onClick={this.loginAsGuest}>
+                <button type="button" className='demo-login facebook' onClick={this.loginAsGuest}>
                   <i className="fab fa-facebook-f"></i>
                   <p className="demo-login-des">LOG IN WITH FACEBOOK</p>
                 </button>
-                <button className='demo-login google' onClick={this.loginAsGuest}>
+                <button type="button" className='demo-login google' onClick={this.loginAsGuest}>
                   <i className="fab fa-google"></i>
                   <p className="demo-login-des">LOG IN WITH GOOGLE</p>
                 </button>
-                <button className='demo-login angelist' onClick={this.loginAsGuest}>
+                <button type="button" className='demo-login angelist' onClick={this.loginAsGuest}>
                   <i className="fab fa-angellist"></i>
                   <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
                 </button>

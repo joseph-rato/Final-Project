@@ -9,21 +9,22 @@ import Modal from './modal';
 import ProductsContainer from './products/products_container'
 import CreateProductContainer from './products/create_product_container'
 import ProductShowContainer from './products/product_show_container'
-import MainPage from './main_page'
 
-const App = () => (
-  <div className="first-div">
-    <div className="second-div">
-      <Switch>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route path="/" component={MainPage} />
-      </Switch>
-    </div>
+const MainPage = () => (
+  <div >
+    <Modal />
+    <header className="header">
+      <Route path="/" component={NavBarContainer} />
+    </header>
 
-
-
+    <Switch>
+      <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
+      <Route exact path="/" component={ProductsContainer} />
+      <ProtectedRoute exact path="/contribute/edit/" component={PlaceHolderContainer} />
+      <ProtectedRoute exact path="/contribute" component={CreateProductContainer} />
+      <Redirect to="/" />
+    </Switch>
   </div>
 )
 
-export default App;
+export default MainPage;
