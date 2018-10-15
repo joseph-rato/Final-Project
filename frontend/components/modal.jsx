@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import {Link} from 'react-router-dom';
+import ProductShowContainer from './products/product_show_container'
 
 const Modal = ({product, modal, closeModal}) => {
   if (!modal) {

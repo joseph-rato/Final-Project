@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:id])
     if @product
       render :show
     else
@@ -24,7 +24,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product = product.find_by(params[:id])
+    @product = product.find(params[:id])
     if @product && @product.update(product_params)
       render :show
     else
