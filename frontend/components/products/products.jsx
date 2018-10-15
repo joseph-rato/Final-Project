@@ -20,7 +20,7 @@ class Products extends React.Component{
     return(
       <div>
         <ul>
-        <h1>Almost There</h1>
+        <h2>Today</h2>
           {
             this.state.prodList.map( (product, idx) =>{
               return(

@@ -132,8 +132,9 @@ class SessionForm extends React.Component {
                     type="text"
                     value={this.state.username}
                     onChange={this.handleChange('username')}
+                    placeholder="USERNAME"
                     required
-                    ></input>
+                    />
                 </label>
                 )
               : <div></div>
@@ -143,16 +144,18 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.email}
                 onChange={this.handleChange('email')}
+                placeholder="EMAIL"
                 required
-                ></input>
+                />
             </label>
               <label> PASSWORD
                 <input
                   type="password"
                   value={this.state.password}
                   onChange={this.handleChange('password')}
+                  placeholder="PASSWORD"
                   required
-                  ></input>
+                  / >
               </label>
               <br></br>
               <input id="login" className="session-submit" type="submit" onClick={this.handleSubmit} value={this.props.formType.toUpperCase()}/>
