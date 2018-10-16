@@ -37,7 +37,7 @@ export const fetchProducts = () => dispatch => {
 };
 
 export const createProduct = (product) => dispatch => {
-  return APIIUtil.createProduct(product).then( serverProduct => dispatch(receiveProduct(serverProduct)),
+  return APIUtil.createProduct(product).then( serverProduct => dispatch(receiveProduct(serverProduct)),
   (err) => dispatch(receiveProductErrors(err)));
 };
 

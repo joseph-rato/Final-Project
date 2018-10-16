@@ -1,0 +1,32 @@
+.modal-product-show{
+  width: 1050px;
+  background-color: white;
+  padding: 30px;
+}
+
+.show-header {
+  width: 100%;
+  display: flex;
+  padding: 0px;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 30px;
+}
+
+.show-body{
+  display: flex;
+  width: 100%
+}
+
+.show-main-information {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+
+  .show-photo-box{
+    width: 100%;
+    background-color: darkblue;
+    height: 100px;
+  }
+
+}

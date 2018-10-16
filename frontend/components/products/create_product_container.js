@@ -3,15 +3,15 @@ import {createProduct} from '../../actions/product_actions'
 import ProductForm from './product_form'
 
 const mapStateToProp = (state, ownProps) => {
-  // debugger;
   return({
+    currentUserId: state.session.id
     // product: state.entities.products[ownProps.product.id]
-  })
+  });
 }
 
 const mapDispatchToProp = (dispatch) => {
   return({
-    createProduct: (product) => dispatch(createProduct(product)),
+    sendForm: (product, id) => dispatch(createProduct(product, id)),
   })
 }
 

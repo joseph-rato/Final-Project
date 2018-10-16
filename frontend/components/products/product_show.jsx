@@ -15,10 +15,16 @@ class ProductShow extends React.Component{
     return(
       <div className="modal-product-show">
         <div className="show-header">
-          <div>image goes here</div>
-          <h1>{product.product_name}</h1>
-          <h3>{product.description}</h3>
-          <div>tag buttons here</div>
+          <div className="product-list-item-photo"></div>
+          <div className="product-list-item-headline">
+            <h1 className="product-list-item-product-Name">{product.product_name}</h1>
+            <h3 className="product-list-item-description">{product.description}</h3>
+            <div className="product-list-item-buttons">
+              <button className="product-list-item-like-button">456</button>
+              <button className="product-list-item-comment-button">17</button>
+            </div>
+            <div>tag buttons here</div>
+          </div>
         </div>
         <div className="show-body">
           <div className="show-main-information">

@@ -14,7 +14,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
-    @product = product.new(product_params)
+
+    @product = Product.new(product_params)
     @product.user_id = current_user
     if @product.save
       render :show
@@ -34,6 +35,6 @@ class Api::ProductsController < ApplicationController
 
   private
   def product_params
-      params.require(:product).premit(:product_name, :website, :social, :photos, :video, :description, :around_the_web)
+    params.require(:products).premit(:user_id, :product_name, :website, :social, :photos, :video, :description, :details, :around_the_web, :list_photo)
   end
 end

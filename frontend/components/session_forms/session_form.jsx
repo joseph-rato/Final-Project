@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
           {
             (this.props.formType === 'signup')
             ?
-            <button className="login-option" onClick={this.props.openModal}>LOGIN</button>
+            <button type="button" className="login-option" onClick={this.props.openModal}>LOGIN</button>
             :
             <div>
               <div className='guest-login-options'>

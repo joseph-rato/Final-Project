@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductListItem from './product_list_item'
 
 
 class Products extends React.Component{
@@ -18,17 +19,13 @@ class Products extends React.Component{
 
   render() {
     return(
-      <div>
+      <div className="product-list-content-box">
         <ul>
-        <h2>Today</h2>
+        <h2 className="product-list-day" >Today</h2>
           {
             this.state.prodList.map( (product, idx) =>{
               return(
-                <li className={'product-list-item'} key={idx} onClick={() => this.props.openModal('product', product)}>
-                  <p>{product.photos}</p>
-                  <h2>{product.product_name}</h2>
-                  <h3>{product.description}</h3>
-                </li>
+                <ProductListItem key={idx} product={product} openModal={this.props.openModal}/>
               );
             })
           }

@@ -1,8 +1,11 @@
-export const createProduct = (product) => {
+export const createProduct = (product, id) => {
+  debugger;
   return $.ajax({
     method: 'POST',
-    url: '/api/users/:user_id/products',
-    data: { product }
+    url: `/api/users/${id}/products`,
+    data: { product },
+    contentType: false,
+    processData: false
   })
 }
 
@@ -20,10 +23,12 @@ export const fetchProduct = (product) => {
   })
 }
 
-export const updateProduct = (product) => {
+export const updateProduct = (product, id) => {
   return $.ajax({
     method: "PATCH",
-    url: `/api/users/:user_id/products/${product.id}`,
-    data: {product}
+    url: `/api/users/${id}/products/${product.id}`,
+    data: {product},
+    contentType: false,
+    processData: false,
   })
 }

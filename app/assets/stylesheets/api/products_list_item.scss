@@ -1,0 +1,81 @@
+// Place all the styles related to the api/products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.product-list-item {
+  display: flex;
+  padding: 0px;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.product-list-day {
+  font-family: sans-serif;
+  font-weight: 350;
+  font-size: 20px;
+  padding-bottom: 12px;
+  margin: 5px 9px;
+  margin-top: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.product-list-item-photo {
+  margin: 15px 10px;
+  width: 75px;
+  height: 75px;
+  background-color: darkblue;
+}
+
+.product-list-item-headline {
+  margin: 0px 5px;
+}
+
+.product-list-item-description{
+  color: darkgrey;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+
+.product-list-item-product-Name{
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 5px 0px;
+  margin-top: 10px;
+
+}
+
+.product-list-item-buttons{
+  margin: 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.product-list-item-like-button {
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+  margin-right: 11px;
+  font-weight: 500;
+}
+
+.product-list-item-comment-button{
+  height: 25px;
+  width: 45px;
+  border-radius: 5px;
+  color: lightslategrey;
+  font-weight: 500;
+}
+
+.product-list-item-like-button:hover{
+  background-color: lightgrey;
+
+}
+
+.product-list-item-comment-button:hover{
+  background-color: lightgrey;
+}

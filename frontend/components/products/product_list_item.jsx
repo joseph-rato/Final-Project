@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+const ProductListItem = ({product, openModal}) => {
+  // need to put an <img> tag with src as the product.list_photo
+  return(
+    <div className='product-list-item' onClick={() => openModal('product', product)} >
+      <div className="product-list-item-photo"></div>
+      <div className="product-list-item-headline">
+        <h2 className="product-list-item-product-Name">{product.product_name}</h2>
+        <h3 className='product-list-item-description'>{product.description}</h3>
+        <div className="product-list-item-buttons">
+          <button className="product-list-item-like-button">456</button>
+          <button className="product-list-item-comment-button">17</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ProductListItem;
