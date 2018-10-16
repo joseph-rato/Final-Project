@@ -3,7 +3,7 @@ export const createProduct = (product, id) => {
   return $.ajax({
     method: 'POST',
     url: `/api/users/${id}/products`,
-    data: { product },
+    data:  product,
     contentType: false,
     processData: false
   })

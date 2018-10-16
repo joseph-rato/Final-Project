@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import {createProduct} from '../../actions/product_actions'
 import ProductForm from './product_form'
+// import {createProduct} from '../../util/product_api_util'
+
 
 const mapStateToProp = (state, ownProps) => {
   return({

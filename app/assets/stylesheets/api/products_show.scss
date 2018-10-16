@@ -1,7 +1,8 @@
 .modal-product-show{
   width: 1050px;
-  background-color: white;
+  background-color: #f7f4f4;
   padding: 30px;
+  border-radius: 5px;
 }
 
 .show-header {
@@ -9,7 +10,7 @@
   display: flex;
   padding: 0px;
   align-items: center;
-  border-bottom: 1px solid lightgrey;
+  // border-bottom: 1px solid lightgrey;
   margin-bottom: 30px;
 }
 
@@ -25,8 +26,73 @@
 
   .show-photo-box{
     width: 100%;
-    background-color: darkblue;
-    height: 100px;
+    background-color: white;
+    height: 430px;
+    padding: 21px;
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+
+    .show-main-photo{
+      background-color: darkblue;
+      width: 100%;
+      height: 90%;
+    }
+
+  .show-information-box{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    border: 1px solid lightgrey;
+    padding: 5px;
+
+    .show-learn-more-details{
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    }
   }
 
+  }
+}
+// maybe .show-main-photo goes outside of
+
+
+
+.show-product-list-item-photo {
+  margin-right: 15px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 75px;
+  height: 75px;
+  background-color: darkblue;
+}
+
+.show-product-list-item-description{
+  color: darkgrey;
+    font-family: sans-serif;
+    font-weight: 350;
+    font-size: 13px;
+    margin: 10px 0px;
+    margin-bottom: 15px;
+}
+
+.show-product-list-item-product-Name{
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  margin: -5px 0px;
+  margin-top: -3px;
+
+}
+
+
+.product-list-item-photo {
+  margin: 15px 10px;
+  width: 75px;
+  height: 75px;
+  background-color: darkblue;
 }

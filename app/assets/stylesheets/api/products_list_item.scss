@@ -10,6 +10,10 @@
   border-bottom: 1px solid lightgrey;
 }
 
+.product-list-item:hover {
+  background-color: #f7f4f4;
+}
+
 .product-list-day {
   font-family: sans-serif;
   font-weight: 350;
@@ -29,30 +33,26 @@
 
 .product-list-item-headline {
   margin: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .product-list-item-description{
   color: darkgrey;
   font-family: sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  margin: 5px 0px;
+  font-weight: 350;
+  font-size: 13px;
+  margin: 10px 0px;
 }
 
 .product-list-item-product-Name{
   font-family: sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  margin: 5px 0px;
+  font-weight: 300;
+  font-size: 20px;
+  margin: -5px 0px;
   margin-top: 10px;
 
-}
-
-.product-list-item-buttons{
-  margin: 10px 0px;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
 }
 
 .product-list-item-like-button {
@@ -71,6 +71,13 @@
   font-weight: 500;
 }
 
+.product-list-item-tag{
+  height: 25px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
 .product-list-item-like-button:hover{
   background-color: lightgrey;
 
@@ -78,4 +85,27 @@
 
 .product-list-item-comment-button:hover{
   background-color: lightgrey;
+}
+.product-list-item-tag:hover {
+  background-color: lightgrey
+}
+
+.product-list-item-tags-buttons{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -8px;
+
+  .product-list-items-tags{
+    justify-content: flex-start;
+  }
+
+
+  .product-list-item-buttons{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }

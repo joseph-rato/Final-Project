@@ -3,7 +3,7 @@ import React from 'react';
 import {login, logout, signup} from './actions/session_actions';
 import configureStore from './store/store'
 import Root from './components/root'
-import {fetchProduct, fetchProducts, createProduct, updateProduct} from './actions/product_actions'
+import {fetchProduct, fetchProducts, createProduct, updateProduct} from './util/product_api_util'
 
 document.addEventListener('DOMContentLoaded', () =>{
   let store ;
