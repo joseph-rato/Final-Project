@@ -204,6 +204,7 @@
   right: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
 }
 
 .modal-exit-symb i{
@@ -215,7 +216,7 @@
 
 .modal-child {
   position: absolute;
-  top: 37%;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
 }

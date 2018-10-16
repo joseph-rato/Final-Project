@@ -47,7 +47,7 @@ class NavUserOptions extends React.Component{
           <Link to="/notdoneyet">MY INVITES</Link>
           <Link to="/notdoneyet">SETTINGS</Link>
           <Link to="/notdoneyet">API DASHBOARD</Link>
-          <button className="button" onClick={this.props.logout}>LOGOUT</button>
+          <Link to="/" onClick={this.props.logout}>LOGOUT</Link>
         </div>
       </div>)
   : (<div className="profile-avatar-button" onBlur={() => console.log('it happened')} onClick={this.toggleList}>
@@ -58,7 +58,7 @@ class NavUserOptions extends React.Component{
           <Link to="/notdoneyet">MY INVITES</Link>
           <Link to="/notdoneyet">SETTINGS</Link>
           <Link to="/notdoneyet">API DASHBOARD</Link>
-          <button className="button" onClick={this.props.logout}>LOGOUT</button>
+          <Link to="/" onClick={this.props.logout}>LOGOUT</Link>
         </div>
       </div>)
     )

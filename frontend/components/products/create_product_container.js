@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {createProduct} from '../../actions/product_actions'
+import {createProduct, receiveProductErrors} from '../../actions/product_actions'
 import ProductForm from './product_form'
 // import {createProduct} from '../../util/product_api_util'
 
@@ -14,6 +14,7 @@ const mapStateToProp = (state, ownProps) => {
 const mapDispatchToProp = (dispatch) => {
   return({
     sendForm: (product, id) => dispatch(createProduct(product, id)),
+    sendError: (error) => dispatch(receiveProductErrors(error))
   })
 }
 

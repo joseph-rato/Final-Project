@@ -15,16 +15,21 @@ class ProductForm extends React.Component {
       around_the_web: '',
     }
 
-    // this.handleFile = this.handleFile.bind(this)
-    // this.handleChange = this.handleChange.bind(this)
+    this.handleFile = this.handleFile.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit= this.handleSubmit.bind(this)
   }
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
+    if ((this.state.photos === '') && (this.state.list_photo === '')) {
+      return this.props.sendError(['You need to upload a picture logo', 'You need to upload at least one display picture']);
+    } else if (this.state.list_photo === '') {
+      return this.props.sendError(['You need to upload a picture logo']);
+    } else if (this.state.photos === '')  {
+      return this.props.sendError(['You need to upload at least one display picture']);
+    }
     const formData = new FormData();
-    debugger;
     formData.append('products[product_name]', this.state.product_name)
     formData.append('products[description]', this.state.description)
     formData.append('products[details]', this.state.details)
@@ -34,16 +39,16 @@ class ProductForm extends React.Component {
     formData.append('products[photos]', this.state.photos)
     formData.append('products[video_link]', this.state.video_link)
     formData.append('products[around_the_web]', this.state.around_the_web)
-    debugger;
     this.props.sendForm(formData, this.props.currentUserId)
     // this.props.createProduct(formData, this.props.currentUserId)
     // .then((response) => console.log(response.message));
   }
 
   handleFile(type) {
+
     return (event) => {
       event.preventDefault();
-      return this.setState({[type]: event.currentTarget.value})
+      return this.setState({[type]: event.currentTarget.files[0]})
     }
   }
 
@@ -89,11 +94,11 @@ class ProductForm extends React.Component {
           </div>
           <div>
             <h4>Product Logo</h4>
-            <input type="file" onChange={this.handleFile('list_photo')} value={this.state.list_photo}  />
+            <input type="file" onChange={this.handleFile('list_photo')} />
           </div>
           <div>
             <h4>Product Display Pictures</h4>
-            <input type="file" onChange={this.handleFile('photos')} value={this.state.photos} />
+            <input type="file" onChange={this.handleFile('photos')} />
           </div>
           <div>
             <h4>Video Dispaly</h4>
