@@ -1,0 +1,109 @@
+.product-form-page{
+  margin-bottom: 50px;
+  margin: 10px
+}
+
+.product-form-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.product-form-input-div{
+  display: flex;
+  align-items: center;
+
+
+  .product-form-input-des{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    width: 400px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: darkgrey;
+    font-weight: 350;
+  }
+
+  .product-form-input-str{
+    text-decoration: none;
+    justify-content: flex-end;
+    width: 400px;
+    height: 40px;
+    font-family: sans-serif;
+    border-top: 0px;
+    border-bottom: 1px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    outline-style: none;
+    background-color: transparent;
+  }
+}
+
+.product-form-video-input{
+  font-size: 20px
+}
+.product-form-socials-input{
+  font-size: 20px
+}
+.product-form-arw-input{
+  font-size: 20px
+}
+.product-form-website-input{
+  font-size: 20px
+}
+.product-form-name-input{
+  font-family: sans-serif;
+  font-size: 30px;
+}
+.product-form-desciption-input{
+  font-size: 20px;
+}
+
+.product-form-input-div:hover{
+  display: flex;
+  align-items: center;
+  background-color: #f7f4f4
+}
+
+.product-form-text-details:focus{
+  outline: none;
+
+}
+
+.product-form-text-details{
+  background-color: transparent;
+  resize: none;
+  font-size: 13px
+}
+
+.product-form-submit-button{
+  background-color: #DA552F;
+  color: white;
+  padding: 11px 11px;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  // padding-bottom: px;
+
+}
+.product-form-submit-button:hover{
+  background-color: #e47353;
+}
+
+
+
+.product-form-title{
+  font-size: 50px;
+  font-family: sans-serif;
+
+}
+
+.product-form-des{
+  font-size: 20px;
+  font-family: sans-serif;
+}

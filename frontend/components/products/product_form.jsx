@@ -64,47 +64,47 @@ class ProductForm extends React.Component {
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h1>Product Form</h1>
-          <h4>Find a product you like? ESCAPE with it</h4>
-          <div>
-            <h4>Product Name</h4>
-            <input type="text" placeholder="Enter Product Name" onChange={this.handleChange('product_name')} value={this.state.product_name} />
+      <div className="product-form-page">
+        <form className="product-form-content" onSubmit={this.handleSubmit}>
+          <h1 className="product-form-title" >Post A New Product</h1>
+          <h4 className="product-form-des">Find a product you like? ESCAPE with it</h4>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Name</h4>
+            <input className="product-form-input-str product-form-name-input" type="text" placeholder="Enter Product Name" onChange={this.handleChange('product_name')} value={this.state.product_name} />
           </div>
-          <div>
-            <h4>Product Description</h4>
-            <input type="text" placeholder="Enter a brief description" onChange={this.handleChange('description')} value={this.state.description} />
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Description</h4>
+            <input className="product-form-input-str product-form-desciption-input" type="text" placeholder="Enter a brief description" onChange={this.handleChange('description')} value={this.state.description} />
           </div>
-          <div>
-            <h4>Product Details </h4>
-            <input type="textarea" placeholder="Enter additional essential details" onChange={this.handleChange('details')} value={this.state.details}/>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product website</h4>
+            <input className="product-form-input-str product-form-website-input" type="url" placeholder="Must be full url ie. www.product-esc.com" onChange={this.handleChange('website')} value={this.state.website}/>
           </div>
-          <div>
-            <h4>Product website</h4>
-            <input type="url" placeholder="Must be full url ie. www.product-esc.com" onChange={this.handleChange('website')} value={this.state.website}/>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Around The Web</h4>
+            <input className="product-form-input-str product-form-arw-input" type="text" placeholder="ie. www.newyorktimes.com/product-esc" onChange={this.handleChange('around_the_web')} value={this.state.around_the_web}/>
           </div>
-          <div>
-            <h4>Product around the web</h4>
-            <input type="text" placeholder="Must be full url ie. www.newyorktimes.com/product-esc" onChange={this.handleChange('around_the_web')} value={this.state.around_the_web}/>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Socials</h4>
+            <input className="product-form-input-str product-form-socials-input" type="text" placeholder="ie. www.facebook.com/product-esc" onChange={this.handleChange('social')} value={this.state.social}/>
           </div>
-          <div>
-            <h4>Product Socials</h4>
-            <input type="text" placeholder="Must be full url ie. www.facebook.com/product-esc" onChange={this.handleChange('social')} value={this.state.social}/>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Video</h4>
+            <input className="product-form-input-str product-form-video-input" type="url" placeholder="ie. www.youtube.com/product-esc" onChange={this.handleChange('video_link')} value={this.state.video_link} />
           </div>
-          <div>
-            <h4>Product Logo</h4>
-            <input type="file" onChange={this.handleFile('list_photo')} />
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Details </h4>
+            <textarea className="product-form-text-details" rows="7" cols="64" placeholder="Enter additional essential details" onChange={this.handleChange('details')} value={this.state.details}></textarea>
           </div>
-          <div>
-            <h4>Product Display Pictures</h4>
-            <input type="file" onChange={this.handleFile('photos')} />
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Logo</h4>
+            <input className="" type="file" onChange={this.handleFile('list_photo')} />
           </div>
-          <div>
-            <h4>Video Dispaly</h4>
-            <input type="url" placeholder="Must be full url ie. www.youtube.com/product-esc" onChange={this.handleChange('video_link')} value={this.state.video_link} />
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Pictures</h4>
+            <input className="" type="file" onChange={this.handleFile('photos')} />
           </div>
-          <button onClick={this.handleSubmit}>ESCAPE IT</button>
+          <button className="product-form-submit-button" onClick={this.handleSubmit}>ESCAPE IT</button>
         </form>
       </div>
     )

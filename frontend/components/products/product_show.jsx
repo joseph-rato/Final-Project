@@ -15,7 +15,7 @@ class ProductShow extends React.Component{
     return(
       <div className="modal-product-show">
         <div className="show-header">
-          <div className="show-product-list-item-photo"></div>
+          <div className="show-product-list-item-photo"><img className="product-list-item-logo" src={this.props.product.logoPhoto}></img></div>
           <div className="product-list-item-headline">
             <h1 className="show-product-list-item-product-Name">{product.product_name}</h1>
             <h3 className="show-product-list-item-description">{product.description}</h3>
