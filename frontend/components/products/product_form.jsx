@@ -30,15 +30,15 @@ class ProductForm extends React.Component {
       return this.props.sendError(['You need to upload at least one display picture']);
     }
     const formData = new FormData();
-    formData.append('products[product_name]', this.state.product_name)
-    formData.append('products[description]', this.state.description)
-    formData.append('products[details]', this.state.details)
-    formData.append('products[website]', this.state.website)
-    formData.append('products[social]', this.state.social)
-    formData.append('products[list_photo]', this.state.list_photo)
-    formData.append('products[photos]', this.state.photos)
-    formData.append('products[video_link]', this.state.video_link)
-    formData.append('products[around_the_web]', this.state.around_the_web)
+    formData.append('product[product_name]', this.state.product_name)
+    formData.append('product[description]', this.state.description)
+    formData.append('product[details]', this.state.details)
+    formData.append('product[website]', this.state.website)
+    formData.append('product[social]', this.state.social)
+    formData.append('product[list_photo]', this.state.list_photo)
+    formData.append('product[photos]', this.state.photos)
+    formData.append('product[video_link]', this.state.video_link)
+    formData.append('product[around_the_web]', this.state.around_the_web)
     this.props.sendForm(formData, this.props.currentUserId)
     // this.props.createProduct(formData, this.props.currentUserId)
     // .then((response) => console.log(response.message));

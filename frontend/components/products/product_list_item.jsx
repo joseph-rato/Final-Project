@@ -5,7 +5,7 @@ const ProductListItem = ({product, openModal}) => {
   // need to put an <img> tag with src as the product.list_photo
   return(
     <div className='product-list-item' onClick={() => openModal('product', product)} >
-      <div className="show-product-list-item-photo"></div>
+      <div className="show-product-list-item-photo"><img className="product-list-item-logo" src={product.logoPhoto}></img></div>
       <div className="product-list-item-headline">
         <h2 className="product-list-item-product-Name">{product.product_name}</h2>
         <h3 className='product-list-item-description'>{product.description}</h3>
