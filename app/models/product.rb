@@ -6,4 +6,5 @@ class Product < ApplicationRecord
   has_one_attached :photos
   has_one_attached :list_photo
   has_many :reviews
+  has_many :product_discussions
 end

@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'reviews/create'
-    get 'reviews/show'
-    get 'reviews/index'
-  end
+  # namespace :api do
+  #   get 'product_discussions/create'
+  #   get 'product_discussions/show'
+  #   get 'product_discussions/update'
+  #   get 'product_discussions/destroy'
+  # end
+  # get 'create/show'
+  # get 'create/destroy'
+  # get 'create/update'
+  # namespace :api do
+  #   get 'reviews/create'
+  #   get 'reviews/show'
+  #   get 'reviews/index'
+  # end
   # namespace :api do
   #   get 'products/index'
   #   get 'products/show'
@@ -20,14 +29,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "static_pages#root"
   namespace :api, default: {format: :json} do
+
     resources :users, only: [:show, :create] do
       resources :products, only: [:create, :update]
       resources :reviews, only: [:show, :create]
+      resources :product_discussions, only:[:create, :update, :destroy, :show]
     end
+
     resource :sessions, only: [:create, :destroy, :show]
+
     resources :products, only: [:index, :show] do
       resources :reviews, only: [:index]
     end
+
   end
 
 

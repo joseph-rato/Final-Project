@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :products
   has_one_attached :avatar
   has_many :reviews
+  has_one_attached :profile_header
+  has_many :product_discussions
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
