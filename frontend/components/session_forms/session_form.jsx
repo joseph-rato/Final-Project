@@ -132,7 +132,7 @@ class SessionForm extends React.Component {
                     type="text"
                     value={this.state.username}
                     onChange={this.handleChange('username')}
-                    placeholder="USERNAME"
+                    placeholder=""
                     required
                     />
                 </label>
@@ -144,7 +144,7 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.email}
                 onChange={this.handleChange('email')}
-                placeholder="EMAIL"
+                placeholder=""
                 required
                 />
             </label>
@@ -153,7 +153,7 @@ class SessionForm extends React.Component {
                   type="password"
                   value={this.state.password}
                   onChange={this.handleChange('password')}
-                  placeholder="PASSWORD"
+                  placeholder=""
                   required
                   / >
               </label>

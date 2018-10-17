@@ -5,7 +5,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id]).includes(:reviews).includes(user: [:username, :headline])
+    @product = Product.find(params[:id])
+    # .include(:reviews).include(user: [:username, :headline])
     if @product
       render :show
     else

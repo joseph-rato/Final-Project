@@ -40,6 +40,8 @@ class ProductForm extends React.Component {
     formData.append('product[video_link]', this.state.video_link)
     formData.append('product[around_the_web]', this.state.around_the_web)
     this.props.sendForm(formData, this.props.currentUserId)
+
+    return this.props.closeModal();
     // this.props.createProduct(formData, this.props.currentUserId)
     // .then((response) => console.log(response.message));
   }

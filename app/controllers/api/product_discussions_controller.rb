@@ -39,5 +39,5 @@ class Api::ProductDiscussionsController < ApplicationController
   def pd_params
     params.require(:product_discussions).permit(:body, :body_id, :review_id, :product_id)
   end
-  
+
 end
