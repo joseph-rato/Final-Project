@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'reviews/create'
+    get 'reviews/show'
+    get 'reviews/index'
+  end
   # namespace :api do
   #   get 'products/index'
   #   get 'products/show'
@@ -17,7 +22,7 @@ Rails.application.routes.draw do
   namespace :api, default: {format: :json} do
     resources :users, only: [:show, :create] do
       resources :products, only: [:create, :update]
-      resources :reviews, only: [:show, :create, :destroy]
+      resources :reviews, only: [:show, :create]
     end
     resource :sessions, only: [:create, :destroy, :show]
     resources :products, only: [:index, :show] do

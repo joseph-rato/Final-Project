@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_211112) do
+ActiveRecord::Schema.define(version: 2018_10_17_023731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2018_10_16_211112) do
     t.string "comment", null: false
     t.string "pro"
     t.string "con"
-    t.string "string"
     t.integer "product_id", null: false
     t.integer "user_id", null: false
     t.string "time_used"
@@ -75,6 +74,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_211112) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "headline"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
