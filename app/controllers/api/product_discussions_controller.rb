@@ -34,8 +34,10 @@ class Api::ProductDiscussionsController < ApplicationController
       render json: ["Only the author can delete their comment"], status: 401
     end
   end
+
   private
   def pd_params
     params.require(:product_discussions).permit(:body, :body_id, :review_id, :product_id)
   end
+  
 end
