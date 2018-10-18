@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   return({
     // need to add reviews later
     // product: ownProps.product
+
   });
 };
 
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   return({
     // closeModal: () => dispatch(closeModa()),
     // fetchProduct: (product) => dispatch(fetchProduct(product))
+
   });
 };
 

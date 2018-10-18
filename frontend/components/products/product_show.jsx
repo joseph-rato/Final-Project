@@ -12,6 +12,13 @@ class ProductShow extends React.Component{
   }
 
 
+// if statement that checks for after www. twitter/facebook then returns proper symbol
+ social(){
+   return(
+     <div>{this.props.product.social}</div>
+   )
+ }
+
   render(){
     const product = this.props.product
     // debugger;
@@ -62,11 +69,33 @@ class ProductShow extends React.Component{
           </div>
 
           <div className="side-bar">
-            <div className="show-updoots">38</div>
-            <div className="show-website-button">{product.website}</div>
-            <div className="show-send-to-phone">SEND TO PHONE</div>
-            <div className="show-product-social"></div>
-            <div className="show-related-products"></div>
+
+            <div className="show-updoots">
+              <button className="show-upvote-button">
+                UPVOTE
+                <div className="show-upvote-number">56</div>
+              </button>
+              <div>People</div>
+            </div>
+
+            <div className="show-website-button-div">
+              <button className="show-website-button">
+                <i class="fas fa-compass"></i>
+                <div className="show-website-word-stacker">
+                  <div className="show-website-identifier">Website</div>
+                  <div className="show-website-address">{product.website}</div>
+                </div>
+                <div>somevector</div>
+              </button>
+            </div>
+
+            <div className="show-send-to-phone">
+              <button className="show-send-to-phone-button">SEND TO PHONE</button>
+            </div>
+            <div className="show-product-social">
+              {this.social()}
+            </div>
+            <div className="show-related-products">THIS HAS TO DO WITH TAGS not now probs container</div>
           </div>
         </div>
       </div>

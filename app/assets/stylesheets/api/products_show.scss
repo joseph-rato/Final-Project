@@ -106,6 +106,13 @@
   justify-content: center;
   align-items: center;
 
+  p {
+    color: white;
+  }
+
+  i {
+    color: white;
+  }
 
 }
 
@@ -120,15 +127,21 @@
   justify-content: center;
   align-items: center;
 
+  p {
+    color: white;
+  }
+
+  i {
+    color: white;
+  }
 
 }
 
-// .product-show-user-social-p:hover{
-//   margin: 0;
-//   display: flex;
-//   margin-left: 5px;
-//   color: white;
-// }
+.product-show-user-social-p:hover{
+  margin: 0;
+  display: flex;
+  margin-left: 5px;
+}
 
 .product-show-user-social-p{
   margin: 0;
@@ -193,4 +206,115 @@
   font-family: sans-serif;
   font-size: 13px;
   font-weight: 300;
+}
+
+.side-bar {
+  margin-left: 74px;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+
+
+
+}
+.show-updoots{
+  display: flex;
+  padding: 22px 0px;
+  border-top: 1px solid #d3d3d370;
+  border-bottom: 1px solid #d3d3d370;
+
+}
+.show-upvote-button{
+  display: flex;
+  width: 195px;
+  height: 50px;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  padding-left: 36px;
+  font-size: 17px;
+  font-weight: 747;
+  color: white;
+  background-color: #da552f;
+
+  .show-upvote-number{
+    display: flex;
+    padding-left: 22px;
+  }
+
+}
+
+.show-upvote-button:hover{
+  display: flex;
+  width: 195px;
+  height: 50px;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  padding-left: 36px;
+  font-size: 17px;
+  font-weight: 747;
+  color: white;
+  background-color: #da682f;
+}
+
+.show-website-button{
+  display: flex;
+  height: 65px;
+  margin: 22px 0px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #d3d3d391;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.fa-compass{
+  font-size: 32px;
+  color: darkgrey;
+  padding-left: 7px;
+}
+
+.show-website-word-stacker{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 15px;
+}
+
+.show-website-identifier{
+  font-size: 14px;
+  font-weight: 450;
+  margin-bottom: 3px;
+  display: flex;
+}
+
+.show-website-address{
+  display: flex;
+  color: darkgrey;
+  font-size: 11px;
+}
+
+.show-send-to-phone{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #d3d3d391;
+  padding-bottom: 23px;
+}
+
+.show-send-to-phone-button{
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  font-size: 11px;
+  border: 1px solid #d3d3d391;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.show-send-to-phone-button:hover{
+  background-color: lightgrey;
 }
