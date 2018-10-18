@@ -9,6 +9,7 @@ import Modal from './modal';
 import ProductsContainer from './products/products_container'
 import CreateProductContainer from './products/create_product_container'
 import ProductShowContainer from './products/product_show_container'
+import UserProfileContainer  from './user_profile_container'
 
 const MainPage = () => (
   <div >
@@ -20,6 +21,7 @@ const MainPage = () => (
     <Switch>
       <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
       <Route exact path="/" component={ProductsContainer} />
+      <Route exact path="/user" component={UserProfileContainer} />
       <ProtectedRoute exact path="/contribute/edit/" component={PlaceHolderContainer} />
       <ProtectedRoute exact path="/contribute" component={CreateProductContainer} />
       <Redirect to="/" />

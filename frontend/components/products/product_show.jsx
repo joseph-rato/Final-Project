@@ -80,7 +80,7 @@ class ProductShow extends React.Component{
 
             <div className="show-website-button-div">
               <button className="show-website-button">
-                <i class="fas fa-compass"></i>
+                <i className="fas fa-compass"></i>
                 <div className="show-website-word-stacker">
                   <div className="show-website-identifier">Website</div>
                   <div className="show-website-address">{product.website}</div>
