@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   has_one_attached :list_photo
   has_many :reviews
   has_many :product_discussions
+
+  has_many :reviewers,
+  through: :reviews,
+  source: :user
 end

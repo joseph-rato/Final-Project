@@ -1,12 +1,13 @@
 import React from 'react';
+import ReviewComponent from '../reviews/review_component'
 
 class ProductShow extends React.Component{
   constructor(props){
     super(props)
   }
 
-  componentDidUpdate() {
-    // debugger;
+  componentDidMount() {
+
     return this.props.fetchProduct(this.props.product);
   }
 
@@ -56,7 +57,7 @@ class ProductShow extends React.Component{
               </div>
             </div>
 
-            <div className="show-review-section">{product.reviews}THIS IS WRONG NEED SELECTOR</div>
+            <ReviewComponent />
             <div className="show-product-discussion">Need new container for this</div>
           </div>
 

@@ -5,11 +5,12 @@ const reviewReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      if (Object.keys(state.reviews).length === 0) {
-        return merge({}, state.reviews, action.product.reviews);
+    // debugger
+      if (!!state) {
+        return Object.assign({}, action.product.reviews);
       } else {
         const reviewArr = Object.values(action.product.reviews)
-        let finalState = Object.assign({}, state.reviews)
+        let finalState = Object.assign({}, state)
         reviewArr.forEach( (review) => {
           return merge({}, finalState[review.id], {[review.id]: review});
         })
