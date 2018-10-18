@@ -14,7 +14,6 @@ const mapStateToProp = (state, ownProps) => {
 
 const mapDispatchToProp = (dispatch) => {
   return({
-    closeModel: () => dispatch(closeModal()),
     sendForm: (product, id) => dispatch(createProduct(product, id)),
     sendError: (error) => dispatch(receiveProductErrors(error))
   })

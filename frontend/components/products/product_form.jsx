@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 class ProductForm extends React.Component {
   constructor(props){
@@ -39,9 +40,10 @@ class ProductForm extends React.Component {
     formData.append('product[photos]', this.state.photos)
     formData.append('product[video_link]', this.state.video_link)
     formData.append('product[around_the_web]', this.state.around_the_web)
-    this.props.sendForm(formData, this.props.currentUserId)
-
-    return this.props.closeModal();
+    // this.props.history.push(`/product/${product_name}`)
+    return this.props.sendForm(formData, this.props.currentUserId).then( (serverProduct) => {
+      return this.props.history.push(`/products/${serverProduct.id}`);
+    })
     // this.props.createProduct(formData, this.props.currentUserId)
     // .then((response) => console.log(response.message));
   }
@@ -113,4 +115,4 @@ class ProductForm extends React.Component {
   }
 }
 
-export default ProductForm;
+export default withRouter(ProductForm);

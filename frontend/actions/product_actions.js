@@ -11,6 +11,7 @@ export const receiveProduct = (product) => {
   })
 }
 
+
 export const receiveProducts = (products) => {
   return({
     type: RECEIVE_PRODUCTS,

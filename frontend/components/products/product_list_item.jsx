@@ -1,5 +1,7 @@
 
 import React from 'react';
+import {connect} from 'react-redux'
+
 
 const ProductListItem = ({product, openModal}) => {
   // need to put an <img> tag with src as the product.list_photo
@@ -24,3 +26,5 @@ const ProductListItem = ({product, openModal}) => {
 }
 
 export default ProductListItem;
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ProductListItem)

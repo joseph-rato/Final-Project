@@ -3,7 +3,7 @@ import {closeModal} from '../actions/modal_actions';
 import {connect} from 'react-redux';
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import ProductShowContainer from './products/product_show_container'
 
 const Modal = ({product, modal, closeModal}) => {
@@ -50,4 +50,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
