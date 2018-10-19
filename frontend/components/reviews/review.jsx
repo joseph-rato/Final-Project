@@ -8,7 +8,7 @@ class Review extends React.Component{
   // review-content-header might be made into its own container
 
   // componentDidMount() {
-  //   debugger;
+  //   ;
   // }
   //
   // componentDidUpdate(prevProps,prevState) {
@@ -18,40 +18,73 @@ class Review extends React.Component{
   // componentDidReceiveProps() {
   //   debugger;
   // }
-  render(){
-    debugger
+
+  profilePic(user){
+
+    return(
+      (!!user.avatarPic)
+      ? <img className="header-profile-pic" src={user.avatarPic}></img>
+      :  <div className="header-profie-avatar-self-made">
+            <svg className="header-profile-avatar-background" height="50" width="50">
+              <circle cx="22" cy="22" r="22" stroke="lightgrey" strokeWidth="3" fill="red" />
+            </svg>
+            <div className="header-profile-letter-self-made">{user.username.slice(0, 1)}</div>
+          </div>
+    )
+  }
+
+  face(rating){
+    switch (rating) {
+      case 1:
+      return(<i className="each-review-face far fa-smile"></i>);
+      case 0:
+      return(<i className="each-review-face far fa-meh"></i>);
+      case -1:
+      return(<i className="each-review-face far fa-frown"></i>);
+      default:
+      return(<h1>NO FACEEEEE</h1>);
+    };
+  };
+
+
+  render() {
     const reviews = this.props.reviews
+    const users = this.props.users
+    const reviewArr = Object.values(reviews)
     return(
       <div className="review-container">
         <div className="review-over-view">
-          <div className="review-all-users">{Object.values(reviews).length}</div>
+          <div className="review-all-users">{Object.values(reviews).length} reviews</div>
           <div className="review-question">Would you recommend product, name to a friend?</div>
           <div className="review-rating-system">
-            <button className="smiley"><i class="far fa-smile"></i></button>
-            <button className="neutral"><i class="far fa-smile"></i></button>
-            <button className="sad"><i class="far fa-frown"></i></button>
+            <button className="review-face-counter"><i className="far fa-smile"></i></button>
+            <button className="review-face-counter"><i class="far fa-meh"></i></button>
+            <button className="review-face-counter"><i className="far fa-frown"></i></button>
             <div className="review-drop-down-selector"></div>
           </div>
         </div>
         <div className="review-section">
-          <ul>
-            {Object.values(reviews).map((review) =>{
+          <ul className="review-list">
+            {reviewArr.map((review, idx) =>{
+
               return(
-                <li>
+                <li key={idx} className="review-each-list-item" >
                   <div className="review-content-header">
                     <div className="user-top-info">
-                      <div className="profile-pic">profile pic here</div>
-                      <div className="user-@identifyer-position">
-                        <div className="profile-name"></div>
-                        <div className="profile-name"></div>
+                      <div className="profile-pic">
+                        {this.profilePic(users[review.user_id])}
                       </div>
-                      <div className="review-feedback">the integer turned into a face</div>
+                      <div className="user-ATidentifyer-position">
+                        <div className="review-profile-name">{users[review.user_id].username}</div>
+                        <div className="review-ATprofile-name">@{users[review.user_id].username}</div>
+                      </div>
+                      <div className="review-feedback">{this.face(review.rating)}</div>
                     </div>
-                    <div className="review-pros">{review.pros}</div>
-                    <div className="review-cons">review.cons</div>
+                    <div className="review-pros"><div className="review-words-bolded">Pros:</div> {review.pro}</div>
+                    <div className="review-cons"><div className="review-words-bolded">Cons:</div> {review.con}</div>
                   </div>
-                  <div className="review-comment"></div>
-                  <div className="how long this has been used"></div>
+                  <div className="review-comment">{review.comment}</div>
+                  <div className="how-long-this-has-been-used">{users[review.user_id].username} has been using this product for {review.time_used}</div>
                   <div>otherthings</div>
                 </li>
               )
@@ -63,5 +96,5 @@ class Review extends React.Component{
     )
   }
 }
-
+//Uzoma Bailey Ayogu has used this product for one year.
 export default Review;
