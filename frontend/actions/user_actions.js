@@ -1,4 +1,4 @@
-
+import * as APIUtil from '../util/user_api_util'
 
 
 export const RECEIVE_USER = 'RECEIVE_USER'
@@ -20,5 +20,10 @@ export const receiveUserError = (err) => {
 
 export const updateUser = (user) => dispatch => {
   return APIUtil.updateProduct(user).then( (serverUser) => dispatch(receiveUser(serverUser)),
-  (err) => dispatch(receiveUserErrors(err)));
+  (err) => dispatch(receiveUserError(err)));
+};
+
+export const fetchUser = (userId) => dispatch => {
+  return APIUtil.fetchUser(userId).then( (serverUser) => dispatch(receiveUser(serverUser)),
+  (err) => dispatch(receiveUserError(err)));
 };

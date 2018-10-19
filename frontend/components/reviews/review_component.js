@@ -1,12 +1,15 @@
 import {connect} from 'react-redux';
 import {createReview} from '../../actions/review_actions'
 import Review from './review'
+import reviewSelector from '../../util/selectors'
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
+  let reviewsArr ;
+  reviewsArr = reviewSelector(state.entities.reviews, ownProps.product);
   return({
     // need to add reviews later
-    // product: ownProps.product
-
+      reviews: state.entities.reviews
   });
 };
 

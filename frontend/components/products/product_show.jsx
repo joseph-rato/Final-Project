@@ -64,7 +64,7 @@ class ProductShow extends React.Component{
               </div>
             </div>
 
-            <ReviewComponent />
+            <ReviewComponent product={product} />
             <div className="show-product-discussion">Need new container for this</div>
           </div>
 

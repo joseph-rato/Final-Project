@@ -42,7 +42,7 @@ class NavUserOptions extends React.Component{
         </div>
 
         <div id="user-option-list" className="profile-dropdown-menu-options closeDropDown">
-          <Link to="/user">MY PROFILE</Link>
+          <Link to="/@" >MY PROFILE</Link>
           <Link to="/notdoneyet">MY COLLECTION</Link>
           <Link to="/notdoneyet">MY INVITES</Link>
           <Link to="/notdoneyet">SETTINGS</Link>
