@@ -4,8 +4,7 @@ import Review from './review'
 import reviewSelector from '../../util/selectors'
 
 const mapStateToProps = (state, ownProps) => {
-  // let reviewsArr ;
-  // reviewsArr = reviewSelector(state.entities.reviews, ownProps.product);
+  
   return({
     // need to add reviews later
       reviews: state.entities.reviews,

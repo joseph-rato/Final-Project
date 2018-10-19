@@ -1,11 +1,16 @@
 # README
 
+## Description
 This app allows to post products read reviews and create users. It's meant to share cool new products you've found and then watch them escape from obscurity.
 
+## Live site
 [Product-esc](product-esc.herokuapp.com)
 
+## Technologies Used
 This app was built on rails, with postgresql as the database and React for the frontend. The outside technology used was active storage for storage of images.
 
+
+## Code
 Two features I'm very proud of are the modals I've implemented and getting active storage to work. The sign up and sign in modals were pretty basic, however the product show modal needed data when it rendered to properly render and then get additional information to see the reviews at the bottom of the page. The key was to pass in an additional argument to the modal so that not only would it know which modal component to mount it would also have initial data for setup.
 
 
@@ -47,7 +52,7 @@ case RECEIVE_PRODUCT:
     finalState = merge({}, finalState, {[userArr[i].id]: userArr[i]});
   }
 ```
-
+### Future Changes
 Future directions for this project:
 * Product Discussion
 * User update form

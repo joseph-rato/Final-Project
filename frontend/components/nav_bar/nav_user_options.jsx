@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 class NavUserOptions extends React.Component{
   constructor( props ) {
     super(props)
-
+    debugger;
     this.toggleList = this.toggleList.bind(this)
   }
 
@@ -29,7 +29,8 @@ class NavUserOptions extends React.Component{
   }
 
   profilePic() {
-    // debugger
+    console.log('HELP')
+    // debugger;
     return(
       (this.props.currentUser.avatarPic === undefined)
     ? (<div className="profile-avatar-button" onClick={this.toggleList}>
@@ -42,12 +43,12 @@ class NavUserOptions extends React.Component{
         </div>
 
         <div id="user-option-list" className="profile-dropdown-menu-options closeDropDown">
-          <Link to="/@" >MY PROFILE</Link>
+          <Link to="/user" >MY PROFILE</Link>
           <Link to="/notdoneyet">MY COLLECTION</Link>
           <Link to="/notdoneyet">MY INVITES</Link>
           <Link to="/notdoneyet">SETTINGS</Link>
           <Link to="/notdoneyet">API DASHBOARD</Link>
-          <Link to="/" onClick={this.props.logout}>LOGOUT</Link>
+          <Link to="/" onClick={this.props.logout()}>LOGOUT</Link>
         </div>
       </div>)
   : (<div className="profile-avatar-button" onBlur={() => console.log('it happened')} onClick={this.toggleList}>
@@ -66,7 +67,7 @@ class NavUserOptions extends React.Component{
 
 
   render() {
-
+    debugger;
     return(
       <div className="profile-menu-wrapper">
         <div className="profile-dropdown-menu" >

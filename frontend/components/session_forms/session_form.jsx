@@ -53,7 +53,9 @@ class SessionForm extends React.Component {
             this.loginAsGuestHelper(guestEmail, guestPassword, button), 100);
         }
       );
-    } else { button.click()}
+    } else {
+      button.click()
+    }
   }
 
   handleChange(type) {
