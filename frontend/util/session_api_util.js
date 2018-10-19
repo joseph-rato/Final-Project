@@ -8,8 +8,6 @@ export const signup = (user) => {
 
 
 export const login = (user) => {
-  console.log('help2')
-  debugger;
   return $.ajax({
     method: "POST",
     url: "/api/sessions",

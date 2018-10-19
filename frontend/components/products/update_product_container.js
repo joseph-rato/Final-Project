@@ -3,7 +3,6 @@ import {updateProduct} from '../../actions/product_actions'
 import ProductForm from './product_form'
 
 const mapStateToProp = (state, ownProps) => {
-  // debugger;
   return({
     product: state.entities.products[ownProps.product.id]
   })

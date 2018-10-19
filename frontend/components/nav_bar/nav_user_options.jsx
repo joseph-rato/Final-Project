@@ -5,32 +5,21 @@ import {Link} from 'react-router-dom';
 class NavUserOptions extends React.Component{
   constructor( props ) {
     super(props)
-    debugger;
     this.toggleList = this.toggleList.bind(this)
   }
 
   toggleList(){
     const hiddenChart = document.getElementById('user-option-list')
     if (hiddenChart.classList.contains('openDropDown')){
-      // debugger;
        hiddenChart.classList.remove('openDropDown');
        return hiddenChart.classList.add('closeDropDown');
-       // return document.removeEventListener('click', () => {
-       //   return this.togglelist();
-       // })
     } else {
-      // debugger;
       hiddenChart.classList.add('openDropDown');
       return hiddenChart.classList.remove('closeDropDown');
-      // return document.addEventListener('click', () =>{
-      //   return this.toggleList();
-      // })
     }
   }
 
   profilePic() {
-    console.log('HELP')
-    // debugger;
     return(
       (this.props.currentUser.avatarPic === undefined)
     ? (<div className="profile-avatar-button" onClick={this.toggleList}>
@@ -67,7 +56,6 @@ class NavUserOptions extends React.Component{
 
 
   render() {
-    debugger;
     return(
       <div className="profile-menu-wrapper">
         <div className="profile-dropdown-menu" >

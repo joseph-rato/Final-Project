@@ -28,7 +28,6 @@ const MainPage = () => (
     </Switch>
   </div>
 )
-//       <ProtectedRoute exact path={`${state.entities.users[session.id].username}`} />
 
 
 export default MainPage;

@@ -13,7 +13,6 @@ class UserHeader extends React.Component{
   }
 
   profilePic(){
-    debugger
     return(
       (!!this.props.user.avatarPic)
       ? <img className="header-profile-pic" src={this.props.user.avatarPic}></img>
@@ -42,7 +41,6 @@ class UserHeader extends React.Component{
 
   render(){
     const user = this.props.user
-    debugger
     return(
       <div className={(!!user.profileHeader) ? "header-clear-size" : "header-generic-headerpic"}>
         {this.profileHeader()}

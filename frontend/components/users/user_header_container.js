@@ -4,7 +4,6 @@ import UserHeader from './user_header'
 
 
 const mapStateToProp = (state, ownProps) => {
-  debugger
   return({
     sessionId: state.session.id,
     user: ownProps.user

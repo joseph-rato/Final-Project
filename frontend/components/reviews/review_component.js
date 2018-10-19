@@ -4,9 +4,8 @@ import Review from './review'
 import reviewSelector from '../../util/selectors'
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return({
-    // need to add reviews later
       reviews: state.entities.reviews,
       users: state.entities.users
   });
@@ -14,9 +13,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return({
-    // closeModal: () => dispatch(closeModa()),
-    // fetchProduct: (product) => dispatch(fetchProduct(product))
-
   });
 };
 

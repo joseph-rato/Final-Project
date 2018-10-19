@@ -5,7 +5,6 @@ import ProductShow from './product_show'
 
 const mapStateToProps = (state, ownProps) => {
   return({
-    // need to add reviews later
     product: ownProps.product
   });
 };

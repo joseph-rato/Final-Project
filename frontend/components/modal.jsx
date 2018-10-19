@@ -50,5 +50,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

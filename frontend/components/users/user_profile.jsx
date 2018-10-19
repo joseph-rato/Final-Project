@@ -7,10 +7,7 @@ class UserProfile extends React.Component {
     return this.props.fetchUser(this.props.userProfileId);
   }
 
-  // <UserLeftBarNav />
-  // <div>this is header container</div>
   render(){
-    debugger;
     return(
       <div className="user-content-page" >
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>

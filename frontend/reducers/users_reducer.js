@@ -23,12 +23,6 @@ const usersReducer = (state = {}, action) => {
 }
 
 
-// debugger
-// let finalState = Object.assign({}, state)
-// userArr.forEach( (user) => {
-//   // debugger
-//   finalState = merge({}, finalState[user.id], {[user.id]: user});
-// });
-// debugger;
+
 
 export default usersReducer;

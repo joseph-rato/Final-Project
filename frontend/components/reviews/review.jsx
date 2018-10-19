@@ -2,23 +2,6 @@ import React from 'react'
 
 
 class Review extends React.Component{
-
-  // the buttons smiely neutral and sad open up an if/else that opens a create view
-  // need to iterate through each review of ownProps and then printing them out as a li
-  // review-content-header might be made into its own container
-
-  // componentDidMount() {
-  //   ;
-  // }
-  //
-  // componentDidUpdate(prevProps,prevState) {
-  //   debugger;
-  // }
-  //
-  // componentDidReceiveProps() {
-  //   debugger;
-  // }
-
   profilePic(user){
 
     return(
@@ -85,7 +68,7 @@ class Review extends React.Component{
                   </div>
                   <div className="review-comment">{review.comment}</div>
                   <div className="how-long-this-has-been-used">{users[review.user_id].username} has been using this product for {review.time_used}</div>
-                  <div>otherthings</div>
+                  <div></div>
                 </li>
               )
             })}
@@ -96,5 +79,4 @@ class Review extends React.Component{
     )
   }
 }
-//Uzoma Bailey Ayogu has used this product for one year.
 export default Review;

@@ -4,12 +4,10 @@ import UserProfile from './user_profile'
 
 
 const mapStateToProp = (state, ownProps) => {
-  debugger
   return({
     userProfileId: ownProps.userId || state.session.id,
     users: state.entities.users
   });
-  // user: state.entities.users[userId] || state.entities.users[userProfileId]
 }
 
 const mapDispatchToProp = (dispatch) => {

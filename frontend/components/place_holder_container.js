@@ -1,6 +1,5 @@
 import PlaceHolder from './place_holder';
 import {connect} from 'react-redux';
-// import {} from '../../actions/session_actions';
 
 const mapStateToProps = ({errors}) => {
   return {};

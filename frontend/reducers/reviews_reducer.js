@@ -5,7 +5,6 @@ const reviewReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PRODUCT:
-    // debugger
       if (!!state) {
         return Object.assign({}, action.product.reviews);
       } else {
