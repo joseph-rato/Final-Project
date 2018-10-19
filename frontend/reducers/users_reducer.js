@@ -15,17 +15,20 @@ const usersReducer = (state = {}, action) => {
       for (let i = 0; i < userArr.length; i++) {
         finalState = merge({}, finalState, {[userArr[i].id]: userArr[i]});
       }
-      // debugger
-      // let finalState = Object.assign({}, state)
-      // userArr.forEach( (user) => {
-      //   // debugger
-      //   finalState = merge({}, finalState[user.id], {[user.id]: user});
-      // });
-      // debugger;
+
       return finalState;
     default:
     return state;
   }
 }
+
+
+// debugger
+// let finalState = Object.assign({}, state)
+// userArr.forEach( (user) => {
+//   // debugger
+//   finalState = merge({}, finalState[user.id], {[user.id]: user});
+// });
+// debugger;
 
 export default usersReducer;

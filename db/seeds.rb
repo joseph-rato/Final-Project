@@ -1,34 +1,64 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  user1 = User.create({username: "test1", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAs95uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygSevAQ", email: "test1@gmail.com", website: nil, headline: nil})
+  user2 = User.create({username: "mat", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAssdfaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygSe3AQ", email: "mat@gmail.com", website: nil, headline: nil})
+  user3 = User.create({username: "joseph", password_digest: "$2a$10$Iy41hdAKn4IdUbFYido95uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxby2SevAQ", email: "john@gmail.com", website: nil, headline: nil})
+  user4 = User.create({username: "jacob", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAs95uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygdevAQ", email: "joseph@gmail.com", website: nil, headline: nil})
+  user5 = User.create({username: "jenny", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAsfuaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygSsvAQ", email: "letgo@gmail.com", website: nil, headline: nil})
+  user6 = User.create({username: "smith", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiA235uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbyg4evAQ", email: "smithg@gmail.com", website: nil, headline: nil})
+  user7 = User.create({username: "oliver", password_digest: "$2a$10$Iy41hdAKn4IdUbFYi4695uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxby5SevAQ", email: "jenny@gmail.com", website: nil, headline: nil})
+  user8 = User.create({username: "don", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAs99caYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygSe6AQ", email: "don@gmail.com", website: nil, headline: nil})
 
-# need to destroy all the database examples so when i create it's not there
-User.destroy_all
+  user1.avatar.attach(io: File.open('app/assets/images/guywithglasses.jpg'), filename: 'guywithglasses.jpg')
+  user2.avatar.attach(io: File.open('app/assets/images/tom_hanks.jpg'), filename: 'tom_hanks.jpg')
+  user3.avatar.attach(io: File.open('app/assets/images/bret.jpg'), filename: 'bret.jpg')
+  user4.avatar.attach(io: File.open('app/assets/images/jenny.jpg'), filename: 'jenny.jpg')
+  user5.avatar.attach(io: File.open('app/assets/images/user7.jpg'), filename: 'user7.jpg')
+  user6.avatar.attach(io: File.open('app/assets/images/user8.jpg'), filename: 'user8.jpg')
+  user7.avatar.attach(io: File.open('app/assets/images/Joseph_Oliver_2.jpg'), filename: 'Joseph_Oliver_2.jpg')
+  user8.avatar.attach(io: File.open('app/assets/images/don.jpg'), filename: 'don.jpg')
 
-Faker::UniqueGenerate.clear
 
-for i in (0..99) do
-  if i % 3 == 0
-    username = Faker::StarWars.unique.character
-  elsif i % 3 == 1
-    username = Faker::BojackHorseman.unique.character
-  else
-    username = Faker::Dune.unqiue.character
-  end
-end
 
-username.gsub!(/[^0-9A-Za-z_]/,"$")
 
-while User.findby(username: username)
-  username += "#{rand 9}"
-end
 
-User.create(
-  username: username,
-  email: Faker::Internet.safe_email(username),
-  password: Faker::Internet.password(9)
-)
+
+  product1 = Product.create({user_id: 1, product_name: "Flying Cats", website: "kittencannon.us", social: "www.facebook.com/kitten-cannon", description: "a cannon that shoots cats", around_the_web: "http://www.fastgames.com/kitten-cannon", details: "This is an addicting game that shoots cats really far and hits randomly generated objects.\n\nGreat fun for the whole family.\n\nHowever you probably want to be older then 5! and have no psychopathic tendencies", video_link: "https://www.youtube.com/watch?v=8q2w0Hb_-ps"})
+  product2 = Product.create({user_id: 2, product_name: "CastBox", website: "https://castbox.fm/", social: "www.facebook.com/castbox", description: "A website to find all types of podcasts", around_the_web: "https://www.investopedia.com/insights/top-startups/", details: "CastBox wants to become the “YouTube of audio.” The company makes a podcast player that also helps users discover new podcasts. Founder Xiaoyu Wang says her goal is make finding key sections of audio on the web as easy as finding key pieces of text. So far, CastBox has raised $16 million in funding as it plans to launch an audio search feature that processes natural language.\n", video_link: ""})
+  product3 = Product.create({user_id: 4, product_name: "Mixpanel", website: "https://mixpanel.com/", social: "https://twitter.com/mixpanel", description: "Provides A/B testing ", around_the_web: "https://woocommerce.com/products/mixpanel/", details: "Mixpanel helps companies understand how their customers behave while on their websites or mobile apps by providing A/B testing tools. The startup wants to give clients the ability to look deeper than just page views and instead see the entire path of their customers. Founded in 2009, Mixpanel is now approaching a billion-dollar valuation.", video_link: "https://www.youtube.com/watch?v=2uNhae_bwWo"})
+  product4 = Product.create({user_id: 4, product_name: "ClassDojo", website: "https://www.classdojo.com/", social: "https://twitter.com/classdojo", description: "Communication for parents students and teachers", around_the_web: "https://www.edsurge.com/product-reviews/classdojo", details: "ClassDojo is a communication platform that helps connect teachers, students and parents. Its platform allows teachers to encourage students while engaging with parents about their children's progress in the classroom. \n\nClassDojo is currently being used in 90 percent of the classrooms in the U.S. Founded in 2011 by Liam Don and Sam Chaudhary, the company has expanded to more than 180 countries.", video_link: "https://www.youtube.com/watch?v=Rzzb5cmNoc0"})
+  product5 = Product.create({user_id: 1, product_name: "Instacart", website: "https://www.instacart.com/", social: "https://twitter.com/Instacart", description: "Same day grocery delivery service", around_the_web: "https://www.cnn.com/2018/10/16/tech/instacart-funding/index.html", details: "​Instacart, founded in 2012, is a same-day grocery delivery service. Customer can place an order either online or from their smartphones, and then have it delivered within an hour. \n\nThe company raised $400 million in funding earlier this year and is now valued at about $3.4 billion.", video_link: "https://www.youtube.com/watch?v=ZxpReM4rE60"})
+  product6 = Product.create({user_id: 3, product_name: "Noodle", website: "https://noodle.ai/", social: "https://twitter.com/NoodleAI?lang=en", description: "Noodle uses ai to manage business", around_the_web: "https://www.businesswire.com/news/home/20180626005253/en/Noodle.ai-Raises-35-Million-Series-Funding", details: "Math. Data. Supercomputing. Business expertise.\n\nNoodle.ai combines the most recent innovations in each of these areas and the resulting learning algorithms may indeed seem magical.\n\nNoodle.ai is the world's most sophisticated Enterprise AI system to manage complex business operations.", video_link: "https://www.youtube.com/watch?v=D7PUQfGm0UU"})
+  product7 = Product.create({user_id: 5, product_name: "Dotify", website: "www.dotify.io", social: "www.twitter.com/dotify", description: "Music playing app", around_the_web: "www.newyorktimes.com/dotifyiscrazybad", details: "\n\nDo\ntify is a super cool player that plays music and it doe\ns m\n\nusic playing! The logo is stolen from spotify but replaces the SP with a \nD.", video_link: "www.youtube.com/dooootify"})
+  product8 = Product.create({user_id: 6, product_name: "Matsana", website: "https://matsana.herokuapp.com/#/login", social: "www.twitter.com/matsana", description: "A project managers dream", around_the_web: "www.newyorktimes.com/supercoolapp", details: "Helps project managers manage their lazy employees", video_link: "www.youtube.com/matsanaisgreat"})
+
+  product1.list_photo.attach(io: File.open('app/assets/images/flyingcat.jpg'), filename: 'flyingcats.jpg')
+  product1.photos.attach(io: File.open('app/assets/images/suchflyingcat.jpg'), filename: 'suchflyingcat.jpg')
+  product2.list_photo.attach(io: File.open('app/assets/images/castbox.jpg'), filename: 'castbox.jpg')
+  product2.photos.attach(io: File.open('app/assets/images/casboxweb.jpg'), filename: 'casboxweb.jpg')
+  product3.list_photo.attach(io: File.open('app/assets/images/mixpanellogo.jpg'), filename: 'mixpannellogo.jpg')
+  product3.photos.attach(io: File.open('app/assets/images/mixpanel.jpg'), filename: 'mixpanel.jpg')
+  product4.list_photo.attach(io: File.open('app/assets/images/classdojo.jpg'), filename: 'classdojologo.jpg')
+  product4.photos.attach(io: File.open('app/assets/images/classdojoweb.jpg'), filename: 'classdojoweb.jpg')
+  product5.list_photo.attach(io: File.open('app/assets/images/instacartlogo.jpg'), filename: 'instacartlogo.jpg')
+  product5.photos.attach(io: File.open('app/assets/images/instacartweb.jpg'), filename: 'instacartweb.jpg')
+  product6.list_photo.attach(io: File.open('app/assets/images/noodle-ai.jpg'), filename: 'noodle-ailogo.jpg')
+  product6.photos.attach(io: File.open('app/assets/images/noodleweb.jpg'), filename: 'noodleweb.jpg')
+  product7.list_photo.attach(io: File.open('app/assets/images/spotifylogo.jpg'), filename: 'spotifylogo.jpg')
+  product7.photos.attach(io: File.open('app/assets/images/spotify.jpg'), filename: 'spotify.jpg')
+  product8.list_photo.attach(io: File.open('app/assets/images/asanalogo.jpg'), filename: 'asanalogo.jpg')
+  product8.photos.attach(io: File.open('app/assets/images/asana.jpg'), filename: 'asana.jpg')
+
+
+  Review.create({rating: 1, comment: "wow this is great", product_id: 1, user_id: 1})
+  Review.create({rating: 1, comment: "i cant believe this game is so addicting", product_id: 1, user_id: 2})
+  Review.create({rating: 1, comment: "I let this game run on in the background", product_id: 1, user_id: 3})
+  Review.create({rating: 1, comment: "i've not slept for 4 days", product_id: 1, user_id: 4})
+  Review.create({rating: 1, comment: "help the house is the only place i can play without feeling judged", product_id: 1, user_id: 5})
+  Review.create({rating: 1, comment: "why can do i love this so much", product_id: 2, user_id: 2})
+  Review.create({rating: 1, comment: "because it's changed your life", product_id: 2, user_id: 3})
+  # review4 = Review.create()
+  # review5 = Review.create()
+  # review6 = Review.create()
+  # review7 = Review.create()
+  # review8 = Review.create()
+  # # review9 = Review.create()
+  # review10 = Review.create()
