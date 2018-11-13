@@ -4,7 +4,6 @@ import {openModal} from '../../actions/modal_actions';
 import {createReview} from '../../actions/review_actions';
 
 const mapStateToProps = ({session}, ownProps) => {
-    
   return({
       product: ownProps.product,
       currentUser: session.id
@@ -14,7 +13,7 @@ const mapStateToProps = ({session}, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     sendForm: (data) => dispatch(createReview(data)),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal, product) => dispatch(openModal(modal, product))
   };
 };
 

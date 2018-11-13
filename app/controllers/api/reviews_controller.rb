@@ -4,7 +4,17 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :show
     else
-      render json: @review.errros.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @review = Review.find_by_id(params[:id])
+    if current_user && current_user.id == @review.user_id
+      @review.destroy
+      render :show
+    else 
+      render(json:["Unauthorized"], status: 401)
     end
   end
   

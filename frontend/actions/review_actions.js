@@ -1,3 +1,5 @@
+import * as APIUtil from '../util/review_api_util';
+
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW"
 export const RECEIVE_REVIEW_ERROR = "RECEIVE_REVIEW_ERROR"
 

@@ -32,7 +32,7 @@ class CreateReview extends React.Component{
     }
     handleSubmit(e){
         e.preventDefault();
-        let reviewData = Object.assign({}, this.state)
+        let reviewData = Object.assign({}, {reviews: this.state})
         debugger
         return this.props.sendForm(reviewData).then(openModal('product', this.props.product))
     }
