@@ -1,4 +1,5 @@
 import React from 'react'
+import { openModal } from '../../actions/modal_actions';
 
 
 class Review extends React.Component{
@@ -29,6 +30,13 @@ class Review extends React.Component{
     };
   };
 
+  switchModal(modal){
+    
+    return(
+      this.props.openModal('review', this.props.product)
+    )
+  }
+
 
   render() {
     const reviews = this.props.reviews
@@ -40,8 +48,8 @@ class Review extends React.Component{
           <div className="review-all-users">{Object.values(reviews).length} reviews</div>
           <div className="review-question">Would you recommend product, name to a friend?</div>
           <div className="review-rating-system">
-            <button className="review-face-counter"><i className="far fa-smile"></i></button>
-            <button className="review-face-counter"><i class="far fa-meh"></i></button>
+            <button onClick={() => this.switchModal('review')} className="review-face-counter"><i className="far fa-smile"></i></button>
+            <button className="review-face-counter"><i className="far fa-meh"></i></button>
             <button className="review-face-counter"><i className="far fa-frown"></i></button>
             <div className="review-drop-down-selector"></div>
           </div>

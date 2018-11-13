@@ -5,6 +5,8 @@ import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import {Link, withRouter} from 'react-router-dom';
 import ProductShowContainer from './products/product_show_container'
+import PlaceHolderContainer from './place_holder_container';
+import CreateReviewContainer from './reviews/create_review_container';
 
 const Modal = ({product, modal, closeModal}) => {
   if (!modal) {
@@ -14,6 +16,10 @@ const Modal = ({product, modal, closeModal}) => {
   switch (modal) {
     case 'login':
       component = <LoginFormContainer />;
+      break;
+    case 'review':
+    
+      component = <CreateReviewContainer product={product}/>;
       break;
     case 'signup':
       component = <SignupFormContainer />;
