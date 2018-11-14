@@ -1,5 +1,6 @@
 
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 
 class UserHeader extends React.Component{
@@ -29,7 +30,7 @@ class UserHeader extends React.Component{
     return(
       (this.props.user.id === this.props.sessionId)
       ? <div className="header-profile-user-interaction">
-          <button className="header-profile-edit-button">EDIT</button>
+          <Link to="/my/settings/edit" className="header-profile-edit-button">EDIT</Link>
         </div>
     : <div className="header-profile-user-interaction">
         <button className="header-profile-follow">FOLLOW</button>

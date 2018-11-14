@@ -7,7 +7,7 @@ class Review extends React.Component{
 
     return(
       (!!user.avatarPic)
-      ? <img className="header-profile-pic" src={user.avatarPic}></img>
+      ? <img className="review-profile-pic" src={user.avatarPic}></img>
       :  <div className="header-profie-avatar-self-made">
             <svg className="header-profile-avatar-background" height="50" width="50">
               <circle cx="22" cy="22" r="22" stroke="lightgrey" strokeWidth="3" fill="red" />

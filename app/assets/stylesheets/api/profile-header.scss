@@ -60,6 +60,14 @@
           border-radius: 3px;
           font-size: 12px;
           font-weight: 450;
+          background-color: white;
+          text-decoration: none;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: sans-serif;
+
         }
       }
 
@@ -67,8 +75,8 @@
   }
 }
 
-.header-profile-edit-button:hover{
-  background-color: lightgrey;
+.header-profile-edit-button:hover {
+  background-color: lightgrey !important;
 }
 
 .header-profile-what-type{
@@ -100,4 +108,8 @@
   color: white;
   font-family: sans-serif;
   left: 549px;
+}
+
+.header-profile-pic{
+
 }
