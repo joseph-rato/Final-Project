@@ -21,7 +21,7 @@ const MainPage = () => (
     <Switch>
       <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
       <Route exact path="/" component={ProductsContainer} />
-      <Route exact path="/user" component={UserProfileContainer} />
+      <Route path="/user" component={UserProfileContainer} />
       <ProtectedRoute exact path="/contribute/edit/" component={PlaceHolderContainer} />
       <ProtectedRoute exact path="/contribute" component={CreateProductContainer} />
       <Redirect to="/" />

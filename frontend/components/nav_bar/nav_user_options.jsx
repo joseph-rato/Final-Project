@@ -43,7 +43,7 @@ class NavUserOptions extends React.Component{
   : (<div className="profile-avatar-button" onBlur={() => console.log('it happened')} onClick={this.toggleList}>
         <img src={this.props.currentUser.avatarPic} className="avatar-profile-pic"></img>
         <div id="user-option-list"  className="profile-dropdown-menu-options closeDropDown">
-          <Link to="/notdoneyet">MY PROFILE</Link>
+          <Link to="/user">MY PROFILE</Link>
           <Link to="/notdoneyet">MY COLLECTION</Link>
           <Link to="/notdoneyet">MY INVITES</Link>
           <Link to="/notdoneyet">SETTINGS</Link>
