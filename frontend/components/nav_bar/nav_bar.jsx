@@ -5,14 +5,7 @@ import NavUserOptionsContainer from './nav_user_options_container'
 
 const NavBar = ({currentUser, logout, openModal}) => {
 
-  const oldStuff = () => (
-    <div className="header-div-session-access">
-      <div className="header-div-logout">
-        <h1>{currentUser.username}</h1>
-        <button className="button" onClick={logout}>logout</button>
-      </div>
-    </div>
-  )
+
   const doctorIsIn = () => (
     <div className="header-container">
 

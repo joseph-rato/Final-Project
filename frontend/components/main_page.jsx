@@ -10,22 +10,26 @@ import ProductsContainer from './products/products_container'
 import CreateProductContainer from './products/create_product_container'
 import ProductShowContainer from './products/product_show_container'
 import UserProfileContainer  from './users/user_profile_container'
+import UserUpdateFormContainer from './users/user_update_form_container'
 
 const MainPage = () => (
-  <div >
+  <div className="">
     <Modal />
-    <header className="header">
-      <Route path="/" component={NavBarContainer} />
-    </header>
-
-    <Switch>
-      <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
-      <Route exact path="/" component={ProductsContainer} />
-      <Route path="/user" component={UserProfileContainer} />
-      <ProtectedRoute exact path="/contribute/edit/" component={PlaceHolderContainer} />
-      <ProtectedRoute exact path="/contribute" component={CreateProductContainer} />
-      <Redirect to="/" />
-    </Switch>
+    <div className="navbar-top-white">
+      <header className="header">
+        <Route path="/" component={NavBarContainer} />
+      </header>
+    </div>
+    <div className="grey-background">
+      <Switch>
+        <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
+        <Route exact path="/" component={ProductsContainer} />
+        <Route path="/user" component={UserProfileContainer} />
+        <ProtectedRoute exact path="/contribute" component={CreateProductContainer} />
+        <ProtectedRoute exact path="/my/settings/edit" component={UserUpdateFormContainer} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
   </div>
 )
 
