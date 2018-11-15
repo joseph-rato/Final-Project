@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewComponent from '../reviews/review_component'
+import ProductDiscussionContainer from '../product_discussions/product_discussion_container'
 
 class ProductShow extends React.Component{
   constructor(props){
@@ -63,7 +64,7 @@ class ProductShow extends React.Component{
             </div>
 
             <ReviewComponent product={product} />
-            <div className="show-product-discussion"></div>
+            <ProductDiscussionContainer product={product} />
           </div>
 
           <div className="side-bar">
