@@ -1,9 +1,14 @@
 import {connect} from 'react-redux';
 import ProductDiscussion from './product_discussion';
 
-const mapStateToProps = ({errors}) => {
-  return {};
-};
+const mapStateToProps = (state, ownProps) => {
+  
+    return({
+        product: ownProps.product,
+        productDiscussion: state.entities.productDiscussion,
+        users: state.entities.users
+    });
+  };
 
 const mapDispatchToProps = (dispatch) => {
   return {};

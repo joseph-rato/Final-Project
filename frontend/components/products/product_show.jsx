@@ -8,7 +8,7 @@ class ProductShow extends React.Component{
   }
 
   componentDidMount() {
-
+    debugger
     return this.props.fetchProduct(this.props.product);
   }
 
@@ -20,6 +20,7 @@ class ProductShow extends React.Component{
  }
 
   render(){
+    debugger
     const product = this.props.product
     return(
       <div className="modal-product-show">

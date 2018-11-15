@@ -8,6 +8,10 @@ class Product < ApplicationRecord
   has_many :reviews
   has_many :product_discussions
 
+  has_many :commenters,
+  through: :product_discussions,
+  source: :user
+
   has_many :reviewers,
   through: :reviews,
   source: :user

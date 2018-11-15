@@ -39,6 +39,7 @@ class Review extends React.Component{
 
 
   render() {
+    debugger
     const reviews = this.props.reviews
     const users = this.props.users
     const reviewArr = Object.values(reviews)

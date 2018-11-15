@@ -8,9 +8,14 @@ class ProductDiscussion extends React.Component{
     }
     render(){
         return(
-        <h1>
-          NOTHING IS HERE YET
-        </h1>
+        <div className="product-discussion-container">
+            <div>Header</div>
+            <div>Comments.each do print out
+                <div>recursivecallstackfor reply comments</div>
+            </div>
+
+        </div>
+
         )
     }
 }
