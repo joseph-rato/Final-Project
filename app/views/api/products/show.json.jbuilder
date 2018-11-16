@@ -9,6 +9,6 @@ json.users user_arr do |user|
   json.partial! 'api/users/user', user: user
 end
 
-json.productDisucssions @product.product_discussions do |comment|
+json.productDiscussions @product.product_discussions do |comment|
   json.partial! 'api/product_discussions/product_discussion', product_discussions: comment
 end

@@ -5,18 +5,19 @@ const reviewReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      if (!!state) {
-        debugger
-        return Object.assign({}, action.product.reviews);
-      } else {
-        debugger
-        const reviewArr = Object.values(action.product.reviews)
-        let finalState = Object.assign({}, state)
-        reviewArr.forEach( (review) => {
-          return merge({}, finalState, {[review.id]: review});
-        })
-        return finalState
-      }
+      // if (!!state) {
+      //   debugger
+      //   return Object.assign({}, action.product.reviews);
+      // } else {
+      //   debugger
+      //   const reviewArr = Object.values(action.product.reviews)
+      //   let finalState = Object.assign({}, state)
+      //   reviewArr.forEach( (review) => {
+      //     return merge({}, finalState, {[review.id]: review});
+      //   })
+      // }
+        let finalState = Object.assign({}, action.product.reviews);
+        return finalState;
     default:
       return state;
   }

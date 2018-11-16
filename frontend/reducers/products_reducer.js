@@ -5,7 +5,9 @@ const productsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      const newState = merge({}, state[action.product.id], {[action.product.id]: action.product});
+      let changeState = Object.assign({}, state)
+      const newState = merge({}, changeState, {[action.product.id]: action.product});
+      
       return newState;
     case RECEIVE_PRODUCTS:
       const onlyState = Object.assign({}, action.products)
