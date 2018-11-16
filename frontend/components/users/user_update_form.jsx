@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 class UserUpdateForm extends React.Component{
     constructor(props){
         super(props)
-        debugger
         this.state = {
             user: ""
             // username: this.props.users[this.props.userId] ? this.props.users[this.props.userId].username : "",
@@ -19,7 +18,6 @@ class UserUpdateForm extends React.Component{
         this.handleFile = this.handleFile.bind(this)
     }
     componentDidMount(){
-        debugger
         this.props.fetchUser(this.props.userId).then( (userData) => 
             this.setState(userData)
         )
@@ -33,7 +31,6 @@ class UserUpdateForm extends React.Component{
     }
 
     handleChange(type) {
-        debugger
         return (event) => {
             event.preventDefault()
             return this.setState({[type]: event.currentTarget.value})
@@ -42,11 +39,9 @@ class UserUpdateForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
     }
 
     render(){
-        debugger
         this.user = this.state.user
         if (this.user === ""){
             return null;

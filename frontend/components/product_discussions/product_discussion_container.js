@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import ProductDiscussion from './product_discussion';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
     return({
         product: ownProps.product,
         productDiscussion: state.entities.productDiscussions,

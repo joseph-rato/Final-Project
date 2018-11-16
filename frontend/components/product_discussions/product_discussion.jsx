@@ -7,7 +7,6 @@ class ProductDiscussion extends React.Component{
 
     }
     render(){
-        // debugger
         let commentsArr = Object.values(this.props.productDiscussion)
         return(
         <div className="product-discussion-container">
@@ -16,9 +15,11 @@ class ProductDiscussion extends React.Component{
                 <div>recursivecallstackfor reply comments</div>
             </div>
             {
-                commentsArr.forEach( (comment) => {
+                commentsArr.map( (comment) => {
+                    debugger
                     return(
                         <div className="comments">
+                            <div>HELLO</div>
                             <span>{comment.body}</span>
                         </div>
                     )

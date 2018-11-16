@@ -6,10 +6,8 @@ const reviewReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_PRODUCT:
       // if (!!state) {
-      //   debugger
       //   return Object.assign({}, action.product.reviews);
       // } else {
-      //   debugger
       //   const reviewArr = Object.values(action.product.reviews)
       //   let finalState = Object.assign({}, state)
       //   reviewArr.forEach( (review) => {

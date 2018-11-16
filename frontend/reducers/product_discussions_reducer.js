@@ -5,7 +5,6 @@ const productDiscussionReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PRODUCT:
             let finalState = Object.assign({}, action.product.productDiscussions)    
-              debugger
             return finalState;
         default:
             return state;
