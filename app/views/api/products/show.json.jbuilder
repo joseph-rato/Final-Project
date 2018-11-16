@@ -4,12 +4,11 @@ json.partial! 'product', product: @product
 json.reviews @product.reviews do |review|
   json.partial! 'api/reviews/review', review: review
 end
-json.users @product.reviewers do |user|
+user_arr = @product.reviewers + @product.commenters
+json.users user_arr do |user|
   json.partial! 'api/users/user', user: user
 end
-json.users @product.commenters do |user|
-  json.partial! 'api/users/user', user: user
-end 
-json.productDisucssions @product.product_disucssions do |comment|
-  json.partial! 'api/product_disucssions/product_disucssion', product_disucssions: comment
+
+json.productDisucssions @product.product_discussions do |comment|
+  json.partial! 'api/product_discussions/product_discussion', product_discussions: comment
 end

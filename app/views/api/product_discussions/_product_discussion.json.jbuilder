@@ -1,0 +1,1 @@
+json.extract! product_discussions, :body, :user_id
