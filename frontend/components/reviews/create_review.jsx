@@ -23,6 +23,8 @@ class CreateReview extends React.Component{
     handleRating(num_score){
         return (event) => {
             event.preventDefault();
+            debugger
+            this.highlightedSwitch('rating', event.currentTarget);
             this.setState({rating: num_score});
         }
     }
@@ -36,24 +38,17 @@ class CreateReview extends React.Component{
     buttonSelection(type){
         return (event) => {
             event.preventDefault();
-            debugger
-            // let selector = type + '_selected'
-            // this.highlightedSwitch(selector)
             this.highlightedSwitch(type, event.currentTarget);
-            debugger
             this.setState({[type]: event.currentTarget.value})
         }
     }
     highlightedSwitch(type, new_button){
         let selectedState = type + '_selected'
-        console.log(selectedState)
-        debugger
         let oldButton = this.state[selectedState]
         if (oldButton){
             oldButton.classList.remove(`${selectedState}`)
         }
         this.setState({[selectedState]: new_button})
-        debugger
         new_button.classList.add(`${selectedState}`)
     }
 
