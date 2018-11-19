@@ -5,6 +5,8 @@ class CreateReview extends React.Component{
     constructor(props){
         super(props)
         this.state = {
+            time_used_selected: '',
+            rating_selected: '',
             pro: '',
             con: '',
             time_used: '',
@@ -30,6 +32,31 @@ class CreateReview extends React.Component{
             this.setState({[type]: event.currentTarget.value});
         }
     }
+
+    buttonSelection(type){
+        return (event) => {
+            event.preventDefault();
+            debugger
+            // let selector = type + '_selected'
+            // this.highlightedSwitch(selector)
+            this.highlightedSwitch(type, event.currentTarget);
+            debugger
+            this.setState({[type]: event.currentTarget.value})
+        }
+    }
+    highlightedSwitch(type, new_button){
+        let selectedState = type + '_selected'
+        console.log(selectedState)
+        debugger
+        let oldButton = this.state[selectedState]
+        if (oldButton){
+            oldButton.classList.remove(`${selectedState}`)
+        }
+        this.setState({[selectedState]: new_button})
+        debugger
+        new_button.classList.add(`${selectedState}`)
+    }
+
     handleSubmit(e){
         e.preventDefault();
         let reviewData = Object.assign({}, {reviews: this.state})
@@ -67,13 +94,13 @@ class CreateReview extends React.Component{
                 </div>
                 <div>
                     <label>How long have you used this product?</label>
-                    <select value={this.state.value} onChange={this.handleChange('time_used')}>
-                        <option value="Never Used">NEVER USED</option>
-                        <option value="One Day">1 DAY</option>
-                        <option value="One Week">1 WEEK</option>
-                        <option value="One Month">1 MONTH</option>
-                        <option value="One Year">1 YEAR</option>
-                    </select>
+                    <div>
+                        <button onClick={this.buttonSelection('time_used')} value="Never Used">NEVER USED</button>
+                        <button onClick={this.buttonSelection('time_used')} value="One Day">1 DAY</button>
+                        <button onClick={this.buttonSelection('time_used')} value="One Week">1 WEEK</button>
+                        <button onClick={this.buttonSelection('time_used')} value="One Month">1 MONTH</button>
+                        <button onClick={this.buttonSelection('time_used')} value="One Year">1 YEAR</button>
+                    </div>
                 </div>
                 <div>
                     <button>DELETE MY REVIEW</button>
