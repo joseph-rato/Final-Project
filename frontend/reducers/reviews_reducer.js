@@ -1,11 +1,16 @@
 import {RECEIVE_PRODUCT} from '../actions/product_actions';
-import {RECEIVE_REVIEW} from '../actions/review_actions'
+import {RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review_actions'
 
 import {merge} from 'lodash';
 
 const reviewReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case REMOVE_REVIEW:
+    debugger
+    finalState = Object.assign({}, state)
+    let minusState = merge({}, finalState, action.review)
+    return minusState;
     case RECEIVE_PRODUCT:
       // if (!!state) {
       //   return Object.assign({}, action.product.reviews);

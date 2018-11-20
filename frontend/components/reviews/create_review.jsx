@@ -22,6 +22,7 @@ class CreateReview extends React.Component{
         this.handleDelete = this.handleDelete.bind(this)
         this.handleRating = this.handleRating.bind(this)
     }
+
     handleRating(num_score){
         return (event) => {
             event.preventDefault();
@@ -29,6 +30,7 @@ class CreateReview extends React.Component{
             this.setState({rating: num_score});
         }
     }
+
     handleChange(type){
         return (event) => {
             event.preventDefault();
@@ -43,6 +45,7 @@ class CreateReview extends React.Component{
             this.setState({[type]: event.currentTarget.value})
         }
     }
+
     highlightedSwitch(type, new_button){
         let selectedState = type + '_selected'
         let oldButton = this.selectors[selectedState]
@@ -59,9 +62,14 @@ class CreateReview extends React.Component{
         debugger
         return this.props.sendForm(reviewData).then(this.props.openModal('product', this.props.product))
     }
-    handleDelete(){
 
+    handleDelete(e){
+        e.preventDefault();
+        debugger
+        let idData = Object.assign({}, this.state)
+        return this.props.deleteForm(idData).then(this.props.openModal('product', this.props.product))
     }
+
     render(){
         return(
         <div className="review-container">
@@ -100,7 +108,7 @@ class CreateReview extends React.Component{
                     </div>
                 </div>
                 <div className="review-form-button-options">
-                    <button>DELETE MY REVIEW</button>
+                    <button onClick={this.handleDelete}>DELETE MY REVIEW</button>
                     <button type="submit">SAVE</button>
                 </div>
 
