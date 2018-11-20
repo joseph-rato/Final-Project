@@ -1,4 +1,6 @@
 import {RECEIVE_PRODUCT} from '../actions/product_actions';
+import {RECEIVE_REVIEW} from '../actions/review_actions'
+
 import {merge} from 'lodash';
 
 const reviewReducer = (state = {}, action) => {
@@ -14,8 +16,16 @@ const reviewReducer = (state = {}, action) => {
       //     return merge({}, finalState, {[review.id]: review});
       //   })
       // }
-        let finalState = Object.assign({}, action.product.reviews);
+      let finalState = {};
+        action.product.reviews.forEach( (review) => {
+          finalState = merge({}, finalState, review)
+        })
         return finalState;
+    case RECEIVE_REVIEW:
+        let copyState = Object.assign({}, state)
+        let addedState = merge({}, copyState, action.review)
+        debugger
+        return addedState;
     default:
       return state;
   }

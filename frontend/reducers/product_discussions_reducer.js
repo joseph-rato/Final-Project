@@ -4,8 +4,11 @@ const productDiscussionReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PRODUCT:
-            let finalState = Object.assign({}, action.product.productDiscussions)    
-            return finalState;
+            let finalState = {};
+            action.product.productDiscussions.forEach( (comment) => {
+            finalState = merge({}, finalState, comment)
+            })
+            return finalState; 
         default:
             return state;
     }

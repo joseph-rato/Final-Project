@@ -5,7 +5,6 @@ import reviewSelector from '../../util/selectors'
 import {openModal} from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  
   return({
       product: ownProps.product,
       reviews: state.entities.reviews,

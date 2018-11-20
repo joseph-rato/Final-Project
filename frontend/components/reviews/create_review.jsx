@@ -5,8 +5,6 @@ class CreateReview extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            time_used_selected: '',
-            rating_selected: '',
             pro: '',
             con: '',
             time_used: '',
@@ -15,6 +13,10 @@ class CreateReview extends React.Component{
             product_id: this.props.product.id,
             user_id: this.props.currentUser
         }
+        this.selectors = {
+            rating_selected: '',
+            time_used_selected: ''
+        };
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
@@ -23,7 +25,6 @@ class CreateReview extends React.Component{
     handleRating(num_score){
         return (event) => {
             event.preventDefault();
-            debugger
             this.highlightedSwitch('rating', event.currentTarget);
             this.setState({rating: num_score});
         }
@@ -44,17 +45,18 @@ class CreateReview extends React.Component{
     }
     highlightedSwitch(type, new_button){
         let selectedState = type + '_selected'
-        let oldButton = this.state[selectedState]
+        let oldButton = this.selectors[selectedState]
         if (oldButton){
             oldButton.classList.remove(`${selectedState}`)
         }
-        this.setState({[selectedState]: new_button})
+        this.selectors[selectedState] = new_button 
         new_button.classList.add(`${selectedState}`)
     }
 
     handleSubmit(e){
         e.preventDefault();
         let reviewData = Object.assign({}, {reviews: this.state})
+        debugger
         return this.props.sendForm(reviewData).then(this.props.openModal('product', this.props.product))
     }
     handleDelete(){
@@ -62,7 +64,7 @@ class CreateReview extends React.Component{
     }
     render(){
         return(
-        <div>
+        <div className="review-container">
             <form onSubmit={this.handleSubmit}>
                 <div className="create-review">
                     <div className="review-question">Would you recommend product, name to a friend?</div>
@@ -72,22 +74,22 @@ class CreateReview extends React.Component{
                         <button onClick={this.handleRating(-1)} className="review-face-counter"><i className="far fa-frown"></i></button>
                     </div>
                 </div>
-                <div>
+                <div className="review-form-pros-line">
                     <label>Pros</label>
                     <input onChange={this.handleChange('pro')}></input>
                     <span>140</span>
                 </div>
-                <div>
+                <div className="review-form-cons-line">
                     <label>Cons</label>
                     <input onChange={this.handleChange('con')}></input>
                     <span>140</span>
                 </div>
-                <div>
+                <div className="review-form-comment-line">
                     <label>Tell us more</label>
                     <textarea onChange={this.handleChange('comment')} rows="3" cols="50"></textarea>
                     <span>Infinity</span>
                 </div>
-                <div>
+                <div className="review-form-time-used-line">
                     <label>How long have you used this product?</label>
                     <div>
                         <button onClick={this.buttonSelection('time_used')} value="Never Used">NEVER USED</button>
@@ -97,7 +99,7 @@ class CreateReview extends React.Component{
                         <button onClick={this.buttonSelection('time_used')} value="One Year">1 YEAR</button>
                     </div>
                 </div>
-                <div>
+                <div className="review-form-button-options">
                     <button>DELETE MY REVIEW</button>
                     <button type="submit">SAVE</button>
                 </div>

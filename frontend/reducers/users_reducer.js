@@ -10,11 +10,9 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, {[action.currentUser.id]: action.currentUser})
     case RECEIVE_PRODUCT:
       let finalState = Object.assign({}, state)
-      const userArr = Object.values(action.product.users)
-      for (let i = 0; i < userArr.length; i++) {
-        finalState = merge({}, finalState, {[userArr[i].id]: userArr[i]});
-      }
-
+      action.product.users.forEach( (user) => {
+        finalState = merge({}, finalState, user)
+      })
       return finalState;
     default:
     return state;
