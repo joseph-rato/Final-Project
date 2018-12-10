@@ -21,7 +21,7 @@ class ProductDiscussion extends React.Component{
         )
       }
 
-
+    // comment_container product={this.props.product} commentId={nul} 
     render(){
         let commentsArr = Object.values(this.props.productDiscussion)
         return(

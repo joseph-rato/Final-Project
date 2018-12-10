@@ -1,5 +1,5 @@
 
-const reviewSelector = (reviews, product) => {
+export const reviewSelector = (reviews, product) => {
 
   let ansArr = [];
   for (var i = 0; i < reviews.length; i++) {
@@ -9,5 +9,14 @@ const reviewSelector = (reviews, product) => {
   }
   return ansArr;
 }
+export const commentSelector = (productDiscussions, responseCommentId) => {
 
-export default reviewSelector;
+  let commentArr = []
+  for(let i = 0; i < productDiscussions.length; i++) {
+    if (productDiscussions[i].body_id === responseComment.id){
+      return ansArr.push(productDiscussions[i])
+    }
+  }
+  return commentArr;
+}
+
