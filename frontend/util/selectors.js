@@ -13,7 +13,6 @@ export const commentSelector = (productDiscussions, responseCommentId) => {
 
   let commentArr = []
   let arrProdDiscus = Object.values(productDiscussions)
-  debugger
   for(let i = 0; i < arrProdDiscus.length; i++) {
     if (arrProdDiscus[i].body_id === responseCommentId){
       commentArr.push(arrProdDiscus[i])
