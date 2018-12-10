@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import CommentsContainer from './comments_container'
 
 class ProductDiscussion extends React.Component{
     constructor(props){
@@ -21,7 +22,7 @@ class ProductDiscussion extends React.Component{
         )
       }
 
-    // comment_container product={this.props.product} commentId={nul} 
+    // CommentsContainer product={this.props.product} commentId={nul} 
     render(){
         let commentsArr = Object.values(this.props.productDiscussion)
         return(
@@ -31,28 +32,8 @@ class ProductDiscussion extends React.Component{
                 <div>recursivecallstackfor reply comments</div>
             </div>
             <ul>
-                {
-                    commentsArr.map( (comment) => {
-                        debugger
-                        return(
-                            <li>
-                                <div className="comment-user-info">
-                                    <div className="profile-pic">
-                                        {this.profilePic(this.props.users[comment.user_id])}
-                                    </div>
-                                    <div className="comment-user-identification">
-                                        <div>{this.props.users[comment.user_id].username}</div>
-                                        <div>{this.props.users[comment.user_id].headline}</div>
-                                    </div>
-                                </div>
-                                <div className="comments">
-                                    <span>{comment.body}</span>
-                                </div>
-                                <div>Reply</div>
-                            </li>
-                        )
-                    })
-                }
+                <CommentsContainer product={this.props.product} commentId={null} />
+                
             </ul>
         </div>
 

@@ -63,6 +63,7 @@ class ProductShow extends React.Component{
             </div>
 
             <ReviewComponent product={product} />
+            <ProductDiscussionContainer product={product} />
           </div>
 
           <div className="side-bar">

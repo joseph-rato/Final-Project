@@ -12,9 +12,11 @@ export const reviewSelector = (reviews, product) => {
 export const commentSelector = (productDiscussions, responseCommentId) => {
 
   let commentArr = []
-  for(let i = 0; i < productDiscussions.length; i++) {
-    if (productDiscussions[i].body_id === responseComment.id){
-      return ansArr.push(productDiscussions[i])
+  let arrProdDiscus = Object.values(productDiscussions)
+  debugger
+  for(let i = 0; i < arrProdDiscus.length; i++) {
+    if (arrProdDiscus[i].body_id === responseCommentId){
+      commentArr.push(arrProdDiscus[i])
     }
   }
   return commentArr;
