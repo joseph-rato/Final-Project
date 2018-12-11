@@ -16,7 +16,7 @@ const CommentIndexItem = ({comment, product, users}) => {
               </div>
         )
       } 
-
+      debugger
     return (
        <div>
            <div className="user-ATidentifyer-position">
@@ -24,8 +24,8 @@ const CommentIndexItem = ({comment, product, users}) => {
                 <div className="review-profile-name">{users[comment.user_id].username}</div>
                 <div className="review-ATprofile-name">@{users[comment.user_id].username}</div>
             </div>
-           <p>this is the body {comment.body}</p>
-           <CommentsContainer product={product} commentId={comment.id} />
+           <p>this is the body: {comment.body}</p>
+           <CommentsContainer product={product} commentId={comment.id} users={users} />
        </div> 
     )
 }

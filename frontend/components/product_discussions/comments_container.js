@@ -3,6 +3,7 @@ import Comments from './comments';
 import {commentSelector} from '../../util/selectors'
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return({
         product: ownProps.product,
         comments: commentSelector(state.entities.productDiscussions, ownProps.commentId),

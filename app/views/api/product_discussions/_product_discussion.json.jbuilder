@@ -1,1 +1,1 @@
-json.extract! product_discussions, :body, :user_id, :body_id
+json.extract! product_discussions, :body, :user_id, :body_id, :id

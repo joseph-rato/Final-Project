@@ -1,8 +1,9 @@
 import React from 'react'
-import CommentIndexItem from './comment_index_item'
+import CommentIndexItem from './comment_index_item.jsx'
 
 class  Comments extends React.Component{
     render(){
+        debugger
         return(
             <div>
                 <p>hello?</p>
