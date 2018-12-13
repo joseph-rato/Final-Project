@@ -7,7 +7,7 @@ const reviewReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case REMOVE_REVIEW:
-    debugger
+    
     finalState = Object.assign({}, state)
     let minusState = merge({}, finalState, action.review)
     return minusState;
@@ -29,7 +29,7 @@ const reviewReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
         let copyState = Object.assign({}, state)
         let addedState = merge({}, copyState, action.review)
-        debugger
+        
         return addedState;
     default:
       return state;
