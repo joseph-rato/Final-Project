@@ -3,7 +3,7 @@ class Api::ProductDiscussionsController < ApplicationController
   before_action :require_loggin, except: [:show]
   def create
     @product_discussions = ProductDiscussion.new(pd_params)
-    @product_discussions.user_id = params[:user_id]
+    # @product_discussions.user_id = params[:user_id]
     if @product_discussions.save
       render :show
     else
@@ -37,7 +37,7 @@ class Api::ProductDiscussionsController < ApplicationController
 
   private
   def pd_params
-    params.require(:product_discussions).permit(:body, :body_id, :review_id, :product_id)
+    params.require(:product_discussions).permit(:body, :body_id, :review_id, :product_id, :user_id)
   end
 
 end

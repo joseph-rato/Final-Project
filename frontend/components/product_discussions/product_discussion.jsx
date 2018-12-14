@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import CommentsContainer from './comments_container'
+import CreateCommentContainer from './create_comment_container'
 
 class ProductDiscussion extends React.Component{
     constructor(props){
@@ -14,6 +15,8 @@ class ProductDiscussion extends React.Component{
         return(
         <div className="product-discussion-container">
             <div>Header</div>
+            <div>create a new comment</div>
+            <CreateCommentContainer product={this.props.product}/>
             <div>Comments.each do print out
                 <div>recursivecallstackfor reply comments</div>
             </div>

@@ -10,25 +10,30 @@ class CommentForm extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-
+        this.hiddenSubmit = this.hiddenSubmit.bind(this)
     }
 
     handleSubmit(e){
         
+        e.preventDefault()
+        let formData ={product_discussions: this.state} 
+        return this.props.sendForm(formData).then(this.setState({body: ''}))
     }
 
     handleChange(e){
-        e.perventDefault()
-        this.setState({body: e.currentTarget.value})
+        e.preventDefault()
+        return this.setState({body: e.currentTarget.value})
     }
 
     hiddenSubmit(){
-        (this.state.body === '') 
-        ? null
-        : <div className="comment-submit-area">
-            <span>@user, !product, :emoji</span>
-            <input type="submit">{this.props.submitButton}</input>
-        </div>
+        return(
+            (this.state.body === '') 
+            ? null
+            : <div className="comment-submit-area">
+                <span>@user, !product, :emoji</span>
+                <input type="submit" value={this.props.submitButton}></input>
+            </div>
+        )
     }
 
     render(){
@@ -51,9 +56,11 @@ class CommentForm extends React.Component{
                 <div className="comment-line-of-text">
                     <div>profilepic</div>
                 </div>
-                <textarea className="comment-text" handleChange={this.handleChange} placeHolder={placeholderSen} />
-                {this.hiddenSubmit}
+                <textarea className="comment-text" onChange={this.handleChange} placeholder={placeholderSen(commentType)} value={this.state.body} />
+                {this.hiddenSubmit()}
             </form>
         )
     }
 }
+
+export default CommentForm;

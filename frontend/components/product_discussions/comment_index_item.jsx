@@ -16,7 +16,7 @@ const CommentIndexItem = ({comment, product, users}) => {
               </div>
         )
       } 
-      debugger
+      
     return (
        <div>
            <div className="user-ATidentifyer-position">
