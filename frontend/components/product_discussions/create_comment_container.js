@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import {createProductDiscussion, deleteProductDiscussion} from '../../actions/product_discussion_actions'
 import CommentForm from './comment_form';
-import { deleteProductDiscussion } from '../../util/product_discussion_api_util';
 
 const mapStateToProps = (state, ownProps) => {
     return({

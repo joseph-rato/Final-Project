@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import NavLinks from './nav_links';
 import NavUserOptionsContainer from './nav_user_options_container'
+import SearchContainer from '../nav_search/search_container'
 
 const NavBar = ({currentUser, logout, openModal}) => {
 
@@ -16,6 +17,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
+          <SearchContainer />
           <i className="fas fa-search"></i>
           <p>Discover your next favorite thing ...</p>
         </div>
@@ -39,6 +41,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
+          <SearchContainer />
           <i className="fas fa-search"></i>
           <p>Discover your next favorite thing ...</p>
         </div>
