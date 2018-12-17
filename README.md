@@ -4,7 +4,7 @@
 This app allows to post products read reviews and create users. It's meant to share cool new products you've found and then watch them escape from obscurity.
 
 ## Live site
-[Product-esc](product-esc.herokuapp.com)
+[Product-esc](http://product-esc.herokuapp.com)
 
 ## Technologies Used
 This app was built on rails, with postgresql as the database and React for the frontend. The outside technology used was active storage for storage of images.
