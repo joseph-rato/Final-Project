@@ -15,13 +15,18 @@ class SearchBar extends React.Component{
     componentDidUpdate(prevProps, prevState) {
         if(this.state !== prevState && this.state !== '') {
             let autoSearching = {query_string: this.state.queryString}
-            let sendQuery = (data) => this.props.submitQuery(data)
+            const sendQuery = (data) => this.props.submitQuery(data);
+            
             clearTimeout(this.debouncy)
             this.debouncy = setTimeout( function() {
-                console.log('done');
+                
                 sendQuery(autoSearching)
             }, 1000)
         }
+    }
+
+    debouncedSubmit(){
+
     }
 
 
@@ -59,7 +64,9 @@ class SearchBar extends React.Component{
                     onKeyPress={this.checkSubmit}
                     ></input>
                 </form>
-
+                <div>
+                    
+                </div>
             </div>
         )
     }

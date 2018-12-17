@@ -17,9 +17,8 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <SearchContainer />
           <i className="fas fa-search"></i>
-          <p>Discover your next favorite thing ...</p>
+          <SearchContainer />
         </div>
 
         <NavLinks / >
@@ -41,9 +40,9 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <SearchContainer />
           <i className="fas fa-search"></i>
-          <p>Discover your next favorite thing ...</p>
+          <SearchContainer />
+          
         </div>
 
         <div className="header-places-not-here">Ask Ship Makers Jobs Events ... </div>

@@ -33,8 +33,23 @@ class Api::ProductsController < ApplicationController
     end
   end
 
+  # wrap up entire querry 
+  # n+1 queries .include 
+  # if debugging
+  def search
+    result = "%#{params[:query_string].downcase}%"
+    @products = Product.where(<<-SQL, result)
+      lower(product_name) LIKE ? 
+    SQL
+    @users = User.where(<<-SQL, result)
+      lower(username) LIKE ? 
+    SQL
+    # need to make a jbuilder that's correct instead of this one
+    render :search
+  end
+
   private
   def product_params
-    params.require(:product).permit(:user_id, :product_name, :website, :social, :photos, :video_link, :description, :details, :around_the_web, :list_photo)
+    params.require(:product).permit(:user_id, :product_name, :website, :social, :photos, :video_link, :description, :details, :around_the_web, :list_photo, :query_string)
   end
 end
