@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResultsContainer from './search_results_container'
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -51,6 +52,17 @@ class SearchBar extends React.Component{
             return this.handleSubmit();
         }
     }
+    showResults(){
+        if (this.state.queryString !== ""){
+            return (
+            <div>
+                    <SearchResultsContainer />
+            </div>
+            )
+        } else {
+            return null 
+        }
+    }
 
     render(){
         return(
@@ -64,9 +76,7 @@ class SearchBar extends React.Component{
                     onKeyPress={this.checkSubmit}
                     ></input>
                 </form>
-                <div>
-                    
-                </div>
+                {this.showResults()}
             </div>
         )
     }

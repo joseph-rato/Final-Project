@@ -1,4 +1,5 @@
 import {RECEIVE_PRODUCT, RECEIVE_PRODUCTS} from '../actions/product_actions'
+import {RECIEVE_RESULTS} from '../actions/search_actions'
 import {merge} from 'lodash'
 
 const productsReducer = (state = {}, action) => {
@@ -12,6 +13,17 @@ const productsReducer = (state = {}, action) => {
     case RECEIVE_PRODUCTS:
       const onlyState = Object.assign({}, action.products)
       return onlyState;
+    case RECIEVE_RESULTS:
+      let finalState = Object.assign({}, state)
+      if (action.payload.product) {
+        let arrProduct = Object.values(action.payload.product)
+        if (arrProduct > 0) {
+          arrProduct.forEach( (product)=>{
+            finalState = merge({}, finalState, {[product.id]: product})
+          })
+        }
+      }
+      return finalState
     default:
       return state;
   }

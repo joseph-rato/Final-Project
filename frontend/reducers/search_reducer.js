@@ -1,14 +1,11 @@
-import RECIEVE_RESULTS from '../actions/search_actions'
+import {combineReducers} from 'redux';
 
-const searchReducer = (state = {}, action) => { 
-    Object.freeze(state);
-    switch (action.type) {
-        case RECIEVE_RESULTS:
-            debugger
-        return 
-        default:
-            return state;
-    }
-}
+import searchUserReducer from './search_user_reducer'
+import searchProductReducer from './search_product_reducer'
 
-export default searchReducer; 
+export default combineReducers({
+  user: searchUserReducer,
+  product: searchProductReducer
+})
+
+
