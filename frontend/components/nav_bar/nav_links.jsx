@@ -5,14 +5,9 @@ import {Link} from 'react-router-dom';
 const NavLinks = () => {
   return(
     <div className="header-places-not-here">
-      <Link to="/notdoneyet">Ask</Link>
-      <Link to="/notdoneyet">Ship</Link>
-      <Link to="/notdoneyet">Makers</Link>
-      <Link to="/notdoneyet">Jobs</Link>
-      <Link to="/notdoneyet">Events</Link>
-      <Link to="/notdoneyet">
-        <i className="fas fa-ellipsis-h"></i>
-      </Link>
+      <a href="https://www.github.com/joseph-rato"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/joseph-rato"><i class="fab fa-linkedin"></i></a>
+      <Link to="/notdoneyet">Portfolio</Link>
     </div>
   );
 }
