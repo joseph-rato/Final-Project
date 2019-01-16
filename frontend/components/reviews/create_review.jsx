@@ -90,17 +90,17 @@ class CreateReview extends React.Component{
                 </div>
                 <div className="review-form-opin-line">
                     <label className="review-question">Cons</label>
-                    <input onChange={this.handleChange('con')}></input>
-                    <span>140</span>
+                    <input className="review-form-opin-input" onChange={this.handleChange('con')}></input>
+                    <span className="review-form-opin-span">140</span>
                 </div>
                 <div className="review-form-comment-line">
                     <label className="review-question">Tell us more</label>
-                    <textarea onChange={this.handleChange('comment')} rows="3" cols="50"></textarea>
-                    <span>Infinity</span>
+                    <textarea className="review-form-opin-input" onChange={this.handleChange('comment')} rows="3" cols="50"></textarea>
+                    <span className="review-form-comment-span">INFINITY</span>
                 </div>
                 <div className="review-form-time-used-line">
-                    <label>How long have you used this product?</label>
-                    <div>
+                    <label className="review-question">How long have you used this product?</label>
+                    <div className="review-form-time-used-buttons"> 
                         <button onClick={this.buttonSelection('time_used')} value="Never Used">NEVER USED</button>
                         <button onClick={this.buttonSelection('time_used')} value="One Day">1 DAY</button>
                         <button onClick={this.buttonSelection('time_used')} value="One Week">1 WEEK</button>
@@ -109,8 +109,8 @@ class CreateReview extends React.Component{
                     </div>
                 </div>
                 <div className="review-form-button-options">
-                    <button onClick={this.handleDelete}>DELETE MY REVIEW</button>
-                    <button type="submit">SAVE</button>
+                    <button className="review-form-delete" onClick={this.handleDelete}>DELETE MY REVIEW</button>
+                    <button className="review-form-submit" type="submit">SAVE</button>
                 </div>
 
             </form>

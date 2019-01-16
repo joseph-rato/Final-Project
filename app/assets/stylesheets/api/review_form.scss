@@ -1,7 +1,7 @@
 .create-review-container{
-    height: 30px;
     border-radius: 3px;
     padding: 0px 20px;
+    background-color: white;
 }
 
 .create-review-title{
@@ -53,6 +53,65 @@
     font-size: 13px;
 }
 
+.review-form-comment-line{
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-comment-input{
+    resize: none;
+    height: 60px;
+    width: 400px;
+    border-radius: 3px;
+    border: solid .5px lightgrey;
+}
+
+.review-form-comment-span{
+    position: relative;
+    left: 360px;
+    top: -17px;
+    font-size: 13px;
+}
+.review-form-time-used-line{
+    margin: 20px 0px;
+}
+
+.review-form-time-used-buttons{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.review-form-time-used-buttons:button {
+    height: 30px;
+    border: solid .5px lightgrey;
+    border-radius: 5px;
+    padding: 0px 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.review-form-button-options{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.review-form-delete{
+    height: 30px;
+    padding: 0px 14px;
+    border: solid .5px lightgrey;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.review-form-submit{
+    height: 30px;
+    padding: 0px 14px;
+    border: solid .5px lightgrey;
+    color:  white;
+    background-color: #DA552F;
+    border-radius: 3px;
+    font-weight: 600;
+}
 .pos-review{
     border-color: #80de80;
 }
