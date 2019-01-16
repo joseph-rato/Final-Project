@@ -7,8 +7,9 @@ const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-
-      return merge({}, state, {[action.currentUser.id]: action.currentUser})
+      finalState = Object.assign({}, state)
+      finalState = merge({}, finalState, action.currentUser)
+      return finalState;
     case RECEIVE_PRODUCT:
       let finalState = Object.assign({}, state)
       action.product.users.forEach( (user) => {

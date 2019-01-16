@@ -7,7 +7,7 @@ const NavLinks = () => {
     <div className="header-places-not-here">
       <a href="https://www.github.com/joseph-rato"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/joseph-rato"><i class="fab fa-linkedin"></i></a>
-      <Link to="/notdoneyet">Portfolio</Link>
+      
     </div>
   );
 }

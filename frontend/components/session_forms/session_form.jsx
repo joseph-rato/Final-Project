@@ -105,19 +105,19 @@ class SessionForm extends React.Component {
               <div className='guest-login-options'>
                 <button type="button" className='demo-login twitter' onClick={this.loginAsGuest}>
                   <i className="fab fa-twitter"></i>
-                  <p className="demo-login-des">LOG IN WITH TWITTER</p>
+                  <p className="demo-login-des">DEMO LOGIN</p>
                 </button>
                 <button type="button" className='demo-login facebook' onClick={this.loginAsGuest}>
                   <i className="fab fa-facebook-f"></i>
-                  <p className="demo-login-des">LOG IN WITH FACEBOOK</p>
+                  <p className="demo-login-des">DEMO LOGIN</p>
                 </button>
                 <button type="button" className='demo-login google' onClick={this.loginAsGuest}>
                   <i className="fab fa-google"></i>
-                  <p className="demo-login-des">LOG IN WITH GOOGLE</p>
+                  <p className="demo-login-des">DEMO LOGIN</p>
                 </button>
                 <button type="button" className='demo-login angelist' onClick={this.loginAsGuest}>
                   <i className="fab fa-angellist"></i>
-                  <p className="demo-login-des">LOG IN WITH ANGELLIST</p>
+                  <p className="demo-login-des">DEMO LOGIN</p>
                 </button>
               </div>
               <div className="session-discliamer" > We'll never post to any of your accounts without your permission.</div>

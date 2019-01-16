@@ -45,7 +45,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
           
         </div>
 
-        <div className="header-places-not-here">Ask Ship Makers Jobs Events ... </div>
+      <NavLinks / >
 
         <div className="header-div-session-access">
           <div className="header-div-signup-login">
