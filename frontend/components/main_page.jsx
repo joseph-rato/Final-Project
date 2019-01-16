@@ -13,7 +13,7 @@ import UserProfileContainer  from './users/user_profile_container'
 import UserUpdateFormContainer from './users/user_update_form_container'
 
 const MainPage = () => (
-  <div className="">
+  <div className="all-content">
     <Modal />
     <div className="navbar-top-white">
       <header className="header">
