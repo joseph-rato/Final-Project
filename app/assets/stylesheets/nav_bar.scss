@@ -13,7 +13,7 @@
 
 .profile-dropdown-menu-options {
   position: absolute;
-  transform: translate(-25%);
+  transform: translate(-75%);
 }
 
 .profile-avatar{
@@ -39,7 +39,9 @@
   flex-direction: column;
   width: 150px;
   height: auto;
-  border: solid black;
+  border: solid .5px lightgrey;
+  background-color: white;
+  border-radius: 5px;
   padding: 15px 10px;
 }
 
@@ -53,7 +55,15 @@
 
 .openDropDown a{
   text-decoration: none;
-  color: #999
+  color: #999;
+}
+.setting-seperator{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: solid .5px lightgrey;
+  border-bottom: solid .5px lightgrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .openDropDown a:hover {
