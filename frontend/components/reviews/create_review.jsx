@@ -73,27 +73,28 @@ class CreateReview extends React.Component{
     render(){
         return(
         <div className="review-container">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="create-review-container">
+                <h2 className="create-review-title">Review {this.props.product.product_name}</h2>
                 <div className="create-review">
-                    <div className="review-question">Would you recommend product, name to a friend?</div>
+                    <div className="review-question">Would you recommend {this.props.product.product_name} to a friend?</div>
                     <div className="review-rating-system">
-                        <button onClick={this.handleRating(1)} className="review-face-counter"><i className="far fa-smile"></i></button>
-                        <button onClick={this.handleRating(0)} className="review-face-counter"><i className="far fa-meh"></i></button>
-                        <button onClick={this.handleRating(-1)} className="review-face-counter"><i className="far fa-frown"></i></button>
+                        <button onClick={this.handleRating(1)} className="review-face-counter pos-review"><i className="far fa-smile"></i></button>
+                        <button onClick={this.handleRating(0)} className="review-face-counter neut-review"><i className="far fa-meh"></i></button>
+                        <button onClick={this.handleRating(-1)} className="review-face-counter neg-review"><i className="far fa-frown"></i></button>
                     </div>
                 </div>
-                <div className="review-form-pros-line">
-                    <label>Pros</label>
-                    <input onChange={this.handleChange('pro')}></input>
-                    <span>140</span>
+                <div className="review-form-opin-line">
+                    <label className="review-question">Pros</label>
+                    <input className="review-form-opin-input" onChange={this.handleChange('pro')}></input>
+                    <span className="review-form-opin-span">140</span>
                 </div>
-                <div className="review-form-cons-line">
-                    <label>Cons</label>
+                <div className="review-form-opin-line">
+                    <label className="review-question">Cons</label>
                     <input onChange={this.handleChange('con')}></input>
                     <span>140</span>
                 </div>
                 <div className="review-form-comment-line">
-                    <label>Tell us more</label>
+                    <label className="review-question">Tell us more</label>
                     <textarea onChange={this.handleChange('comment')} rows="3" cols="50"></textarea>
                     <span>Infinity</span>
                 </div>

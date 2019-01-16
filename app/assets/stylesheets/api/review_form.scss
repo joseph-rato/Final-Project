@@ -1,0 +1,66 @@
+.create-review-container{
+    height: 30px;
+    border-radius: 3px;
+    padding: 0px 20px;
+}
+
+.create-review-title{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.review-question{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.review-face-counter{
+    width: 40px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+
+.review-form-opin-line{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.review-form-opin-input{
+    height: 30px;
+    width: 400px;
+    border-radius: 3px;
+    border: solid .5px lightgrey;
+}
+
+.review-form-content-line{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.review-form-opin-span{
+    position: relative;
+    left: 375px;
+    top: -17px;
+    font-size: 13px;
+}
+
+.pos-review{
+    border-color: #80de80;
+}
+
+.neut-review{
+
+}
+
+.neg-review{
+
+}

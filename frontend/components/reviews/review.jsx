@@ -46,7 +46,7 @@ class Review extends React.Component{
       <div className="review-container">
         <div className="review-over-view">
           <div className="review-all-users">{Object.values(reviews).length} reviews</div>
-          <div className="review-question">Would you recommend product, name to a friend?</div>
+          <div className="review-question">Would you recommend {this.props.product.product_name} to a friend?</div>
           <div className="review-rating-system">
             <button onClick={() => this.switchModal('review')} className="review-face-counter"><i className="far fa-smile"></i></button>
             <button className="review-face-counter"><i className="far fa-meh"></i></button>
