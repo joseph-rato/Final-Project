@@ -1,3 +1,101 @@
 // Place all the styles related to the api/ProductDiscussions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.product-discus-hunter{
+    display: flex;
+    flex-direction: column;
+    border-right: solid .5px lightgrey;
+    border-bottom: solid .5px lightgrey;
+    padding: 21px;
+    width: 30%;
+
+}
+
+.product-discus-user-hunter {
+    color: #b3aeae;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.product-discus-hunter-username{
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.product-discus-hunter-identity{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-discussion-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    border: 1px solid lightgrey;
+    width: 100%;
+    padding-right: 42px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.product-discus-content{
+    padding: 25px;
+}
+
+.comment-line-of-text{
+    display: flex;
+    flex-direction: row;
+}
+
+.product-discus-request{
+    font-size: 20px;
+    color: #b3aeae;
+    margin-bottom: 15px;
+    margin-left: 65px;
+}
+
+.comment-text{
+    padding: 5px;
+    margin-left: 15px;
+    width: 90%;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    font-size: 15px;
+    height: auto;
+    align-items: center;
+}
+
+.comment-form-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f4f4;
+    padding: 15px;
+    border-radius: 3px;
+    border: solid 1px lightgrey;
+}
+
+.comment-submit-area{
+    margin-left: 65px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.comment-options{
+    margin-right: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    background-color: #f7f4f4;
+
+}
+
+.comment-submit-button{
+    
+}

@@ -30,11 +30,25 @@ class CommentForm extends React.Component{
             (this.state.body === '') 
             ? null
             : <div className="comment-submit-area">
-                <span>@user, !product, :emoji</span>
-                <input type="submit" value={this.props.submitButton}></input>
+                <span className="comment-options">@user, !product, :emoji</span>
+                <input className="comment-submit-button" type="submit" value={this.props.submitButton}></input>
             </div>
         )
     }
+
+    profilePic(user){
+
+        return(
+          (!!user.avatarPic)
+          ? <img className="review-profile-pic" src={user.avatarPic}></img>
+          :  <div className="header-profie-avatar-self-made">
+                <svg className="header-profile-avatar-background" height="50" width="50">
+                  <circle cx="22" cy="22" r="22" stroke="lightgrey" strokeWidth="3" fill="red" />
+                </svg>
+                <div className="header-profile-letter-self-made">{user.username.slice(0, 1)}</div>
+              </div>
+        )
+      }
 
     render(){
         let commentType = this.props.type
@@ -54,9 +68,9 @@ class CommentForm extends React.Component{
         return(
             <form onSubmit={this.handleSubmit} className="comment-form-container">
                 <div className="comment-line-of-text">
-                    <div>profilepic</div>
+                    {this.profilePic(this.props.users[this.props.product.user_id])}
+                    <textarea className="comment-text" onChange={this.handleChange} placeholder={placeholderSen(commentType)} value={this.state.body} />
                 </div>
-                <textarea className="comment-text" onChange={this.handleChange} placeholder={placeholderSen(commentType)} value={this.state.body} />
                 {this.hiddenSubmit()}
             </form>
         )

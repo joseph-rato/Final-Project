@@ -61,8 +61,9 @@ class ProductShow extends React.Component{
                 <p className="product-show-details-p">{product.details}</p>
               </div>
             </div>
-
+            <h3>REVIEWS</h3>
             <ReviewComponent product={product} />
+            <h3>DISCUSSION</h3>
             <ProductDiscussionContainer product={product} />
           </div>
 
