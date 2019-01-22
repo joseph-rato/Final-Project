@@ -58,7 +58,7 @@ class UserUpdateForm extends React.Component{
                             </div>
                             <div className="profile-form-avatar">
                                 <label className="profile-update-label">Avatar</label>
-                                <input type="file"></input>
+                                <input className="profile-form-file-field" type="file"></input>
                             </div>
                             <div className="profile-form-headline">
                                 <label className="profile-update-label">Headline</label>
@@ -74,9 +74,9 @@ class UserUpdateForm extends React.Component{
                             </div>
                             <div>
                                 <label className="profile-update-label">Profile Header</label>
-                                <input type="file"></input>
+                                <input className="profile-form-file-field" type="file"></input>
                             </div>
-                            <button type="submit" className="">UPDATE</button>
+                            <button className="profile-form-submit" type="submit">UPDATE</button>
                         </form>
                     </div>
                 </div>

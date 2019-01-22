@@ -38,8 +38,23 @@
     border: 1px solid lightgrey;
     height: 25px;
     padding: 10px 15px;
-    width: 100%;
+    width: 97%;
     font-size: 20px;
     font-weight: 300;
     font-family: sans-serif;
+}
+
+.profile-form-file-field{
+    margin: 10px 0px;
+}
+.profile-form-submit{
+    height: 40px;
+    padding: 0px 17px;
+    border: solid .5px lightgrey;
+    color: white;
+    background-color: #DA552F;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 14px;
 }
