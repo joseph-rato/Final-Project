@@ -50,7 +50,7 @@ class UserUpdateForm extends React.Component{
                 <div className="user-form-page">
                     <h1 className="page-description">Settings</h1>
                     <div className="update-form-container">
-                        <h3>My Details</h3>
+                        <h3 className="user-form-section-description">My Details</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div className="profile-form-name">
                                 <label className="profile-update-label">Name</label>

@@ -1,0 +1,45 @@
+.user-form-page{
+    width: 1100px;
+}
+
+.page-description{
+    font-family: sans-serif;
+    font-size: 40px;
+
+}
+
+.update-form-container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.user-form-section-description{
+    font-weight: 300;
+    font-family: sans-serif;
+    font-size: 25px;
+    margin: 0px;
+    padding: 10px 0px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.profile-update-label{
+    display: block;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 550;
+    margin: 10px 0px;
+}
+
+.profile-form-input-field{
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    height: 25px;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: sans-serif;
+}

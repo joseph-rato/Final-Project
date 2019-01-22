@@ -5,7 +5,7 @@ class  Comments extends React.Component{
     render(){
         
         return(
-            <div>
+            <div className="comments-branch">
                 {this.props.comments.map((comment) => {
                     return <CommentIndexItem key={comment.id} comment={comment} product={this.props.product} users={this.props.users}/>
                 })

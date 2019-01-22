@@ -18,13 +18,15 @@ const CommentIndexItem = ({comment, product, users}) => {
       } 
       
     return (
-       <div>
-           <div className="user-ATidentifyer-position">
+       <div className="comment-container">
+           <div className="comment-section-user">
                 {profilePic(users[comment.user_id])}
-                <div className="review-profile-name">{users[comment.user_id].username}</div>
-                <div className="review-ATprofile-name">@{users[comment.user_id].username}</div>
+                <div className="user-ATidentifyer-position">
+                  <div className="review-profile-name">{users[comment.user_id].username}</div>
+                  <div className="review-ATprofile-name">@{users[comment.user_id].username}</div>
+                </div>
             </div>
-           <p>this is the body: {comment.body}</p>
+           <p className="comment-body">{comment.body}</p>
            <CommentsContainer product={product} commentId={comment.id} users={users} />
        </div> 
     )

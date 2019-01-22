@@ -46,7 +46,6 @@ class SearchResults extends React.Component{
     userResults(){
         const profilePic = (searchId) => this.profilePic(searchId)
         const allUsers = this.props.allUsers
-        debugger
          return(
           (this.props.searchedUsersResults.length === 0) ? 
         <div className="search-results-negative">
