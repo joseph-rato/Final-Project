@@ -6,7 +6,7 @@ json.reviews @product.reviews do |review|
     json.partial! 'api/reviews/review', review: review
   end
 end
-user_arr = @product.reviewers + @product.commenters
+user_arr = @product.reviewers + @product.commenters + [@product.user]
 json.users user_arr do |user|
   json.set! user.id do 
     json.partial! 'api/users/user', user: user

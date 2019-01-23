@@ -6,7 +6,7 @@ import CreateCommentContainer from './create_comment_container'
 class ProductDiscussion extends React.Component{
     constructor(props){
         super(props)
-
+        
     }
 
     profilePic(user){

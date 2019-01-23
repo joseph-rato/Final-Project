@@ -68,7 +68,7 @@ class CommentForm extends React.Component{
         return(
             <form onSubmit={this.handleSubmit} className="comment-form-container">
                 <div className="comment-line-of-text">
-                    {this.profilePic(this.props.users[this.props.product.user_id])}
+                    {this.profilePic(this.props.users[this.props.currentUser])}
                     <textarea className="comment-text" onChange={this.handleChange} placeholder={placeholderSen(commentType)} value={this.state.body} />
                 </div>
                 {this.hiddenSubmit()}

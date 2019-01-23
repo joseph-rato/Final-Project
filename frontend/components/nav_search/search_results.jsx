@@ -35,7 +35,7 @@ class SearchResults extends React.Component{
               <svg className="avatar-background" height="47" width="47">
                 <circle cx="23" cy="23" r="23" stroke="lightgrey" strokeWidth="3" fill="red" />
               </svg>
-              <div className="profile-letter-self-made">{this.props.currentUser.username.slice(0, 1)}</div>
+              <div className="profile-letter-self-made">{this.props.allUsers[searchId].username.slice(0, 1)}</div>
             </div>
             </div>)
         : (<div>{this.props.allUsers[searchId].avatarPic}</div>)

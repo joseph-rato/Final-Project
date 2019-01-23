@@ -1,14 +1,20 @@
 import React from 'react';
 import ReviewComponent from '../reviews/review_component'
 import ProductDiscussionContainer from '../product_discussions/product_discussion_container'
+import { ScaleLoader } from 'react-spinners';
+
 
 class ProductShow extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
-    return this.props.fetchProduct(this.props.product);
+    this.props.fetchProduct(this.props.product)
+      .then(() => setTimeout(() => this.setState({loading: false}), 750));
   }
 
 
@@ -19,6 +25,22 @@ class ProductShow extends React.Component{
  }
 
   render(){
+    if (this.state.loading) {
+      return (
+        <div className='sweet-loading'>
+          <ScaleLoader
+            className="bars"
+            sizeUnit={"px"}
+            height={200}
+            width={5}
+            size={130}
+            radius={999}
+            color={'#4E7E0F'}
+            loading={this.state.loading}
+          />
+        </div>
+      )
+    }
     const product = this.props.product
     return(
       <div className="modal-product-show">
