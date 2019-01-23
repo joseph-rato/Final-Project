@@ -32,10 +32,10 @@
 
   product1.list_photo.attach(io: File.open('app/assets/images/flyingcat-logo.jpg'), filename: 'flyingcat-logo.jpg')
   product1.photos.attach(io: File.open('app/assets/images/flying-kitty-website.jpg'), filename: 'flying-kitty-website.jpg')
-  product2.list_photo.attach(io: File.open('app/assets/images/castb0x-logo.jpg'), filename: 'castb0x-logo.jpg')
+  product2.list_photo.attach(io: File.open('app/assets/images/castbox-logo.jpg'), filename: 'castb0x-logo.jpg')
   product2.photos.attach(io: File.open('app/assets/images/castbox-website.jpg'), filename: 'castbox-website.jpg')
   product3.list_photo.attach(io: File.open('app/assets/images/mixpanellogo.jpg'), filename: 'mixpannellogo.jpg')
-  product3.photos.attach(io: File.open('app/assets/images/miexpanel-website.jpg'), filename: 'miexpanel-website.jpg')
+  product3.photos.attach(io: File.open('app/assets/images/mixpanel-website.jpg'), filename: 'mixpanel-website.jpg')
   product4.list_photo.attach(io: File.open('app/assets/images/classdojo.jpg'), filename: 'classdojologo.jpg')
   product4.photos.attach(io: File.open('app/assets/images/classdojo-website.jpg'), filename: 'classdojo-website.jpg')
   product5.list_photo.attach(io: File.open('app/assets/images/instacart-logo.jpg'), filename: 'instacart-logo.jpg')

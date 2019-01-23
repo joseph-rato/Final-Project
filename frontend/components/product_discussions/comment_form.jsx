@@ -37,7 +37,7 @@ class CommentForm extends React.Component{
     }
 
     profilePic(user){
-
+        
         return(
           (!!user.avatarPic)
           ? <img className="review-profile-pic" src={user.avatarPic}></img>
@@ -65,6 +65,7 @@ class CommentForm extends React.Component{
                     return "no type";
             }
         }
+        
         return(
             <form onSubmit={this.handleSubmit} className="comment-form-container">
                 <div className="comment-line-of-text">
