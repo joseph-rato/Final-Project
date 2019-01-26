@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsContainer from './comments_container'
+import CreateCommentContainer from './create_comment_container'
 
 const CommentIndexItem = ({comment, product, users}) => {
 
@@ -16,6 +17,12 @@ const CommentIndexItem = ({comment, product, users}) => {
               </div>
         )
       } 
+
+    const commentBox = () => {
+      return(
+          <CommentsContainer product={product} commentId={null} />
+      )
+    }
       
     return (
        <div className="comment-container">
@@ -27,6 +34,7 @@ const CommentIndexItem = ({comment, product, users}) => {
                 </div>
             </div>
            <p className="comment-body">{comment.body}</p>
+           <button onClick={}>REPLY</button>
            <CommentsContainer product={product} commentId={comment.id} users={users} />
        </div> 
     )
