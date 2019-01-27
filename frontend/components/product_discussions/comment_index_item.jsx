@@ -20,7 +20,7 @@ const CommentIndexItem = ({comment, product, users}) => {
 
     const commentBox = () => {
       return(
-          <CommentsContainer product={product} commentId={null} />
+          <CommentsContainer product={product} commentId={comment.id} />
       )
     }
       
