@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
         users: state.entities.users,
         currentUser: state.session.id,
         submitButton: 'COMMENT',
-        type: 'product'
+        type: 'review'
     });
   };
 

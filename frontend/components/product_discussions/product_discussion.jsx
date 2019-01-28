@@ -38,7 +38,7 @@ class ProductDiscussion extends React.Component{
                 </div>
             </div>
             <div className="product-discus-content">
-                <CreateCommentContainer product={this.props.product}/>
+                <CreateCommentContainer product={this.props.product} commentId={null}/>
                 <CommentsContainer product={this.props.product} commentId={null} />  
             </div>
         </div>

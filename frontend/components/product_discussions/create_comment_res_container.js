@@ -9,8 +9,8 @@ const mapStateToProps = (state, ownProps) => {
         product: ownProps.product,
         users: state.entities.users,
         currentUser: state.session.id,
-        submitButton: 'COMMENT',
-        type: 'product'
+        submitButton: 'REPLY',
+        type: 'comment'
     });
   };
 
