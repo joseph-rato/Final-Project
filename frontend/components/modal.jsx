@@ -7,6 +7,8 @@ import {Link, withRouter} from 'react-router-dom';
 import ProductShowContainer from './products/product_show_container'
 import PlaceHolderContainer from './place_holder_container';
 import CreateReviewContainer from './reviews/create_review_container';
+import SearchContainer from './nav_search/search_container'
+
 
 const Modal = ({product, modal, closeModal}) => {
   if (!modal) {
@@ -17,8 +19,10 @@ const Modal = ({product, modal, closeModal}) => {
     case 'login':
       component = <LoginFormContainer />;
       break;
+    case 'search':
+      component = <SearchContainer modal={true} />;
+      break;
     case 'review':
-    
       component = <CreateReviewContainer product={product}/>;
       break;
     case 'signup':
@@ -33,10 +37,10 @@ const Modal = ({product, modal, closeModal}) => {
 
   return(
     <div className="modal-background" onClick={closeModal}>
-      <Link to="/" className="modal-exit-symb">
+      <Link to="/" className={(modal ==='search') ? "modal-exit-symb-search" : "modal-exit-symb"}>
         <i className="fas fa-times-circle"></i>
       </Link>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className={(modal ==='search') ? "modal-child-search" : "modal-child"} onClick={e => e.stopPropagation()}>
         {component}
       </div>
     </div>

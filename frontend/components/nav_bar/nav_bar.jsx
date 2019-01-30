@@ -18,10 +18,10 @@ const NavBar = ({currentUser, logout, openModal}) => {
 
         <div className="header-search-bar">
           <i className="fas fa-search"></i>
-          <SearchContainer />
+          <div className="search-bar-modal" onClick={() => openModal('search')}><SearchContainer modal={false}/></div>
         </div>
 
-        <NavLinks / >
+        <NavLinks />
         <NavUserOptionsContainer />
 
 
@@ -41,11 +41,10 @@ const NavBar = ({currentUser, logout, openModal}) => {
 
         <div className="header-search-bar">
           <i className="fas fa-search"></i>
-          <SearchContainer />
-          
+          <div className="search-bar-modal" onClick={() => openModal('search')}><SearchContainer modal={false}/></div>
         </div>
 
-      <NavLinks / >
+      <NavLinks />
 
         <div className="header-div-session-access">
           <div className="header-div-signup-login">

@@ -9,11 +9,11 @@ class SearchResults extends React.Component{
         return(
         (this.props.searchedProductResults.length === 0) ? 
         <div className="search-results-negative">
-            <div>PRODUCTS</div>
+            <div className="search-results-label">PRODUCTS</div>
             <span>No matches</span>
         </div>
         : <div>
-            <div>PRODUCTS</div>
+            <div className="search-results-label">PRODUCTS</div>
             <ul className="product-search-results">
                 {
                     this.props.searchedProductResults.map( (searchId, idx) =>{
@@ -49,17 +49,16 @@ class SearchResults extends React.Component{
          return(
           (this.props.searchedUsersResults.length === 0) ? 
         <div className="search-results-negative">
-            <div>USERS</div>
+            <div className="search-results-label">USERS</div>
             <span>No matches</span>
         </div>
         :<div>
-            <div>USERS</div>
-            <ul className="product-search-results">
+            <div className="search-results-label">USERS</div>
+            <ul className="user-search-results">
                 {
                     this.props.searchedUsersResults.map( (searchId, idx) => {
                         return( 
                             <li key={idx}>
-                                <div>help</div>
                                 <div>{profilePic(searchId)}</div>
                                 <div>{allUsers[searchId].username}</div>
                                 <div>{allUsers[searchId].headline}</div>
@@ -75,7 +74,6 @@ class SearchResults extends React.Component{
     render(){
         return(
             <div className="search-results">
-                <label>Search Results</label>
                 {this.productResults()}
                 {this.userResults()}
             </div>

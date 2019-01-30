@@ -53,7 +53,7 @@ class SearchBar extends React.Component{
         }
     }
     showResults(){
-        if (this.state.queryString !== ""){
+        if (this.state.queryString !== "" && this.props.modalOpen === true){
             return (
             <div>
                     <SearchResultsContainer />
@@ -66,10 +66,10 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div className="search-container">
-                <form className="search-bar" onSubmit={this.handleSubmit}>
+            <div className={this.props.modalOpen ? 'search-container-modal' : 'search-container'}>
+                <form className={this.props.modalOpen ? 'search-bar-modal' : 'search-bar'} onSubmit={this.handleSubmit}>
                     <input
-                    className="search-input"
+                    className={this.props.modalOpen ? 'search-input-modal' : 'search-input'}
                     placeholder="Discover your next favorite thing..."
                     value={this.state.queryString}
                     onChange={this.handleInput('queryString')}

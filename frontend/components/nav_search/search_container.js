@@ -5,7 +5,8 @@ import {fetchUsersProductsByName} from '../../actions/search_actions'
 const mapStateToProps = (state, ownProps) => {
     return({
         allProducts: state.entities.products,
-        allUsers: state.entities.users
+        allUsers: state.entities.users,
+        modalOpen: ownProps.modal
     })
   };
 

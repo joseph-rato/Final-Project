@@ -14,6 +14,28 @@
 
 .search-product-list-item{
     display: flex;
+    flex-direction: row;
     height: 50px;
     width: 1000px;  
+}
+
+.search-product-list-item-product-Name{
+    font-size: 14px;
+    font-family: sans-serif;
+    color: black;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.search-product-list-item-headline{
+    margin-left: 15px;
+    align-items: center;
+}
+
+.search-product-list-item-description{
+    font-size: 14px;
+    font-weight: 300;
+    color: darkgrey;
+    margin: 0px;
+    margin-top: 10px;
 }
