@@ -10,13 +10,16 @@ class LeaveComment extends React.Component{
         this.handleReveal =this.handleReveal.bind(this)
     }
     handleReveal (e) {
-        e.preventDefault();
-        this.setState({revealComment: true})
+        e.preventDefault()
+        return(
+            this.setState({revealComment: true})
+        )
     }
     render(){
+        debugger
         return(
             <div className="comment-res-options">
-                <button className="reply-button" onClick={this.handleReveal()}><i class="fas fa-reply"></i>REPLY</button>
+                <button className="reply-button" onClick={this.handleReveal}><i class="fas fa-reply"></i>REPLY</button>
                 { this.state.revealComment 
                 ? <CreateCommentResContainer product={this.props.product} commentId={this.props.commentId}/>
                 : null

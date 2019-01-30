@@ -22,7 +22,7 @@ class SearchBar extends React.Component{
             this.debouncy = setTimeout( function() {
                 
                 sendQuery(autoSearching)
-            }, 1000)
+            }, 250)
         }
     }
 
