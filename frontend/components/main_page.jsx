@@ -12,6 +12,8 @@ import ProductShowContainer from './products/product_show_container'
 import UserProfileContainer  from './users/user_profile_container'
 import UserUpdateFormContainer from './users/user_update_form_container'
 
+
+
 const MainPage = () => (
   <div className="all-content">
     <Modal />
@@ -32,9 +34,6 @@ const MainPage = () => (
     </div>
   </div>
 )
-<Route
-  path='/dashboard'
-  render={(props) => <Dashboard {...props} isAuthed={true} />}
-/>
+
 
 export default MainPage;
