@@ -51,14 +51,15 @@ class CommentForm extends React.Component{
       }
 
     render(){
+        debugger
         let commentType = this.props.type
         const placeholderSen = (commentType) => {
             switch (commentType) {
                 case 'review':
-                    let placeholds = `Add a comment to ${this.props.users[this.props.commentId]}'s review...`
+                    let placeholds = `Add a comment to ${this.props.users[this.props.commentId].username}'s review...`
                     return placeholds;
                 case 'comment':
-                    return `Add a reply to ${this.props.users[this.props.commentId]}'s comment...`;
+                    return `Add a reply to ${this.props.users[this.props.commentId].username}'s comment...`;
                 case 'product':         
                     return "What do you think of this product..."; 
                 default:
