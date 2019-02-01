@@ -57,3 +57,13 @@
     font-family: sans-serif;
     color: darkgrey;
 }
+
+.search-result-user-listitems{
+    list-style: none;
+    display: flex;
+}
+
+.search-result-user-avatar{
+    height: 50px;
+    margin-right: 10px;
+}

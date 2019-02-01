@@ -38,7 +38,7 @@ class SearchResults extends React.Component{
               <div className="profile-letter-self-made">{this.props.allUsers[searchId].username.slice(0, 1)}</div>
             </div>
             </div>)
-        : (<div>{this.props.allUsers[searchId].avatarPic}</div>)
+        : (<img className="search-result-user-avatar" src={this.props.allUsers[searchId].avatarPic}></img>)
         )}
 
 
@@ -58,11 +58,11 @@ class SearchResults extends React.Component{
                 {
                     this.props.searchedUsersResults.map( (searchId, idx) => {
                         return( 
-                            <li key={idx}>
-                                <div>{profilePic(searchId)}</div>
+                            <Link className="search-result-user-listitems"key={idx} to="/user">
+                                <div className="">{profilePic(searchId)}</div>
                                 <div>{allUsers[searchId].username}</div>
                                 <div>{allUsers[searchId].headline}</div>
-                            </li>
+                            </Link>
                         )
                     })
                 }

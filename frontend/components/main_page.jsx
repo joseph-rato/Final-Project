@@ -32,6 +32,9 @@ const MainPage = () => (
     </div>
   </div>
 )
-
+<Route
+  path='/dashboard'
+  render={(props) => <Dashboard {...props} isAuthed={true} />}
+/>
 
 export default MainPage;
