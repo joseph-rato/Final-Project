@@ -20,6 +20,7 @@ class NavUserOptions extends React.Component{
   }
 
   profilePic() {
+    debugger
     return(
       (this.props.currentUser.avatarPic === undefined)
     ? (<div className="profile-avatar-button" onClick={this.toggleList}>
@@ -42,7 +43,7 @@ class NavUserOptions extends React.Component{
   : (<div className="profile-avatar-button" onBlur={() => console.log('it happened')} onClick={this.toggleList}>
         <img src={this.props.currentUser.avatarPic} className="avatar-profile-pic"></img>
         <div id="user-option-list"  className="profile-dropdown-menu-options closeDropDown">
-          <Link to="/user">MY PROFILE</Link>
+          <Link to={`/user:${this.props.currentUser.id}`}>MY PROFILE</Link>
           <div className="setting-seperator">
             <Link to="/my/settings/edit">SETTINGS</Link>
           </div>

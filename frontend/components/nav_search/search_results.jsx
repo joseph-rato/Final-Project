@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchProductListItem from './search_product_list_item'
+import {Link} from 'react-router-dom'
 
 class SearchResults extends React.Component{
     
@@ -58,7 +59,7 @@ class SearchResults extends React.Component{
                 {
                     this.props.searchedUsersResults.map( (searchId, idx) => {
                         return( 
-                            <Link className="search-result-user-listitems"key={idx} to="/user">
+                            <Link className="search-result-user-listitems"key={idx} to={`/user:${allUsers[searchId].id}`}>
                                 <div className="">{profilePic(searchId)}</div>
                                 <div>{allUsers[searchId].username}</div>
                                 <div>{allUsers[searchId].headline}</div>

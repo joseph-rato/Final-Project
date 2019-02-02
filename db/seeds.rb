@@ -7,14 +7,14 @@
   user7 = User.create({username: "oliver", password_digest: "$2a$10$Iy41hdAKn4IdUbFYi4695uaYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxby5SevAQ", email: "jenny@gmail.com", website: nil, headline: nil})
   user8 = User.create({username: "don", password_digest: "$2a$10$Iy41hdAKn4IdUbFYiAs99caYo/PeWv588xiyS6bdDQgEmz9dCaWfi", session_token: "5TFcKqo1FHHnaxbygSe6AQ", email: "don@gmail.com", website: nil, headline: nil})
 
-  user1.avatar.attach(io: File.open('app/assets/images/guywithglasses.jpg'), filename: 'guywithglasses.jpg')
+  user1.avatar.attach(io: File.open('app/assets/images/guywithglasses-sqr.jpg'), filename: 'guywithglasses.jpg')
   user2.avatar.attach(io: File.open('app/assets/images/tom_hanks.jpg'), filename: 'tom_hanks.jpg')
-  user3.avatar.attach(io: File.open('app/assets/images/bret.jpg'), filename: 'bret.jpg')
-  user4.avatar.attach(io: File.open('app/assets/images/jenny.jpg'), filename: 'jenny.jpg')
+  user3.avatar.attach(io: File.open('app/assets/images/bret-sqr.jpg'), filename: 'bret.jpg')
+  user4.avatar.attach(io: File.open('app/assets/images/jenny-sqr.jpg'), filename: 'jenny.jpg')
   user5.avatar.attach(io: File.open('app/assets/images/user7.jpg'), filename: 'user7.jpg')
-  user6.avatar.attach(io: File.open('app/assets/images/user8.jpg'), filename: 'user8.jpg')
-  user7.avatar.attach(io: File.open('app/assets/images/Joseph_Oliver_2.jpg'), filename: 'Joseph_Oliver_2.jpg')
-  user8.avatar.attach(io: File.open('app/assets/images/don.jpg'), filename: 'don.jpg')
+  user6.avatar.attach(io: File.open('app/assets/images/user8-sqr.jpg'), filename: 'user8.jpg')
+  user7.avatar.attach(io: File.open('app/assets/images/Joseph-sqr.jpg'), filename: 'Joseph_Oliver_2.jpg')
+  user8.avatar.attach(io: File.open('app/assets/images/don-sqr.jpg'), filename: 'don.jpg')
 
 
 
