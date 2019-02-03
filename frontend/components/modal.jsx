@@ -26,7 +26,7 @@ const Modal = ({product, modal, closeModal}) => {
       component = <CreateReviewContainer product={product}/>;
       break;
     case 'signup':
-      component = <SignupFormContainer />;
+      component = <SignupFormContainer modalActivate={true} />;
       break;
     case 'product':
       component = <ProductShowContainer product={product} />;

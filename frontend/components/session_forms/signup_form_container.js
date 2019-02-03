@@ -4,10 +4,12 @@ import {signup, clearErrors} from '../../actions/session_actions';
 import React from 'react';
 import {openModal, closeModal} from '../../actions/modal_actions';
 
-const mapStateToProps = ({errors}) => {
+const mapStateToProps = ({errors}, ownProps) => {
+  debugger
   return{
     formType: 'signup',
-    errors: errors.session
+    errors: errors.session,
+    modal: ownProps.modalActivate || false
   };
 };
 

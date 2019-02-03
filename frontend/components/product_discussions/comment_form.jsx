@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class CommentForm extends React.Component{
     constructor(props){
@@ -51,6 +52,14 @@ class CommentForm extends React.Component{
       }
 
     render(){
+
+        if (this.props.currentUser === null){
+            return(
+                <div className="comment-sign-up">
+                    <span className="request-to-signup">You need to become a Contributor to join the discussion - <Link className="link-to-signup-page" to="/signup">Find Out How</Link>.</span>
+                </div>
+            )
+        }
         let commentType = this.props.type
         const placeholderSen = (commentType) => {
             switch (commentType) {
