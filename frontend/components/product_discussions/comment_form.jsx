@@ -51,7 +51,6 @@ class CommentForm extends React.Component{
       }
 
     render(){
-        debugger
         let commentType = this.props.type
         const placeholderSen = (commentType) => {
             switch (commentType) {

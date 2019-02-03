@@ -3,7 +3,6 @@ import CommentIndexItem from './comment_index_item.jsx'
 
 class  Comments extends React.Component{
     render(){
-        debugger
         return(
             <div className="comments-branch">
                 {this.props.comments.map((comment) => {

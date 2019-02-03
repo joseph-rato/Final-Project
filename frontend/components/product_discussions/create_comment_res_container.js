@@ -3,7 +3,6 @@ import {createProductDiscussion, deleteProductDiscussion} from '../../actions/pr
 import CommentForm from './comment_form';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
    return({
        commentId: ownProps.commentId,
         product: ownProps.product,

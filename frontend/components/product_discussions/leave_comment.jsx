@@ -16,7 +16,6 @@ class LeaveComment extends React.Component{
         )
     }
     render(){
-        debugger
         return(
             <div className="comment-res-options">
                 <button className="reply-button" onClick={this.handleReveal}><i class="fas fa-reply"></i>REPLY</button>

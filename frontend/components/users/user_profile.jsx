@@ -2,14 +2,41 @@ import React from 'react'
 import UserHeaderContainer from './user_header_container'
 import {Switch, Link, Route} from 'react-router-dom'
 import PlaceHolderContainer from '../place_holder_container'
+import { ScaleLoader } from 'react-spinners'
 
 class UserProfile extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      loading: true,
+    }
+  }
 
   componentDidMount(){
-    return this.props.fetchUser(this.props.userProfileId);
+    debugger
+    return this.props.fetchUser(this.props.userProfileId)
+      .then(() => setTimeout(() => this.setState({loading: false}), 750));;
   }
 
   render(){
+    debugger
+    if (this.state.loading) {
+      return (
+        <div className='sweet-loading'>
+          <ScaleLoader
+            className="bars"
+            sizeUnit={"px"}
+            height={200}
+            width={5}
+            size={130}
+            radius={999}
+            color={'#4E7E0F'}
+            loading={this.state.loading}
+          />
+        </div>
+      )
+    }
+
     return(
       <div className="user-content-page" >
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>

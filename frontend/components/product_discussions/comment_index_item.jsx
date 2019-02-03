@@ -19,7 +19,6 @@ const CommentIndexItem = ({comment, product, users}) => {
       } 
 
     
-      debugger
     return (
        <div className="comment-container">
            <div className="comment-section-user">
