@@ -13,13 +13,11 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     return this.props.fetchUser(this.props.userProfileId)
       .then(() => setTimeout(() => this.setState({loading: false}), 750));;
   }
 
   render(){
-    debugger
     if (this.state.loading) {
       return (
         <div className='sweet-loading'>
@@ -42,11 +40,11 @@ class UserProfile extends React.Component {
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>
         <div className="user-content-body">
           <div className="user-left-side-bar">this is the left nav bar
-            <Link to="/user" >MY PROFILE</Link>
-            <Link to="/user/upvotes" >Upvotes</Link>
-            <Link to="/user/followed" >Followed Topics</Link>
-            <Link to="/user/collections" >Collection Made</Link>
-            <Link to="/user/followed_collections" >Followed Collection</Link>
+            <Link className="user-main-content-options" to="/user" >MY PROFILE</Link>
+            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/upvotes`} >Upvotes</Link>
+            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed`} >Followed Topics</Link>
+            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/collections`} >Collection Made</Link>
+            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed_collections`} >Followed Collection</Link>
           </div>
           <div className="user-main-content">
             <Switch>
