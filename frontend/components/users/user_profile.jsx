@@ -2,6 +2,7 @@ import React from 'react'
 import UserHeaderContainer from './user_header_container'
 import {Switch, Link, Route} from 'react-router-dom'
 import PlaceHolderContainer from '../place_holder_container'
+import ProductsContainer from '../products/products_container'
 import { ScaleLoader } from 'react-spinners'
 
 class UserProfile extends React.Component {
@@ -39,7 +40,7 @@ class UserProfile extends React.Component {
       <div className="user-content-page" >
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>
         <div className="user-content-body">
-          <div className="user-left-side-bar">this is the left nav bar
+          <div className="user-left-side-bar">
             <Link className="user-main-content-options" to="/user" >MY PROFILE</Link>
             <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/upvotes`} >Upvotes</Link>
             <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed`} >Followed Topics</Link>
@@ -48,11 +49,11 @@ class UserProfile extends React.Component {
           </div>
           <div className="user-main-content">
             <Switch>
-              <Route component={PlaceHolderContainer}/>
-              <Route component={PlaceHolderContainer}/>
-              <Route component={PlaceHolderContainer}/>
-              <Route component={PlaceHolderContainer}/>
-              <Route component={PlaceHolderContainer}/>
+              <Route path="/user/:Id" component={PlaceHolderContainer}/>
+              <Route path={`/user/${this.props.userProfileId}/upvotes`} component={PlaceHolderContainer}/>
+              <Route path={`/user/${this.props.userProfileId}/followed`} component={ProductsContainer}/>
+              <Route path={`/user/${this.props.userProfileId}/collections`} component={PlaceHolderContainer}/>
+              <Route path={`/user/${this.props.userProfileId}/followed_collections`} component={PlaceHolderContainer}/>
             </Switch>
           </div>
           <div className="user-right-side-bar">
