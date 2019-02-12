@@ -1,6 +1,6 @@
 import {fetchProducts} from '../../actions/product_actions';
 import {connect} from 'react-redux';
-import ProductsContainer from './products';
+import UserContent from './user_content';
 import {closeModal, openModal} from '../../actions/modal_actions';
 
 const mapStateToProps = ({entities}) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
   })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(UserContent)

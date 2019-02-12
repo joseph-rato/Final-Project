@@ -18,6 +18,7 @@ class Products extends React.Component{
   }
 
   render() {
+    debugger
     return(
       <div className="product-list-content-box">
         <ul>
