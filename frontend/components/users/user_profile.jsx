@@ -2,7 +2,6 @@ import React from 'react'
 import UserHeaderContainer from './user_header_container'
 import {Switch, Link, Route} from 'react-router-dom'
 import PlaceHolderContainer from '../place_holder_container'
-import ProductsContainer from '../products/products_container'
 import UserContentContainer from './user_content_container'
 import { ScaleLoader } from 'react-spinners'
 

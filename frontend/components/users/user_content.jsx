@@ -15,6 +15,10 @@ class UserContent extends React.Component{
         return this.props.fetchProducts()
           .then(() => setTimeout(() => this.setState({loading: false}), 750));;
       }
+      // needed to prevent changes to random generated items
+    //   shouldComponentUpdate(nextProps, nextState){
+          
+    //   }
 
       randomProducts(){
           
