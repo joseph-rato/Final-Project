@@ -1,0 +1,1 @@
+json.extract! tag, :id, :product_id, :tag

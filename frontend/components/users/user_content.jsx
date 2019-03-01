@@ -17,7 +17,7 @@ class UserContent extends React.Component{
       }
       // needed to prevent changes to random generated items
     //   shouldComponentUpdate(nextProps, nextState){
-          
+    //      
     //   }
 
       randomProducts(){

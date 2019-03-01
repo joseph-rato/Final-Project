@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
 
     resources :users, only: [:show, :create] do
-      resources :products, only: [:create, :update]
+      resources :products, only: [:create, :update] do
+        resources :tags, only: [:create]
+      end
       resources :reviews, only: [:show, :create, :destroy, :update]
       resources :product_discussions, only:[:create, :update, :destroy, :show]
     end
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
     get 'products/search', to: 'products#search'
 
     resource :sessions, only: [:create, :destroy, :show]
-
+    resource :tags, only: [:index]
     resources :products, only: [:index, :show] do
       resources :reviews, only: [:index]
     end

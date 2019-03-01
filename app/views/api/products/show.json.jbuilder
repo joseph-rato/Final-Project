@@ -20,3 +20,6 @@ json.productDiscussions @product.product_discussions do |comment|
 end
 
 
+
+
+
