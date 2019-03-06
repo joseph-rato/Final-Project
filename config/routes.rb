@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show, :create] do
       resources :products, only: [:create, :update] do
-        resources :tags, only: [:create]
+        resources :tags, only: [:create, :show]
       end
       resources :reviews, only: [:show, :create, :destroy, :update]
       resources :product_discussions, only:[:create, :update, :destroy, :show]

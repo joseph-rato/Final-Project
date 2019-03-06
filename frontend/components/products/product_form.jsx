@@ -36,7 +36,9 @@ class ProductForm extends React.Component {
       return this.props.sendError(['You need to upload at least one display picture']);
     }
     Object.assign({}, {reviews: this.state})
-    let prodTags = Object.assign({}, {tags: {tag: this.state.clicked})
+    let tagKeys = Object.keys(this.state.clicked)
+    debugger
+    let prodTags = Object.assign({}, {tags: {tags: tagKeys}})
     const formData = new FormData();
     formData.append('product[product_name]', this.state.product_name)
     formData.append('product[description]', this.state.description)
@@ -48,8 +50,9 @@ class ProductForm extends React.Component {
     formData.append('product[video_link]', this.state.video_link)
     formData.append('product[around_the_web]', this.state.around_the_web)
     return this.props.sendForm(formData, this.props.currentUserId).then( (serverProduct) => {
-      return this.props.sendTagForm({, this.props.currentUserId, serverProduct.id).then((serverTag) => {
-        return this.props.history.push(`/products/${serverProduct.id}`);
+      debugger
+      return this.props.sendTagForm(prodTags, this.props.currentUserId, serverProduct.product.id).then((serverTag) => {
+        return this.props.history.push(`/products/${serverProduct.product.id}`);
       })
     })
   }
@@ -62,23 +65,25 @@ class ProductForm extends React.Component {
     }
   }
   removeTag(tag){
-    let tagsObj = this.state.clicked
+    let tagsObj = Object.assign({}, this.state.clicked)
     delete tagsObj[`${tag}`]
     return this.setState({clicked: tagsObj})
   }
 
   addTag(tag){
-    let tagsObj = this.state.clicked
+    let tagsObj = Object.assign({}, this.state.clicked)
     tagsObj[`${tag}`] = 1
-    return this.setState({clicked: tagObj})
+    return this.setState({clicked: tagsObj})
   }
 
   handleTagChange(tag) {
     return (event) => {
       event.preventDefault();
       if (this.state.clicked.hasOwnProperty(tag)){
+        
         this.removeTag(tag)
       } else {
+        
         this.addTag(tag)
       }
     }
@@ -93,6 +98,7 @@ class ProductForm extends React.Component {
 
 
   render(){
+    const tagsArr = ['Tech', 'Education', 'Music', 'AI', 'Productivity']
     return(
       <div className="product-form-page">
         <form className="product-form-content" onSubmit={this.handleSubmit}>
@@ -128,14 +134,26 @@ class ProductForm extends React.Component {
           </div>
           <div>
             <h4>Product Tags</h4>
+
             <span className="tag-options">
-              <span className="tag" onClick={this.handleTagChange("Tech")}>Tech</span>
-              <span className="tag" onClick={this.handleTagChange("Education")}>Education</span>
-              <span className="tag" onClick={this.handleTagChange("Music")}>Music</span>
-              <span className="tag" onClick={this.handleTagChange("AI")}>AI</span>
-              <span className="tag" onClick={this.handleTagChange("Productivity")}>Productivity</span>
+            {
+              tagsArr.map((tagger)=>{
+                
+                if (this.state.clicked[`${tagger}`]){
+                  
+                  return(
+                    <span className="selected-tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
+                  ) 
+                } else {
+                  
+                  return(
+                    <span className="tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
+                  )
+                }
+              })
+            }
+              
             </span>
-            <input className="" type="text" placeHolder="select multiple tags above" disabled></input>
           </div>
           <div className="product-form-input-div">
             <h4 className="product-form-input-des">Product Logo</h4>

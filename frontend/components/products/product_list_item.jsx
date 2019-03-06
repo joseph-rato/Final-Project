@@ -4,6 +4,14 @@ import {connect} from 'react-redux'
 
 
 const ProductListItem = ({product, openModal}) => {
+  let randomLike = Math.floor(Math.random() *1000)
+  function increaseRandomLike(){
+    return e =>{
+      e.stopPropagation();
+      randomLike = randomLike + 1 
+    } 
+  }
+  
   return(
     <div className='product-list-item' onClick={() => openModal('product', product)} >
       <div className="show-product-list-item-photo"><img className="product-list-item-logo" src={product.logoPhoto}></img></div>
@@ -15,7 +23,7 @@ const ProductListItem = ({product, openModal}) => {
             <button className="product-list-item-tag">TECH</button>
           </div>
           <div className="product-list-item-buttons">
-            <button className="product-list-item-like-button">456</button>
+            <button className="product-list-item-like-button" onClick={() => increaseRandomLike()}>{randomLike}</button>
             <button className="product-list-item-comment-button">17</button>
           </div>
         </div>

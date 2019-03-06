@@ -26,7 +26,8 @@ export const receiveTagErrors = (errors) => {
   })
 }
 
-export const createTag = (tag) => dispatch => {
-    return APIUtil.createTag(tag).then( servertag => dispatch(receiveTag(servertag)),
+export const createTag = (tag, id, product_id) => dispatch => {
+    debugger
+    return APIUtil.createTag(tag, id, product_id).then( servertag => dispatch(receiveTag(servertag)),
     (err) => dispatch(receiveTagErrors(err)));
 };

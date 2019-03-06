@@ -1,4 +1,4 @@
-export const createTags = (tag, id, product_id) => {
+export const createTag = (tag, id, product_id) => {
     return $.ajax({
         method: 'POST',
         url: `/api/users/${id}/products/${product_id}/tags`,
