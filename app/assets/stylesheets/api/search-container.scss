@@ -7,6 +7,14 @@
     padding: 10px;
 }
 .search-container{
+    display: flex;
+    flex-direction: column;
+
+}
+.search-bar-symb-input{
+    display: flex;
+    flex-direction: row;
+    padding: 14px;
 }
 
 .search-input{
@@ -46,7 +54,8 @@
 
 .search-results{
     margin-top: 20px;
-    padding: 0px 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
     background-color: white;
     /* margin-left: 10px; */
     width: 100%;

@@ -131,28 +131,31 @@ class ProductForm extends React.Component {
             <h4 className="product-form-input-des">Product Details </h4>
             <textarea className="product-form-text-details" rows="7" cols="64" placeholder="Enter additional essential details" onChange={this.handleChange('details')} value={this.state.details}></textarea>
           </div>
-          <div>
-            <h4>Product Tags</h4>
+          <div className="product-form-input-div">
+            <h4 className="product-form-input-des">Product Tags</h4>
+            <div className="product-form-tag-input-side">
+              <label className="product-form-select-tag-desc">Click all that Apply</label>
+              <span className="product-form-tag-options">
 
-            <span className="tag-options">
-            {
-              tagsArr.map((tagger)=>{
+              {
+                tagsArr.map((tagger)=>{
+                  
+                  if (this.state.clicked[`${tagger}`]){
+                    
+                    return(
+                      <span className="product-form-selected-tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
+                      ) 
+                    } else {
+                      
+                      return(
+                        <span className="product-form-tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
+                        )
+                      }
+                    })
+                  }
                 
-                if (this.state.clicked[`${tagger}`]){
-                  
-                  return(
-                    <span className="selected-tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
-                  ) 
-                } else {
-                  
-                  return(
-                    <span className="tag" onClick={this.handleTagChange(`${tagger}`)}>{`${tagger}`}</span>
-                  )
-                }
-              })
-            }
-              
-            </span>
+              </span>
+            </div>
           </div>
           <div className="product-form-input-div">
             <h4 className="product-form-input-des">Product Logo</h4>
