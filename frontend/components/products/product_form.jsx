@@ -37,7 +37,6 @@ class ProductForm extends React.Component {
     }
     Object.assign({}, {reviews: this.state})
     let tagKeys = Object.keys(this.state.clicked)
-    debugger
     let prodTags = Object.assign({}, {tags: {tags: tagKeys}})
     const formData = new FormData();
     formData.append('product[product_name]', this.state.product_name)
@@ -50,9 +49,9 @@ class ProductForm extends React.Component {
     formData.append('product[video_link]', this.state.video_link)
     formData.append('product[around_the_web]', this.state.around_the_web)
     return this.props.sendForm(formData, this.props.currentUserId).then( (serverProduct) => {
-      debugger
       return this.props.sendTagForm(prodTags, this.props.currentUserId, serverProduct.product.id).then((serverTag) => {
-        return this.props.history.push(`/products/${serverProduct.product.id}`);
+        this.props.history.push(`/`)
+        this.props.openModal('product', serverProduct.product);
       })
     })
   }

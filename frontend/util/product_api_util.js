@@ -1,5 +1,4 @@
 export const createProduct = (product, id) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: `/api/users/${id}/products`,

@@ -3,7 +3,6 @@ class Api::ProductDiscussionsController < ApplicationController
   before_action :require_loggin, except: [:show]
   def create
     @product_discussions = ProductDiscussion.new(pd_params)
-    debugger
     # @product_discussions.user_id = params[:user_id]
     if @product_discussions.save
       render :show
