@@ -61,9 +61,9 @@ class SearchResults extends React.Component{
                     this.props.searchedUsersResults.map( (searchId, idx) => {
                         return( 
                             <Link onClick={() => this.props.closeModal()} className="search-result-user-listitems"key={idx} to={`/user/${allUsers[searchId].id}`}>
-                                <div className="">{profilePic(searchId)}</div>
-                                <div>{allUsers[searchId].username}</div>
-                                <div>{allUsers[searchId].headline}</div>
+                                <div className="search-picture">{profilePic(searchId)}</div>
+                                <div className="search-user-results-name">{allUsers[searchId].username}</div>
+                                <div className="search-user-results-headline">{allUsers[searchId].headline}</div>
                             </Link>
                         )
                     })

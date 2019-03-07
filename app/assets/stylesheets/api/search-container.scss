@@ -61,9 +61,13 @@
 .search-result-user-listitems{
     list-style: none;
     display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
 }
 
 .search-result-user-avatar{
     height: 50px;
+    border-radius: 50%;
     margin-right: 10px;
 }

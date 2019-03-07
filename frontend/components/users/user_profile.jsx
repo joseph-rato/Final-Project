@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>
         <div className="user-content-body">
           <div className="user-left-side-bar">
-            <Link className="user-main-content-options" to="/user/:id" >MY PROFILE</Link>
+            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}`} >MY PROFILE</Link>
             <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/upvotes`} >Upvotes</Link>
             <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed`} >Followed Topics</Link>
             <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/collections`} >Collection Made</Link>
