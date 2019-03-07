@@ -6,12 +6,11 @@ class Api::TagsController < ApplicationController
     # might not need this method
     # how do we access the product_id params again need to remember/find out
     def show
-        byebug
         @tag = Tag.where(product_id: params[:tags][:product_id])
         if @tag
-            render :show
+            render :index
         else
-            render json ['does not exist'], status 404
+            render json: ['does not exist'], status: 404
         end
     end
 
@@ -19,22 +18,24 @@ class Api::TagsController < ApplicationController
     # activerecord-import is probably not working check it out
     # need to fix this create method not registrating real entries which makes the show method broken as well
     def create
-        debugger
-        byebug
         columns = [:tags, :product_id]
-        values = [params[:tags][:tags], params[:tags][:product_id]]
-        if Tag.import columns values
-            
-            render :show
+        arrOfCombs = []
+        params[:tags][:tags].each do |tag|
+            arrOfCombs << [tag, params[:product_id]]
+        end
+        values = arrOfCombs
+        
+        @tags = Tag.import columns, values
+        if @tags
+            render json: ["done"], status: 201
         else
-            render json: @tag.errors.full_messages, status 422
+            render json: @tag.errors.full_messages, status: 422
         end
     end
     def delete
 
     end
     def tag_params
-        debugger
         params.require(:tags).permit(:product_id, :tags)
     end
 end

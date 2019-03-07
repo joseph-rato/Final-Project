@@ -1,16 +1,11 @@
 
 import React from 'react';
 import {connect} from 'react-redux'
+import LikeButton from '../likes/like_list_item_container'
 
 
 const ProductListItem = ({product, openModal}) => {
-  let randomLike = Math.floor(Math.random() *1000)
-  function increaseRandomLike(){
-    return e =>{
-      e.stopPropagation();
-      randomLike = randomLike + 1 
-    } 
-  }
+  
   
   return(
     <div className='product-list-item' onClick={() => openModal('product', product)} >
@@ -23,7 +18,7 @@ const ProductListItem = ({product, openModal}) => {
             <button className="product-list-item-tag">TECH</button>
           </div>
           <div className="product-list-item-buttons">
-            <button className="product-list-item-like-button" onClick={() => increaseRandomLike()}>{randomLike}</button>
+            <LikeButton product={product}/>
             <button className="product-list-item-comment-button">17</button>
           </div>
         </div>
