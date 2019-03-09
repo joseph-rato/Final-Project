@@ -17,7 +17,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <div className="search-bar-modal" onClick={() => openModal('search')}>NEED TO PUT A UI COMPONENT THAT READS EITHER Discover your next favorite thing... or whatever is in the search bar</div>
+          <div className="search-bar-modal" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
         </div>
 
         <NavLinks />
@@ -39,7 +39,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <div className="search-bar-modal" onClick={() => openModal('search')}>NEED TO PUT A UI COMPONENT THAT READS EITHER Discover your next favorite thing... or whatever is in the search bar</div>
+          <div className="search-bar-modal" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
         </div>
 
       <NavLinks />
