@@ -11,11 +11,22 @@ class UserProfile extends React.Component {
     this.state = {
       loading: true,
     }
+    this.linkSelect = this.linkSelect.bind(this)
   }
 
   componentDidMount(){
     return this.props.fetchUser(this.props.userProfileId)
-      .then(() => setTimeout(() => this.setState({loading: false}), 750));;
+      .then(this.setState({loading: false}), 750);;
+  }
+  linkSelect(location){
+    let classIdentity;
+    if(this.props.location.pathname === location){
+      classIdentity = "selected-user-content"
+      return classIdentity
+    } else {
+      classIdentity = "user-main-content-options"
+      return classIdentity
+    }
   }
 
   render(){
@@ -35,22 +46,20 @@ class UserProfile extends React.Component {
         </div>
       )
     }
-
     return(
       <div className="user-content-page" >
         <UserHeaderContainer user={this.props.users[this.props.userProfileId]}/>
         <div className="user-content-body">
           <div className="user-left-side-bar">
-            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}`} >MY PROFILE</Link>
-            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/upvotes`} >Upvotes</Link>
-            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed`} >Followed Topics</Link>
-            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/collections`} >Collection Made</Link>
-            <Link className="user-main-content-options" to={`/user/${this.props.userProfileId}/followed_collections`} >Followed Collection</Link>
+          <span></span>
+            <Link className="no-link-user-prof" to={`/user/${this.props.userProfileId}`}><span className={this.linkSelect(`/user/${this.props.userProfileId}`)}>Upvotes</span></Link>
+            <Link className="no-link-user-prof" to={`/user/${this.props.userProfileId}/followed`} ><span className={this.linkSelect(`/user/${this.props.userProfileId}/followed`)}>Followed Topics</span></Link>
+            <Link className="no-link-user-prof" to={`/user/${this.props.userProfileId}/collections`} ><span className={this.linkSelect(`/user/${this.props.userProfileId}/collections`)}>Collection Made</span></Link>
+            <Link className="no-link-user-prof" to={`/user/${this.props.userProfileId}/followed_collections`} ><span className={this.linkSelect(`/user/${this.props.userProfileId}/followed_collections`)}>Followed Collection</span></Link>
           </div>
           <div className="user-main-content">
             <Switch>
-              <Route exact path="/user/:Id" component={PlaceHolderContainer}/>
-              <Route path={`/user/${this.props.userProfileId}/upvotes`} component={UserContentContainer}/>
+              <Route path={`/user/${this.props.userProfileId}`} component={UserContentContainer}/>
               <Route path={`/user/${this.props.userProfileId}/followed`} component={UserContentContainer}/>
               <Route path={`/user/${this.props.userProfileId}/collections`} component={UserContentContainer}/>
               <Route path={`/user/${this.props.userProfileId}/followed_collections`} component={UserContentContainer}/>

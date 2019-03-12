@@ -6,7 +6,7 @@ import UserProfile from './user_profile'
 const mapStateToProp = (state, ownProps) => {
   return({
     userProfileId: ownProps.match.params.Id || state.session.id,
-    users: state.entities.users
+    users: state.entities.users,
   });
 }
 

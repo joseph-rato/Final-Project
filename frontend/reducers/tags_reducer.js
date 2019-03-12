@@ -3,7 +3,6 @@ import {merge} from 'lodash'
 
 const tagReducer = (state = {}, action) => { 
     Object.freeze(state);
-    
     switch (action.type) {
         case RECEIVE_TAGS:
             debugger
@@ -20,7 +19,6 @@ const tagReducer = (state = {}, action) => {
                 }
             }
             finalTags = {[tagType]: productOnlyId};
-            debugger
             finalState = merge({}, finalState, finalTags)
         return finalState;
         default:
