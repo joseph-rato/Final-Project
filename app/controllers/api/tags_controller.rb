@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
     def index
-        @tags = Tag.where({tags: `#{tag_params}`})
+        @tags = Tag.where({tags: params[:tags][:tags]})
     end
 
     # might not need this method

@@ -7,9 +7,10 @@ export const createTag = (tag, id, product_id) => {
     })
 }
 
-export const fetchTags = () => {
+export const fetchTags = (tag) => {
     return $.ajax({
         method: "GET",
-        url: "/api/tags"
+        url: "/api/tags",
+        data: {tags: tag}
     })
 }

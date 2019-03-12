@@ -1,7 +1,7 @@
-@tags.each do |tag|
 
-    json.set! tag.tags do 
-        json.partial! 'tag', tag: tag
-        
+json.set! @tags[0].tags do
+    json.array! @tags do |tag|
+        json.productId tag.product_id
     end
+    
 end

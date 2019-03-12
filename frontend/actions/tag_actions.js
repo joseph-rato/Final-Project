@@ -26,6 +26,11 @@ export const receiveTagErrors = (errors) => {
   })
 }
 
+export const fetchTags = (tag) => dispatch => {
+  return APIUtil.fetchTags(tag).then( serverTags => dispatch(receiveTags(serverTags)),
+  (err) => dispatch(receiveTagErrors(err)));
+}
+
 export const createTag = (tag, id, product_id) => dispatch => {
     return APIUtil.createTag(tag, id, product_id).then( servertag => dispatch(receiveTag(servertag)),
     (err) => dispatch(receiveTagErrors(err)));

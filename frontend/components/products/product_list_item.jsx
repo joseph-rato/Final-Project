@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import LikeButton from '../likes/like_list_item_container'
 
 
-const ProductListItem = ({product, openModal}) => {
+const ProductListItem = ({product, openModal, recieveTags}) => {
   
   
   return(
@@ -15,7 +15,7 @@ const ProductListItem = ({product, openModal}) => {
         <h3 className='product-list-item-description'>{product.description}</h3>
         <div className="product-list-item-tags-buttons">
           <div className="product-list-item-tags">
-            <button className="product-list-item-tag">TECH</button>
+            <button className="product-list-item-tag" onClick={() => recieveTags({tags: 'Tech'})}>TECH</button>
           </div>
           <div className="product-list-item-buttons">
             <LikeButton product={product}/>

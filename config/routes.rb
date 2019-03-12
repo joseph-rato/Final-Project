@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     get 'products/search', to: 'products#search'
 
     resource :sessions, only: [:create, :destroy, :show]
-    resource :tags, only: [:index]
+    resources :tags, only: [:index]
     resources :products, only: [:index, :show] do
       resources :reviews, only: [:index]
     end
