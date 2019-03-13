@@ -55,10 +55,37 @@
   Review.create({rating: 1, comment: "help the house is the only place i can play without feeling judged", product_id: 1, user_id: 5})
   Review.create({rating: 1, comment: "why can do i love this so much", product_id: 2, user_id: 2})
   Review.create({rating: 1, comment: "because it's changed your life", product_id: 2, user_id: 3})
-  # review4 = Review.create()
-  # review5 = Review.create()
-  # review6 = Review.create()
-  # review7 = Review.create()
-  # review8 = Review.create()
-  # # review9 = Review.create()
-  # review10 = Review.create()
+
+  ProductDiscussion.create({user_id: 1,product_id: 1,body: "Honestly sometimes I'm jealous of how far they can fly"})#1
+  ProductDiscussion.create({user_id: 2,product_id: 2,body: "This is where I get all of my podcasts now because before I couldn't find everything in one spot"})
+  ProductDiscussion.create({user_id: 3,product_id: 3,body: "Thanks to this we can do constant updating and testing with user. Sometimes we try out a new build and then watch how they user our website, then make appropriate changes. VERY USEFUL!"})
+  ProductDiscussion.create({user_id: 4,product_id: 4,body: "Wow I wish I had this as a kid!"})#4
+  ProductDiscussion.create({user_id: 3,product_id: 5,body: "I actually never have to leave my house now"})
+  ProductDiscussion.create({user_id: 7,product_id: 6,body: "Woww when is our AI overlords coming to take us over???"})#6
+  ProductDiscussion.create({user_id: 6,product_id: 7,body: "This seems oddly similar to spotify look it even has playlists"})
+  ProductDiscussion.create({user_id: 8,product_id: 8,body: "This keeps everyone at my office on task really helpful honstly."})
+  ProductDiscussion.create({user_id: 2,product_id: 1,body: "Damn how is this humane at all"})#9
+  ProductDiscussion.create({user_id: 3,product_id: 1,body: "WOW I want this so bad youre next year's present is here"})
+  ProductDiscussion.create({user_id: 5,product_id: 1,body: "Terrible idea for real life okay as a game"})
+  ProductDiscussion.create({user_id: 7,product_id: 1,body: "THIS IS INSANE ANYONE WHO BUYS THIS IS TERRIBLE"})#12
+  ProductDiscussion.create({user_id: 4,body_id: 10,body: "Dude read a dictionary it's your"})
+  ProductDiscussion.create({user_id: 5,body_id: 11,body: "I feel like i played this in my childhood"})
+  ProductDiscussion.create({user_id: 7,body_id: 1,body: "HOw could you say this????"})
+
+
+  Tag.create({tags: "Tech", product_id: 1})
+  Tag.create({tags: "Tech", product_id: 2})
+  Tag.create({tags: "Education", product_id: 2})
+  Tag.create({tags: "Tech", product_id: 3})
+  Tag.create({tags: "AI", product_id: 3})
+  Tag.create({tags: "Tech", product_id: 4})
+  Tag.create({tags: "Education", product_id: 4})
+  Tag.create({tags: "Tech", product_id: 5})
+  Tag.create({tags: "Tech", product_id: 6})
+  Tag.create({tags: "AI", product_id: 6})
+  Tag.create({tags: "Tech", product_id: 7})
+  Tag.create({tags: "Music", product_id: 7})
+  Tag.create({tags: "Productivity", product_id: 7})
+  Tag.create({tags: "Tech", product_id: 8})
+  Tag.create({tags: "Productivity", product_id: 8})
+  
