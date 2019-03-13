@@ -7,7 +7,7 @@ class UserUpdateForm extends React.Component{
         this.state = {
             // user: ""
             username: this.inititalCheck(this.props.users[this.props.userId].username) ? this.props.users[this.props.userId].username : "",
-            avatarPic: this.inititalCheck(this.props.users[this.props.userId].avatarPic) ? this.props.users[this.props.userId].avatarPic : "",
+            avatar: this.inititalCheck(this.props.users[this.props.userId].avatar) ? this.props.users[this.props.userId].avatar : "",
             headline: this.inititalCheck(this.props.users[this.props.userId].headline) ? this.props.users[this.props.userId].headline : "",
             website: this.inititalCheck(this.props.users[this.props.userId].website) ? this.props.users[this.props.userId].website : "",
             email: this.inititalCheck(this.props.users[this.props.userId].email) ? this.props.users[this.props.userId].email : "",
@@ -70,8 +70,8 @@ class UserUpdateForm extends React.Component{
         if (this.state.profile_header){
             formData.append('user[profile_header]', this.state.profile_header)
         }
-        if (this.state.avatarPic){
-            formData.append('user[avatar]', this.state.avatarPic)
+        if (this.state.avatar){
+            formData.append('user[avatar]', this.state.avatar)
         }
         formData.append('user[username]', this.state.username)
         formData.append('user[headline]', this.state.headline)
@@ -95,7 +95,7 @@ class UserUpdateForm extends React.Component{
                         </div>
                         <div className="profile-form-avatar">
                             <label className="profile-update-label">Avatar</label>
-                            <input className="profile-form-file-field" type="file" onChange={this.handleFile('avatarPic')}></input>
+                            <input className="profile-form-file-field" type="file" onChange={this.handleFile('avatar')}></input>
                         </div>
                         <div className="profile-form-headline">
                             <label className="profile-update-label">Headline</label>
