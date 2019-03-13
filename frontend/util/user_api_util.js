@@ -2,7 +2,6 @@
 
 
 export const updateProduct = (user, userId) => {
-  debugger
   return $.ajax({
     method: "PATCH",
     url: `/api/users/${userId}`,

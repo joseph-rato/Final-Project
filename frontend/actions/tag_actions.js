@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/tag_api_util';
-
 export const RECEIVE_TAG = 'RECEIVE_TAG';
 export const RECEIVE_TAGS = 'RECEIVE_TAGS';
 export const ERRORS_TAGS = 'ERRORS_TAGS';

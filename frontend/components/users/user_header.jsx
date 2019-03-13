@@ -3,15 +3,16 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 
-class UserHeader extends React.Component{
 
-  profileHeader(){
-    return(
-      (!!this.props.user.profileHeader)
-      ? <img className="header-profile-headliner-image" src={this.props.usre.profileHeader}></img>
-      : <div className="header-generic-profile-headliner-image"></div>
-    )
+class UserHeader extends React.Component{
+  constructor(props){
+    super(props)
+
+    this.profilePic = this.profilePic.bind(this)
+    this.userInteractions = this.userInteractions.bind(this)
+    this.imageStyles = this.imageStyles.bind(this)
   }
+
 
   profilePic(){
     return(
@@ -26,6 +27,8 @@ class UserHeader extends React.Component{
     )
   }
 
+  
+
   userInteractions(){
     return(
       (this.props.user.id === this.props.sessionId)
@@ -39,12 +42,33 @@ class UserHeader extends React.Component{
     )
 
   }
+  imageStyles(img){
+    if (!!img){
+      const imageStyles = {
+        backgroundImage: `url(${img})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        color: 'white',
+        width: '100%',
+        height: '275px',
+        padding: '0px 0px',
+        display: 'flex',
+        alignItems: 'center'
+      }
+      return imageStyles
+    }
+    return null;
+  }
 
   render(){
+    
     const user = this.props.user
+
     return(
-      <div className={(!!user.profileHeader) ? "header-clear-size" : "header-generic-headerpic"}>
-        {this.profileHeader()}
+      <div 
+      className={('profileHeader' in this.props.user) ? "header-clear-size" : "header-generic-headerpic" } 
+      style={('profileHeader' in this.props.user) ? this.imageStyles(this.props.user.profileHeader) : {backgroundColor: 'lightgrey'}}
+      >
         <div className="header-top-content">
           {this.profilePic()}
           <div className="header-profile-info">

@@ -66,7 +66,6 @@ class UserUpdateForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData()
-        debugger
         if (this.state.profile_header){
             formData.append('user[profile_header]', this.state.profile_header)
         }

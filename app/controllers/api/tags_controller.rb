@@ -1,6 +1,5 @@
 class Api::TagsController < ApplicationController
     def index
-        debugger
         @tags = Tag.where({tags: params[:tags][:tags]})
     end
 

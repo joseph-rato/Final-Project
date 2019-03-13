@@ -1,11 +1,11 @@
-import {RECEIVE_CURRENT_USER, RECEIVE_USER} from '../actions/session_actions';
+import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
+import {RECEIVE_USER} from '../actions/user_actions'
 import {RECEIVE_PRODUCT} from '../actions/product_actions'
 import {RECIEVE_RESULTS} from '../actions/search_actions'
 import {merge} from 'lodash';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
-  debugger
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       finalState = Object.assign({}, state)
@@ -18,10 +18,9 @@ const usersReducer = (state = {}, action) => {
       })
       return finalState;
     case RECEIVE_USER:
-      debugger
       let newFinalState = Object.assign({}, state);
       newFinalState = merge({}, newFinalState, action.user)
-      debugger
+      console.log(newFinalState)
     return newFinalState
     case RECIEVE_RESULTS:
       finalState = Object.assign({}, state)
