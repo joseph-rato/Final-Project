@@ -68,7 +68,7 @@ class UserUpdateForm extends React.Component{
         const formData = new FormData()
         debugger
         if (this.state.profile_header){
-            formData.append('user[profile_header]', this.state.username)
+            formData.append('user[profile_header]', this.state.profile_header)
         }
         if (this.state.avatarPic){
             formData.append('user[avatar]', this.state.avatarPic)
