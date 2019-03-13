@@ -1,11 +1,14 @@
 
 
 
-export const updateProduct = (user) => {
+export const updateProduct = (user, userId) => {
+  debugger
   return $.ajax({
     method: "PATCH",
-    url: `/api/users/${user.id}`,
-    data: {user},
+    url: `/api/users/${userId}`,
+    data: user,
+    contentType: false,
+    processData: false
   })
 }
 

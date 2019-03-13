@@ -18,8 +18,8 @@ export const receiveUserError = (err) => {
   })
 }
 
-export const updateUser = (user) => dispatch => {
-  return APIUtil.updateProduct(user).then( (serverUser) => dispatch(receiveUser(serverUser)),
+export const updateUser = (user, userId) => dispatch => {
+  return APIUtil.updateProduct(user, userId).then( (serverUser) => dispatch(receiveUser(serverUser)),
   (err) => dispatch(receiveUserError(err)));
 };
 

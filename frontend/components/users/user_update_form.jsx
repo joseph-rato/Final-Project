@@ -5,22 +5,48 @@ class UserUpdateForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            user: ""
-            // username: this.props.users[this.props.userId] ? this.props.users[this.props.userId].username : "",
-            // avatar: this.props.users[this.props.userId] ? this.props.users[this.props.userId].avatar : "",
-            // headline: this.props.users[this.props.userId] ? this.props.users[this.props.userId].headline : "",
-            // website: this.props.users[this.props.userId] ? this.props.users[this.props.userId].website : "",
-            // email: this.props.users[this.props.userId] ? this.props.users[this.props.userId].email : "",
-            // profile_header: this.props.users[this.props.userId] ? this.props.users[this.props.userId].profile_header : ""
+            // user: ""
+            username: this.inititalCheck(this.props.users[this.props.userId].username) ? this.props.users[this.props.userId].username : "",
+            avatarPic: this.inititalCheck(this.props.users[this.props.userId].avatarPic) ? this.props.users[this.props.userId].avatarPic : "",
+            headline: this.inititalCheck(this.props.users[this.props.userId].headline) ? this.props.users[this.props.userId].headline : "",
+            website: this.inititalCheck(this.props.users[this.props.userId].website) ? this.props.users[this.props.userId].website : "",
+            email: this.inititalCheck(this.props.users[this.props.userId].email) ? this.props.users[this.props.userId].email : "",
+            profile_header: this.inititalCheck(this.props.users[this.props.userId].profile_header) ? this.props.users[this.props.userId].profile_header : ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.inititalCheck = this.inititalCheck.bind(this)
+        this.updatingComponentMountin = this.updatingComponentMountin.bind(this)
     }
     componentDidMount(){
-        this.props.fetchUser(this.props.userId).then( (userData) => 
-            this.setState(userData)
+        this.props.fetchUser(this.props.userId).then( (userData) =>{
+                let allUserKeys= Object.keys(userData.user[this.props.userId])
+                let allUserData = userData.user[this.props.userId]
+                for(let f =0; f < allUserKeys.length; f++){
+                    this.updatingComponentMountin(allUserKeys[f], allUserData)
+                }
+            }
         )
+    }
+
+    updatingComponentMountin(key, dataObj){
+        let theValue = dataObj[key]
+        if (typeof theValue === 'undefined' || theValue === null){
+            this.setState({[key]: ""})
+        } else if (typeof theValue === "string" && theValue.slice(0, 28) === "/rails/active_storage/blobs/"){
+            this.setState({[key]: "You have this picture"})
+        } else {
+            this.setState({[key]: theValue})
+        }
+    }
+
+    inititalCheck(someProp){
+        if (typeof someProp === 'undefined' || someProp === null){
+            return false
+        } else {
+            return true
+        }
     }
 
     handleFile(type){
@@ -39,50 +65,61 @@ class UserUpdateForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        const formData = new FormData()
+        debugger
+        if (this.state.profile_header){
+            formData.append('user[profile_header]', this.state.username)
+        }
+        if (this.state.avatarPic){
+            formData.append('user[avatar]', this.state.avatarPic)
+        }
+        formData.append('user[username]', this.state.username)
+        formData.append('user[headline]', this.state.headline)
+        formData.append('user[website]', this.state.website)
+        formData.append('user[email]', this.state.email)
+        return this.props.updateUser(formData, this.props.userId).then( (serverProdcut) =>{
+            return this.props.history.push(`/user/${this.props.userId}`)
+        })
     }
 
-    render(){
-        this.user = this.state.user
-        if (this.user === ""){
-            return null;
-        } else {
-            return(
-                <div className="user-form-page">
-                    <h1 className="page-description">Settings</h1>
-                    <div className="update-form-container">
-                        <h3 className="user-form-section-description">My Details</h3>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="profile-form-name">
-                                <label className="profile-update-label">Name</label>
-                                <input type="text" className="profile-form-input-field" onChange={this.handleChange('username')} value={this.user.username}></input>
-                            </div>
-                            <div className="profile-form-avatar">
-                                <label className="profile-update-label">Avatar</label>
-                                <input className="profile-form-file-field" type="file"></input>
-                            </div>
-                            <div className="profile-form-headline">
-                                <label className="profile-update-label">Headline</label>
-                                <input type="text" className="profile-form-input-field" onChange={this.handleChange('headline')} value={this.user.headline}></input>
-                            </div>
-                            <div>
-                                <label className="profile-update-label">Email</label>
-                                <input type="email" className="profile-form-input-field" onChange={this.handleChange('email')} value={this.user.email}></input>
-                            </div>
-                            <div>
-                                <label className="profile-update-label">Website</label>
-                                <input type="text" className="profile-form-input-field" onChange={this.handleChange('website')} value={this.user.website}></input>
-                            </div>
-                            <div>
-                                <label className="profile-update-label">Profile Header</label>
-                                <input className="profile-form-file-field" type="file"></input>
-                            </div>
-                            <button className="profile-form-submit" type="submit">UPDATE</button>
-                        </form>
-                    </div>
+    render(){        
+        return(
+            <div className="user-form-page">
+                <h1 className="page-description">Settings</h1>
+                <div className="update-form-container">
+                    <h3 className="user-form-section-description">My Details</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="profile-form-name">
+                            <label className="profile-update-label">Name</label>
+                            <input type="text" className="profile-form-input-field" onChange={this.handleChange('username')} value={this.state.username}></input>
+                        </div>
+                        <div className="profile-form-avatar">
+                            <label className="profile-update-label">Avatar</label>
+                            <input className="profile-form-file-field" type="file" onChange={this.handleFile('avatarPic')}></input>
+                        </div>
+                        <div className="profile-form-headline">
+                            <label className="profile-update-label">Headline</label>
+                            <input type="text" className="profile-form-input-field" onChange={this.handleChange('headline')} value={this.state.headline}></input>
+                        </div>
+                        <div>
+                            <label className="profile-update-label">Email</label>
+                            <input type="email" className="profile-form-input-field" onChange={this.handleChange('email')} value={this.state.email}></input>
+                        </div>
+                        <div>
+                            <label className="profile-update-label">Website</label>
+                            <input type="text" className="profile-form-input-field" onChange={this.handleChange('website')} value={this.state.website}></input>
+                        </div>
+                        <div>
+                            <label className="profile-update-label">Profile Header</label>
+                            <input className="profile-form-file-field" type="file" onChange={this.handleFile('profile_header')}></input>
+                        </div>
+                        <button className="profile-form-submit" type="submit">UPDATE</button>
+                    </form>
                 </div>
-            )
-        }
+            </div>
+        )
     }
+    
 }
 
 

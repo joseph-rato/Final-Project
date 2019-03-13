@@ -35,7 +35,6 @@ class ProductForm extends React.Component {
     } else if (this.state.photos === '')  {
       return this.props.sendError(['You need to upload at least one display picture']);
     }
-    Object.assign({}, {reviews: this.state})
     let tagKeys = Object.keys(this.state.clicked)
     let prodTags = Object.assign({}, {tags: {tags: tagKeys}})
     const formData = new FormData();

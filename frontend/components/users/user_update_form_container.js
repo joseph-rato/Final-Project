@@ -11,7 +11,7 @@ const mapStateToProps = ({session, entities}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateUser: (userData) => dispatch(updateUser(userData)),
+    updateUser: (userData, userId) => dispatch(updateUser(userData, userId)),
     fetchUser: (userId) => dispatch(fetchUser(userId))
   };
 };
