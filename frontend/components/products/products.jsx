@@ -12,13 +12,12 @@ class Products extends React.Component{
 
   componentDidMount(){
     return this.props.fetchProducts().then( data => {
-      let podArr = Object.values(data.products)
+      let podArr = Object.values(data.products.products)
       return this.setState({prodList: podArr})
     });
   }
 
   render() {
-    
     return(
       <div className="product-list-content-box">
         <ul>

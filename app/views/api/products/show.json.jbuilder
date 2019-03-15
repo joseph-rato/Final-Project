@@ -19,7 +19,11 @@ json.productDiscussions @product.product_discussions do |comment|
   end
 end
 
-
+json.tags @product.tags do |tag|
+  json.set! tag.id do 
+    json.partial! 'api/tags/tag', tag: tag
+  end
+end
 
 
 

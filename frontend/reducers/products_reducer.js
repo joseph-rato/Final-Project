@@ -11,7 +11,8 @@ const productsReducer = (state = {}, action) => {
       
       return newState;
     case RECEIVE_PRODUCTS:
-      const onlyState = Object.assign({}, action.products)
+      let onlyState = Object.assign({}, state)
+      onlyState = merge({}, onlyState, action.products.products)
       return onlyState;
     case RECIEVE_RESULTS:
       let finalState = Object.assign({}, state)

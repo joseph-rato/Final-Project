@@ -20,7 +20,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER:
       let newFinalState = Object.assign({}, state);
       newFinalState = merge({}, newFinalState, action.user)
-      console.log(newFinalState)
     return newFinalState
     case RECIEVE_RESULTS:
       finalState = Object.assign({}, state)

@@ -6,6 +6,5 @@ import tagReducer from './tags_reducer'
 
 export default combineReducers({
   modal: modalReducer,
-  search: searchReducer,
-  tag: tagReducer
+  search: searchReducer
 })

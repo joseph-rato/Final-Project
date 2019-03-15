@@ -6,7 +6,6 @@ import LikeButton from '../likes/like_list_item_container'
 
 const ProductListItem = ({product, openModal, recieveTags}) => {
   
-  
   return(
     <div className='product-list-item' onClick={() => openModal('product', product)} >
       <div className="show-product-list-item-photo"><img className="product-list-item-logo" src={product.logoPhoto}></img></div>

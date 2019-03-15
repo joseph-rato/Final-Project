@@ -39,7 +39,7 @@ class NavUserOptions extends React.Component{
           <Link to="/" onClick={this.props.logout()}>LOGOUT</Link>
         </div>
       </div>)
-  : (<div className="profile-avatar-button" onBlur={() => console.log('it happened')} onClick={this.toggleList}>
+  : (<div className="profile-avatar-button" onClick={this.toggleList}>
         <img src={this.props.currentUser.avatarPic} className="avatar-profile-pic"></img>
         <div id="user-option-list"  className="profile-dropdown-menu-options closeDropDown">
           <Link to={`/user/${this.props.currentUser.id}`}>MY PROFILE</Link>
