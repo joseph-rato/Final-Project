@@ -67,7 +67,7 @@ class UserHeader extends React.Component{
     return(
       <div 
       className={('profileHeader' in this.props.user) ? "header-clear-size" : "header-generic-headerpic" } 
-      style={('profileHeader' in this.props.user) ? this.imageStyles(this.props.user.profileHeader) : {backgroundColor: 'lightgrey'}}
+      style={('profileHeader' in this.props.user) ? this.imageStyles(this.props.user.profileHeader) : {backgroundColor: 'darkblue'}}
       >
         <div className="header-top-content">
           {this.profilePic()}
