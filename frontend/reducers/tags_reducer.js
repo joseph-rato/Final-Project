@@ -7,7 +7,7 @@ const tagReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PRODUCT:
-            finalState = Object.assign({}, state);
+            let finalState = Object.assign({}, state);
             finalState = merge({}, finalState, action.tags)
             return finalState;
         case RECEIVE_PRODUCTS:
@@ -18,10 +18,6 @@ const tagReducer = (state = {}, action) => {
             finalState = Object.assign({}, state);
             finalState = merge({}, finalState, action.tags)
             return finalState;
-        case RECEIVE_TAGS:
-            let finalState = Object.assign({}, state);
-            finalState = merge({}, finalState, action.tags)
-        return finalState;
         default:
             return state;
     }

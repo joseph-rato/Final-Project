@@ -5,7 +5,7 @@ const searchUserReducer = (state = [], action) => {
     
     switch (action.type) {
         case RECIEVE_RESULTS:
-            let finalState = Object.assign([], state)
+            let finalState;
             if (action.payload.users) {
                 finalState = Object.keys(action.payload.users)
             }

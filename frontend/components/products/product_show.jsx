@@ -2,6 +2,7 @@ import React from 'react';
 import ReviewComponent from '../reviews/review_component'
 import ProductDiscussionContainer from '../product_discussions/product_discussion_container'
 import { ScaleLoader } from 'react-spinners';
+import TagButtons from '../tags/tag_button_container'
 
 
 class ProductShow extends React.Component{
@@ -53,7 +54,7 @@ class ProductShow extends React.Component{
             <h3 className="show-product-list-item-description">{product.description}</h3>
             <div className="product-list-item-tags-buttons">
               <div className="product-list-item-tags">
-                <button className="product-list-item-tag">TECH</button>
+                <TagButtons product={product}/>
               </div>
             </div>
 
