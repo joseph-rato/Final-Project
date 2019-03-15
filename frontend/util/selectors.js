@@ -21,3 +21,14 @@ export const commentSelector = (productDiscussions, responseCommentId) => {
   return commentArr;
 }
 
+export const tagSelector = (tags, product_id) => {
+  let tagArr = []
+  let tagValues = Object.values(tags)
+  for(let i = 0; i < tagValues.length; i++){
+    if (tagValues[i].product_id === product_id){
+      tagArr.push(tagValues[i].tags)
+    }
+  }
+  return tagArr;
+}
+

@@ -25,7 +25,7 @@ class Products extends React.Component{
           {
             this.state.prodList.map( (product, idx) =>{
               return(
-                <ProductListItem key={idx} recieveTags={this.props.recieveTags} product={product} openModal={this.props.openModal}/>
+                <ProductListItem key={idx} product={product} openModal={this.props.openModal}/>
               );
             })
           }
