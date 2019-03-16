@@ -6,7 +6,6 @@ import {fetchProducts} from '../../actions/product_actions'
 
 
 const mapStateToProps = ({entities}, ownProps) => {
-    debugger
   return({
       type: 'tags',
       tag: ownProps.history.location.pathname.slice(13),

@@ -37,7 +37,6 @@ class IndexResults extends React.Component{
   }
   tagDescription(){
     if (this.props.type === 'tags'){
-        debugger
         return(
             <div className="tag-search-tag-description">
                 <h3>{`${this.props.tag}`}</h3>

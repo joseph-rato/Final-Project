@@ -10,7 +10,7 @@ class SearchBar extends React.Component{
         this.handleInput = this.handleInput.bind(this)
         this.changedInput = false; 
         this.handleSubmit = this.handleSubmit.bind(this)
-        let debouncy;
+        this.debouncy;
     }
 
     componentDidUpdate(prevProps, prevState) {

@@ -13,7 +13,6 @@ class IndexUserResults extends React.Component{
 
   componentDidMount(){
     return this.props.fetchProducts().then( data => {
-        debugger
       let podArr = Object.values(data.products.products)
       return this.setState({prodList: podArr})
     });

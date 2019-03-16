@@ -9,7 +9,6 @@ class TagButtons extends React.Component{
     handleClick(tag){
         return (e) => {
             e.stopPropagation();
-            debugger
             this.props.history.push(`/search/tags/${tag}`);
         }
     }

@@ -5,7 +5,6 @@ import {closeModal, openModal} from '../../actions/modal_actions';
 
 
 const mapStateToProps = ({ui}, {searchResults}) => {
-    debugger
   return({
     products: searchResults
   })
