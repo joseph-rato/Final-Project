@@ -12,7 +12,8 @@ import ProductShowContainer from './products/product_show_container'
 import UserProfileContainer  from './users/user_profile_container'
 import UserUpdateFormContainer from './users/user_update_form_container'
 import IndexResultsUsers from './search_index/index_user_results'
-import IndexResults from './search_index/index_results'
+import IndexResultsProducts from './search_index/index_search_results_container'
+import IndexResultsTags from './search_index/index_tags_results_container'
 
 
 
@@ -26,8 +27,9 @@ const MainPage = () => (
     </div>
     <div className="grey-background">
       <Switch>
-      <Route path="/search/users" component={IndexResultsUsers}/>
-        <Route path="/search" component={IndexResults}/>
+        <Route path="/search/users" component={IndexResultsUsers}/>
+        <Route path="/search/tags" component={IndexResultsTags}/>
+        <Route path="/search" component={IndexResultsProducts}/>
         <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
         <Route exact path="/" component={ProductsContainer} />
         <Route path="/user/:Id" component={UserProfileContainer} />

@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import TagButtons from './tags_buttons'
 import {tagSelector} from '../../util/selectors'
 import {fetchTags} from '../../actions/tag_actions'
+import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = ({entities}, {product}) => {
     return({
@@ -11,8 +12,8 @@ const mapStateToProps = ({entities}, {product}) => {
   
   const mapDispatchToProps = (dispatch) => {
     return({
-      recieveTags: (tag) => dispatch(fetchTags(tag))
+      fetchProducts: (tag) => dispatch(fetchTags(tag))
     })
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(TagButtons)
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TagButtons))

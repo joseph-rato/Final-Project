@@ -1,5 +1,6 @@
 import React from 'react';
-import ProductListItem from './product_list_item'
+import ProductListItem from '../products/product_list_item'
+import {isEmpty} from '../../util/random_util_functions'
 
 const tagDescriptions = {
     Tech: 'Something to make us futuristic',
@@ -18,10 +19,21 @@ class IndexResults extends React.Component{
   }
 
   componentDidMount(){
-    return this.props.fetchProducts().then( data => {
-      let podArr = Object.values(data.products.products)
-      return this.setState({prodList: podArr})
-    });
+      if (this.props)
+      if (!!this.props.tag){
+          return this.props.fetchProducts({tags: this.props.tag}).then( data => {
+            if (isEmpty(this.props.products)){
+                return this.props.fetchAllProducts().then( allProds =>{
+                    let podArr = Object.keys(data.tags)
+                    this.setState({prodList: podArr})
+                })
+            }
+            let podArr = Object.keys(data.tags)
+            this.setState({prodList: podArr})
+          });
+      } else {
+          return this.setState({prodList: this.props.products})
+      }
   }
   
 
@@ -31,9 +43,9 @@ class IndexResults extends React.Component{
         <ul>
           <h2 className="product-list-day" >Today</h2>
           {
-            this.state.prodList.map( (product, idx) =>{
+            this.state.prodList.map( (productId, idx) =>{
               return(
-                <ProductListItem key={idx} product={product} openModal={this.props.openModal}/>
+                <ProductListItem key={idx} product={this.props.products[productId]} openModal={this.props.openModal}/>
               );
             })
           }

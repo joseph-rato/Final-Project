@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductListItem from './product_list_item'
+import ProductListItem from '../products/product_list_item'
 
 
 
@@ -13,6 +13,7 @@ class IndexUserResults extends React.Component{
 
   componentDidMount(){
     return this.props.fetchProducts().then( data => {
+        debugger
       let podArr = Object.values(data.products.products)
       return this.setState({prodList: podArr})
     });
