@@ -21,7 +21,7 @@ class Products extends React.Component{
     return(
       <div className="product-list-content-box">
         <ul>
-          <h2 className="product-list-day" >Today</h2>
+          <h2 className="product-list-day" >What's New</h2>
           {
             this.state.prodList.map( (product, idx) =>{
               return(

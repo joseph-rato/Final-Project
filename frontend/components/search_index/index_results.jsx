@@ -16,10 +16,10 @@ class IndexResults extends React.Component{
     this.state = {
       prodList: [],
     }
+    this.tagDescription = this.tagDescription.bind(this)
   }
 
   componentDidMount(){
-      if (this.props)
       if (!!this.props.tag){
           return this.props.fetchProducts({tags: this.props.tag}).then( data => {
             if (isEmpty(this.props.products)){
@@ -35,13 +35,27 @@ class IndexResults extends React.Component{
           return this.setState({prodList: this.props.products})
       }
   }
+  tagDescription(){
+    if (this.props.type === 'tags'){
+        debugger
+        return(
+            <div className="tag-search-tag-description">
+                <h3>{`${this.props.tag}`}</h3>
+                <p>{tagDescriptions[`${this.props.tag}`]}</p>
+            </div>
+        )
+    } else {
+        return(null)
+    }
+  }
   
 
   render() {
     return(
       <div className="product-list-content-box">
+        {this.tagDescription()}
         <ul>
-          <h2 className="product-list-day" >Today</h2>
+          <h2 className="product-list-day" >What's New</h2>
           {
             this.state.prodList.map( (productId, idx) =>{
               return(
