@@ -50,6 +50,7 @@ class IndexResults extends React.Component{
   
 
   render() {
+    debugger
     return(
       <div className="product-list-content-box">
         {this.tagDescription()}

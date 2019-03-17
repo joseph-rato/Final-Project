@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import SearchBar from './search';
 import {fetchUsersProductsByName} from '../../actions/search_actions'
+import {closeModal} from '../../actions/modal_actions'
+import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
     return({
@@ -12,8 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    submitQuery: (data) => dispatch(fetchUsersProductsByName(data))
+    submitQuery: (data) => dispatch(fetchUsersProductsByName(data)),
+    closeOutModal: ()=> dispatch(closeModal())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBar))

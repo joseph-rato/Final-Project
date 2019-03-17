@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchResultsContainer from './search_results_container'
+import {isEmpty} from '../../util/random_util_functions'
+import {withRouter} from 'react-router-dom'
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -7,6 +9,7 @@ class SearchBar extends React.Component{
         this.state = {
             queryString: ''
         }
+        this.checkSubmit = this.checkSubmit.bind(this)
         this.handleInput = this.handleInput.bind(this)
         this.changedInput = false; 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,6 +25,12 @@ class SearchBar extends React.Component{
             this.debouncy = setTimeout( function() {
                 
                 sendQuery(autoSearching)
+                // might not need this if we take out merge in state and replace with Object.assign
+                // .then( data => {
+                //     if (isEmpty(data)) {
+                //         return null
+                //     }
+                // })
             }, 250)
         }
     }
@@ -31,11 +40,14 @@ class SearchBar extends React.Component{
     }
 
 
-    handleSubmit(event){
-        event.preventDefault();
+    handleSubmit(){
         if (this.state.queryString !== '' && this.changedInput === false){
             let searching = {query_string: this.state.queryString}
-            return this.props.submitQuery(searching);
+            clearTimeout(this.debouncy)
+            return this.props.submitQuery(searching).then((serverData) => {
+                // this.props.closeOutModal();
+                this.props.history.push('/search');
+            });
         }
     }
 
@@ -46,6 +58,7 @@ class SearchBar extends React.Component{
             return this.setState({[pos]: event.currentTarget.value})
         }
     }
+
     checkSubmit(event){
         if (event.which === 13 && this.state.queryString !== '') {
             this.changedInput = false
@@ -69,7 +82,7 @@ class SearchBar extends React.Component{
             <div className={this.props.modalOpen ? 'search-container-modal' : 'search-container'}>
                 <div className="search-bar-symb-input">
                     <i className="fas fa-search"></i>
-                    <form className={this.props.modalOpen ? 'search-bar-modal' : 'search-bar'} onSubmit={this.handleSubmit}>
+                    <form className={this.props.modalOpen ? 'search-bar-modal' : 'search-bar'}>
                         <input
                         autoFocus
                         className={this.props.modalOpen ? 'search-input-modal' : 'search-input'}
@@ -86,4 +99,4 @@ class SearchBar extends React.Component{
     }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

@@ -23,7 +23,7 @@ const usersReducer = (state = {}, action) => {
     return newFinalState
     case RECIEVE_RESULTS:
       finalState = Object.assign({}, state)
-      if (action.payload.users) {
+      if (!!action.payload.users) {
         let arrUsers = Object.values(action.payload.users)
         if (arrUsers.length > 0) {
           arrUsers.forEach( (user)=>{
