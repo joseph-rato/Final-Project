@@ -38,7 +38,10 @@ class SearchBar extends React.Component{
     debouncedSubmit(){
 
     }
-
+    // history.push({
+    //     pathname: '/dresses',
+    //     search: '?color=blue'
+    //   })
 
     handleSubmit(){
         if (this.state.queryString !== '' && this.changedInput === false){
@@ -46,7 +49,8 @@ class SearchBar extends React.Component{
             clearTimeout(this.debouncy)
             return this.props.submitQuery(searching).then((serverData) => {
                 // this.props.closeOutModal();
-                this.props.history.push('/search');
+                let urlQueryString = '/search' + `?${this.state.queryString}`
+                this.props.history.push(urlQueryString);
             });
         }
     }

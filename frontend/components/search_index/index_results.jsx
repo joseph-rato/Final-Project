@@ -16,25 +16,35 @@ class IndexResults extends React.Component{
     this.state = {
       prodList: [],
     }
+    this.checkProductsPresent = this.checkProductsPresent.bind(this)
     this.tagDescription = this.tagDescription.bind(this)
   }
 
   componentDidMount(){
+    this.checkProductsPresent()
       if (!!this.props.tag){
           return this.props.fetchProducts({tags: this.props.tag}).then( data => {
-            if (isEmpty(this.props.products)){
-                return this.props.fetchAllProducts().then( allProds =>{
-                    let podArr = Object.keys(data.tags)
-                    this.setState({prodList: podArr})
-                })
-            }
             let podArr = Object.keys(data.tags)
             this.setState({prodList: podArr})
           });
       } else {
-          return this.setState({prodList: this.props.products})
+          return this.setState({prodList: this.props.productIds})
       }
   }
+
+  checkProductsPresent(){
+    if (isEmpty(this.props.products) && (!!this.props.tag)){
+      return this.props.fetchAllProducts().then( allProds =>{
+          let podArr = Object.keys(data.tags)
+          this.setState({prodList: podArr})
+      })
+    } else if (isEmpty(this.props.products) && (!!this.props.productIds)) {
+      return this.props.fetchProducts().then( allProds =>{
+        this.setState({prodList: this.props.productIds})
+      })
+    }
+  }
+  
   tagDescription(){
     if (this.props.type === 'tags'){
         return(
@@ -50,7 +60,6 @@ class IndexResults extends React.Component{
   
 
   render() {
-    debugger
     return(
       <div className="product-list-content-box">
         {this.tagDescription()}

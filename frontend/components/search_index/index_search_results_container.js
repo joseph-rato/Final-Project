@@ -4,10 +4,10 @@ import IndexResults from './index_results';
 import {closeModal, openModal} from '../../actions/modal_actions';
 
 
-const mapStateToProps = ({ui}) => {
-  debugger
+const mapStateToProps = ({ui, entities}) => {
   return({
-    products: ui.search.product
+    productIds: ui.search.product,
+    products: entities.products
   })
 }
 
