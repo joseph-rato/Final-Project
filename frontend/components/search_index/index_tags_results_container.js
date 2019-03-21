@@ -15,8 +15,8 @@ const mapStateToProps = ({entities}, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return({
-    fetchAllProducts: () => dispatch(fetchProducts()),
-    fetchProducts: (tag) => dispatch(fetchTags(tag)),
+    fetchSearchResults: (tag) => dispatch(fetchTags(tag)),
+    fetchProducts: () => dispatch(fetchProducts()),
     openModal: (modal, product) => dispatch(openModal(modal, product)),
     closeModal: () => dispatch(closeModal())
   })

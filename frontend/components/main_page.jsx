@@ -27,9 +27,9 @@ const MainPage = () => (
     </div>
     <div className="grey-background">
       <Switch>
-        <Route path="/search/users" component={IndexResultsUsers}/>
-        <Route path="/search/tags" component={IndexResultsTags}/>
-        <Route path="/search" component={IndexResultsProducts}/>
+        <Route path="/search/users/:queryString" component={IndexResultsUsers}/>
+        <Route path="/search/tags/:tagType" component={IndexResultsTags}/>
+        <Route path="/search/:queryString" component={IndexResultsProducts}/>
         <Route exact path="/notdoneyet" component={PlaceHolderContainer} />
         <Route exact path="/" component={ProductsContainer} />
         <Route path="/user/:Id" component={UserProfileContainer} />

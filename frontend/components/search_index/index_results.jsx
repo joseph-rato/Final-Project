@@ -15,32 +15,22 @@ class IndexResults extends React.Component{
     super(props)
     this.state = {
       prodList: [],
+      allProds: this.props.products
     }
     this.checkProductsPresent = this.checkProductsPresent.bind(this)
     this.tagDescription = this.tagDescription.bind(this)
   }
 
   componentDidMount(){
-    this.checkProductsPresent()
-      if (!!this.props.tag){
-          return this.props.fetchProducts({tags: this.props.tag}).then( data => {
-            let podArr = Object.keys(data.tags)
-            this.setState({prodList: podArr})
-          });
-      } else {
-        let someQuery = this.props.history.location.search.slice(1)
-        return this.props.fetchSearchResults({query_string: someQuery}).then( (queryResults) =>{
-          console.log(queryResults)
-          return this.setState({prodList: this.props.productIds})
-        })
-      }
-  }
-
-  checkProductsPresent(){
+    let that = this
+    // this.checkProductsPresent()
     if (isEmpty(this.props.products) && (!!this.props.tag)){
-      return this.props.fetchAllProducts().then( allProds =>{
-          let podArr = Object.keys(data.tags)
-          this.setState({prodList: podArr})
+      return this.props.fetchProducts().then( allProds =>{
+        return that.props.fetchSearchResults({tags: that.props.tag}).then( tagAlots =>{
+          let podArr = Object.keys(tagAlots.tags)
+          let productsArr = Object.values(allProds.products.products)
+          that.setState({prodList: podArr, allProds: productsArr})
+        })
       })
     } else if (isEmpty(this.props.products) && (!!this.props.productIds)) {
       let newQuery = this.props.history.location.search.slice(1)
@@ -49,7 +39,44 @@ class IndexResults extends React.Component{
           this.setState({prodList: this.props.productIds})
         })
       })
+    } else {
+      if (!!this.props.tag){
+          return this.props.fetchProducts({tags: this.props.tag}).then( data => {
+            let podArr = Object.keys(data.tags)
+            that.setState({prodList: podArr})
+          });
+      } else {
+        let someQuery = this.props.history.location.search.slice(1)
+        return this.props.fetchSearchResults({query_string: someQuery}).then( (queryResults) =>{
+          return this.setState({prodList: this.props.productIds})
+        })
+      }
     }
+  }
+
+  componentWillUpdate(nextProps) {
+    let newURL = nextProps.match.params
+    if (nextProps.match.params.tagType !== this.props.match.params.tagType){
+      
+      this.props.fetchSearchResults({tags: nextProps.match.params.tagType}).then( tagResults =>{
+        let podArr = Object.keys(tagResults.tags)
+        return this.setState({prodList: podArr})
+      })
+    }
+
+  }
+
+  checkProductsPresent(){
+
+    let that = this
+    
+    if (isEmpty(this.props.products)){
+      this.props.fetchProducts().then( allProducts =>{
+        
+        that.setState({allProds: allProducts.products.products})
+      })
+    }
+    
   }
 
   tagDescription(){
