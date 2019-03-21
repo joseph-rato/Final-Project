@@ -41,7 +41,7 @@ class IndexResults extends React.Component{
       })
     } else {
       if (!!this.props.tag){
-          return this.props.fetchProducts({tags: this.props.tag}).then( data => {
+          return this.props.fetchSearchResults({tags: this.props.tag}).then( data => {
             let podArr = Object.keys(data.tags)
             that.setState({prodList: podArr})
           });
