@@ -73,6 +73,17 @@
     align-items: center;
     text-decoration: none;
     color: black;
+    padding: 10px;
+}
+
+.search-result-user-listitems:hover{
+    list-style: none;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
 }
 
 .search-result-user-avatar{

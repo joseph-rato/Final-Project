@@ -17,6 +17,16 @@
     flex-direction: row;
     height: 50px;
     width: 1000px;  
+    padding: 10px;
+}
+
+.search-product-list-item:hover{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 1000px; 
+    padding: 10px;
+    background-color: lightgrey;   
 }
 
 .search-product-list-item-product-Name{

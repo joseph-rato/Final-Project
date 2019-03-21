@@ -47,9 +47,11 @@ class SearchBar extends React.Component{
         if (this.state.queryString !== '' && this.changedInput === false){
             // let searching = {query_string: this.state.queryString}
             clearTimeout(this.debouncy)
-            this.props.closeOutModal()
-            let urlQueryString = '/search' + `?${this.state.queryString}`
-            return this.props.history.push(urlQueryString);
+            let urlQueryString = '/search/' + `${this.state.queryString}`
+            this.props.history.push(urlQueryString);
+            
+            debugger
+            return this.props.closeOutModal()
        // this.props.closeOutModal();;
         }
     }
@@ -85,7 +87,7 @@ class SearchBar extends React.Component{
             <div className={this.props.modalOpen ? 'search-container-modal' : 'search-container'}>
                 <div className="search-bar-symb-input">
                     <i className="fas fa-search"></i>
-                    <form className={this.props.modalOpen ? 'search-bar-modal' : 'search-bar'}>
+                    <form className={this.props.modalOpen ? 'search-bar-modal' : 'search-bar'} onSubmit={this.checkSubmit}>
                         <input
                         autoFocus
                         className={this.props.modalOpen ? 'search-input-modal' : 'search-input'}
