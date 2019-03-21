@@ -6,8 +6,8 @@ const searchProductReducer = (state = [], action) => {
     switch (action.type) {
         case RECIEVE_RESULTS:
             
-            let finalState;
-            if (action.payload.products){
+            let finalState = Object.assign([], state);
+            if (!!action.payload.products){
                 finalState = Object.keys(action.payload.products)
             }
         return finalState;

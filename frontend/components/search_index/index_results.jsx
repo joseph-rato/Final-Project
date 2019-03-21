@@ -28,7 +28,11 @@ class IndexResults extends React.Component{
             this.setState({prodList: podArr})
           });
       } else {
+        let someQuery = this.props.history.location.search.slice(1)
+        return this.props.fetchSearchResults({query_string: someQuery}).then( (queryResults) =>{
+          console.log(queryResults)
           return this.setState({prodList: this.props.productIds})
+        })
       }
   }
 
@@ -39,12 +43,15 @@ class IndexResults extends React.Component{
           this.setState({prodList: podArr})
       })
     } else if (isEmpty(this.props.products) && (!!this.props.productIds)) {
-      return this.props.fetchProducts().then( allProds =>{
-        this.setState({prodList: this.props.productIds})
+      let newQuery = this.props.history.location.search.slice(1)
+      return this.props.fetchSearchResults({query_string: newQuery}).then( (queryResults) =>{
+        return this.props.fetchProducts().then( allProds =>{
+          this.setState({prodList: this.props.productIds})
+        })
       })
     }
   }
-  
+
   tagDescription(){
     if (this.props.type === 'tags'){
         return(

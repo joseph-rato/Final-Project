@@ -16,9 +16,9 @@ const productsReducer = (state = {}, action) => {
       return onlyState;
     case RECIEVE_RESULTS:
       let finalState = Object.assign({}, state)
-      if (action.payload.product) {
-        let arrProduct = Object.values(action.payload.product)
-        if (arrProduct > 0) {
+      if (action.payload.hasOwnProperty('products')) {
+        let arrProduct = Object.values(action.payload.products)
+        if (arrProduct.length > 0) {
           arrProduct.forEach( (product)=>{
             finalState = merge({}, finalState, {[product.id]: product})
           })

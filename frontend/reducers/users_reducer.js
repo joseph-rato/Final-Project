@@ -23,14 +23,14 @@ const usersReducer = (state = {}, action) => {
     return newFinalState
     case RECIEVE_RESULTS:
       finalState = Object.assign({}, state)
-      if (!!action.payload.users) {
+      if (action.payload.hasOwnProperty('users')) {
         let arrUsers = Object.values(action.payload.users)
         if (arrUsers.length > 0) {
           arrUsers.forEach( (user)=>{
             finalState = merge({}, finalState, {[user.id]: user})
           })
         }
-      }
+      } 
       return finalState;
     default:
     return state;

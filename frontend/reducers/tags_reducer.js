@@ -16,7 +16,9 @@ const tagReducer = (state = {}, action) => {
             return finalState;
         case RECIEVE_RESULTS:
             finalState = Object.assign({}, state);
-            finalState = merge({}, finalState, action.tags)
+            if (action.hasOwnProperty('tags')){
+                finalState = merge({}, finalState, action.tags)
+            }
             return finalState;
         default:
             return state;
