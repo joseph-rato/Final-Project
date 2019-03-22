@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   has_many :reviews
   has_many :product_discussions
   has_many :tags
+  has_many :likes, as: :liked
 
   has_many :commenters,
   through: :product_discussions,

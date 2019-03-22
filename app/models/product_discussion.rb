@@ -5,6 +5,8 @@ class ProductDiscussion < ApplicationRecord
   belongs_to :product, optional: true
   belongs_to :review, optional: true
 
+  has_many :likes, as: :liked
+
   has_many :child_comments,
   foreign_key: :body_id,
   class_name: :ProductDiscussion,

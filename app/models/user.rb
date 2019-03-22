@@ -5,6 +5,7 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :likes
   has_many :products
   has_one_attached :avatar
   has_many :reviews

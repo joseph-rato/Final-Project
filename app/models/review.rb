@@ -4,4 +4,5 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :product
   has_many :product_discussions
+  has_many :likes, as: :liked
 end
