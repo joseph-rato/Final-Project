@@ -6,8 +6,8 @@ import {fetchUsersProductsByName} from '../../actions/search_actions'
 
 
 const mapStateToProps = ({ui, entities}) => {
-  debugger
   return({
+
     productIds: ui.search.product,
     products: entities.products
   })

@@ -35,8 +35,8 @@ class IndexResults extends React.Component{
     } else if (isEmpty(this.props.products) && (!!this.props.productIds)) {
       let newQuery = this.props.history.location.search.slice(1)
       return this.props.fetchSearchResults({query_string: newQuery}).then( (queryResults) =>{
-        return this.props.fetchProducts().then( allProds =>{
-          this.setState({prodList: this.props.productIds})
+        return this.props.fetchProducts().then( (allProds) =>{
+          this.setState({prodList: that.props.productIds})
         })
       })
     } else {
@@ -48,19 +48,29 @@ class IndexResults extends React.Component{
       } else {
         let someQuery = this.props.history.location.search.slice(1)
         return this.props.fetchSearchResults({query_string: someQuery}).then( (queryResults) =>{
-          return this.setState({prodList: this.props.productIds})
+          // let productionArr = Object.keys(queryResults.products)
+          return this.setState({prodList: that.props.productIds})
         })
       }
     }
   }
 
   componentWillUpdate(nextProps) {
+    // need another update for different searches being submitted
+    let that = this
     let newURL = nextProps.match.params
     if (nextProps.match.params.tagType !== this.props.match.params.tagType){
       
       this.props.fetchSearchResults({tags: nextProps.match.params.tagType}).then( tagResults =>{
         let podArr = Object.keys(tagResults.tags)
         return this.setState({prodList: podArr})
+      })
+    } else if (nextProps.location.search.slice(1) !== this.props.location.search.slice(1)){
+      let newQuery = nextProps.location.search.slice(1)
+      this.props.fetchSearchResults({query_string: newQuery}).then( (searchResults) =>{
+
+        
+        return this.setState({prodList: that.props.productIds})
       })
     }
 
@@ -94,7 +104,6 @@ class IndexResults extends React.Component{
   
 
   render() {
-    debugger
     return(
       <div className="product-list-content-box">
         {this.tagDescription()}

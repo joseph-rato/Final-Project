@@ -47,10 +47,9 @@ class SearchBar extends React.Component{
         if (this.state.queryString !== '' && this.changedInput === false){
             // let searching = {query_string: this.state.queryString}
             clearTimeout(this.debouncy)
-            let urlQueryString = '/search/' + `${this.state.queryString}`
+            let urlQueryString = '/search?' + `${this.state.queryString}`
             this.props.history.push(urlQueryString);
             
-            debugger
             return this.props.closeOutModal()
        // this.props.closeOutModal();;
         }
