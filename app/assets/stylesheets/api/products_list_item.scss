@@ -5,7 +5,7 @@
 
 .product-list-item {
   display: flex;
-  padding: 0px;
+  padding: 10px 20px;
   align-items: center;
   border-bottom: 1px solid lightgrey;
 }
@@ -21,7 +21,7 @@
   padding-bottom: 12px;
   margin: 5px 9px;
   margin-top: 10px;
-  border-bottom: 1px solid lightgrey;
+  // border-bottom: 1px solid lightgrey;
 }
 
 .product-list-item-photo {

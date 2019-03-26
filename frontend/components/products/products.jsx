@@ -20,8 +20,8 @@ class Products extends React.Component{
   render() {
     return(
       <div className="product-list-content-box">
-        <ul>
-          <h2 className="product-list-day" >What's New</h2>
+        <h2 className="product-list-day" >What's New</h2>
+        <ul className="product-list-repeater-container">
           {
             this.state.prodList.map( (product, idx) =>{
               return(
