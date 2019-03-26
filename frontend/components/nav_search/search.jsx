@@ -72,7 +72,7 @@ class SearchBar extends React.Component{
     showResults(){
         if (this.state.queryString !== "" && this.props.modalOpen === true){
             return (
-            <div>
+            <div className="search-results-div-function">
                     <SearchResultsContainer />
             </div>
             )
