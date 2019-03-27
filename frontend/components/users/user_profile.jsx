@@ -68,8 +68,12 @@ class UserProfile extends React.Component {
           <div className="user-right-side-bar">
             <h3 className="social-header">SHARE YOUR PROFILE</h3>
             <div className="user-socials-links">
-              <div className="user-social-twitter-link">www.twitter.com</div>
-              <div className="user-social-facebook-link">www.facebook.com</div>
+              <div className="user-social-twitter-link">
+                <button class="twitter-profile-button"><i id="profile-twitter" className="fab fa-twitter"></i></button>
+              </div>
+              <div className="user-social-facebook-link">
+                <button class="facebook-profile-button"><i id="profile-facebook" className="fab fa-facebook-f"></i></button>
+              </div>
             </div>
           </div>
         </div>

@@ -88,6 +88,55 @@
   padding: 20px;
   height: 150px
 }
+.user-socials-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.twitter-profile-button{
+    width: 90%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: deepskyblue;
+}
+
+.twitter-profile-button:hover{
+    width: 90%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #00bfffa6;
+}
+.user-social-twitter-link{
+  width: 50%;
+}
+
+.user-social-facebook-link{
+  width: 50%;
+}
+
+.facebook-profile-button{
+  width: 90%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #2121afc7;
+}
+
+.facebook-profile-button:hover{
+  width: 90%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #1836a5d6;
+}
+
+
+#profile-twitter{
+  color: white
+}
+#profile-facebook{
+  color: white;
+}
+
 
 .social-header{
   border-bottom: 1px solid lightgrey;
