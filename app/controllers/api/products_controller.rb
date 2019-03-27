@@ -38,8 +38,9 @@ class Api::ProductsController < ApplicationController
   # if debugging
   def search
     result = "%#{params[:query_string].downcase}%"
-    if result == ""
-      render json: [""], status: 200
+    
+    if (result == "%%")
+      return render json: [""], status: 200
     end
 
     @products = Product.where(<<-SQL, result)
