@@ -24,7 +24,7 @@ class SearchResults extends React.Component{
                 {
                     tagDescriptionsArr.map( (tags, idx) =>{
                         return(
-                            <Link className="tag-search-result-link" to={`/search/tags/${tags[0]}`}>{tags[0]}</Link>
+                            <Link className="tag-search-result-link" onClick={() => this.props.closeModal()} to={`/search/tags/${tags[0]}`}>{tags[0]}</Link>
                         )
                     })
                 }
