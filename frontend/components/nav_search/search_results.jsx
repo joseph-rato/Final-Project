@@ -3,6 +3,14 @@ import SearchProductListItem from './search_product_list_item'
 import {Link} from 'react-router-dom'
 import { closeModal } from '../../actions/modal_actions';
 
+const tagDescriptionsArr = [
+    ['Tech', 'Something to make us futuristic'],
+    ['Education', 'Something to keep us smart'],
+    ['Music', 'Something pleasent to listen to'],
+    ["Productivity", 'Things that can keep us on topic'],
+    ['AI', 'Something smarter then us']
+]
+
 class SearchResults extends React.Component{
     
     // these are the products that will appear or not
@@ -10,9 +18,17 @@ class SearchResults extends React.Component{
         const allProds = this.props.allProducts
         return(
         (this.props.searchedProductResults.length === 0) ? 
-        <div className="search-results-negative">
-            <div className="search-results-label">PRODUCTS</div>
-            <span>No matches</span>
+        <div className="no-response-result-response">
+            <div className="search-results-label">Tags</div>
+            <ul className="product-search-results">
+                {
+                    tagDescriptionsArr.map( (tags, idx) =>{
+                        return(
+                            <Link className="tag-search-result-link" to={`/search/tags/${tags[0]}`}>{tags[0]}</Link>
+                        )
+                    })
+                }
+            </ul>
         </div>
         : <div>
             <div className="search-results-label">PRODUCTS</div>
@@ -50,10 +66,7 @@ class SearchResults extends React.Component{
         const allUsers = this.props.allUsers
          return(
           (this.props.searchedUsersResults.length === 0) ? 
-        <div className="search-results-negative">
-            <div className="search-results-label">USERS</div>
-            <span>No matches</span>
-        </div>
+            null
         :<div>
             <div className="search-results-label">USERS</div>
             <ul className="user-search-results">

@@ -17,7 +17,7 @@ class SearchBar extends React.Component{
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(this.state !== prevState && this.state !== '') {
+        if(this.state !== prevState) {
             let autoSearching = {query_string: this.state.queryString}
             const sendQuery = (data) => this.props.submitQuery(data);
             
@@ -44,7 +44,7 @@ class SearchBar extends React.Component{
     //   })
 
     handleSubmit(){
-        if (this.state.queryString !== '' && this.changedInput === false){
+        if (this.changedInput === false){
             // let searching = {query_string: this.state.queryString}
             clearTimeout(this.debouncy)
             let urlQueryString = '/search?' + `${this.state.queryString}`
@@ -64,21 +64,17 @@ class SearchBar extends React.Component{
     }
 
     checkSubmit(event){
-        if (event.which === 13 && this.state.queryString !== '') {
+        if (event.which === 13) {
             this.changedInput = false
             return this.handleSubmit();
         }
     }
     showResults(){
-        if (this.state.queryString !== "" && this.props.modalOpen === true){
-            return (
+        return(
             <div className="search-results-div-function">
                     <SearchResultsContainer />
             </div>
-            )
-        } else {
-            return null 
-        }
+        )
     }
 
     render(){

@@ -17,7 +17,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <div className="search-bar-modal" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
+          <div className="search-bar-modal-holder" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
         </div>
 
         <NavLinks />
@@ -39,7 +39,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
       <div className="header-not-link">
 
         <div className="header-search-bar">
-          <div className="search-bar-modal" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
+          <div className="search-bar-modal-holder" onClick={() => openModal('search')}>Discover your next favorite thing...</div>
         </div>
 
       <NavLinks />
