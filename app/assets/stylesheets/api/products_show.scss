@@ -59,8 +59,8 @@
         width: 90px;
         height: 27px;
         border-radius: 5px;
-        border: 1px solid #2121afc7;
-        color: #2121afc7;
+        border: 1px solid #3b5998;
+        color: #3b5998;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -119,8 +119,8 @@
   width: 90px;
   height: 27px;
   border-radius: 5px;
-  border: 1px solid #2121afc7;
-  background-color: #2121afc7;
+  border: 1px solid #305cbb;
+  background-color: #305cbb;
   color: white;
   display: flex;
   justify-content: center;
@@ -313,4 +313,8 @@
 
 .show-send-to-phone-button:hover{
   background-color: lightgrey;
+}
+
+.show-product-social{
+  display: none;
 }
