@@ -9,7 +9,23 @@ class ProductShow extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      loading: true
+      loading: true,
+      likeStatus: false,
+      likes: Math.floor(Math.random()*1000)
+    }
+    this.vote = this.vote.bind(this)
+    this.social = this.social.bind(this)
+  }
+
+
+
+  vote(){
+    if (this.state.likeStatus === false){
+      this.state.likes++
+      return this.setState({likeStatus: true})
+    } else {
+      this.state.likes--
+      return this.setState({likeStatus: false})
     }
   }
 
@@ -93,9 +109,9 @@ class ProductShow extends React.Component{
           <div className="side-bar">
 
             <div className="show-updoots">
-              <button className="show-upvote-button">
+              <button className={this.state.likeStatus ? "show-liked-upvote-button" :"show-upvote-button"} onClick={() => this.vote()}>
                 UPVOTE
-                <div className="show-upvote-number">56</div>
+                <div className="show-upvote-number">{this.state.likes}</div>
               </button>
               <div></div>
             </div>
