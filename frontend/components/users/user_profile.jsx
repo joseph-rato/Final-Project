@@ -66,7 +66,7 @@ class UserProfile extends React.Component {
             </Switch>
           </div>
           <div className="user-right-side-bar">
-            <h3 className="social-header">SHARE YOUR PROFILE</h3>
+            <h3 className="social-header">{(this.props.userProfileId === this.props.sessionId) ? "SHARE YOUR PROFILE" : "SHARE THIS PROFILE"}</h3>
             <div className="user-socials-links">
               <div className="user-social-twitter-link">
                 <button class="twitter-profile-button"><i id="profile-twitter" className="fab fa-twitter"></i></button>
