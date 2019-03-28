@@ -39,6 +39,9 @@ The componentDidUpdate method here is for a debouncer. The debouncer prevents my
 - As a result we clear our last time out and replace it with another .25 second timer. 
 - By the time the user finishes typing then they will finally make a request to our database on the backend for the relevent information.
 
+Gif example: 
+  <img src="app/assets/images/searchDebouncer.gif" />
+
 Inside frontend/component/nav_search/search.jsx
 ```JavaScript
   
