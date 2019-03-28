@@ -18,7 +18,6 @@ class SearchResults extends React.Component{
         if(this.props.searchedProductResults.length === 0 && this.props.searchedUsersResults.length === 0){
             return(
                 <div className="no-response-result-response">
-                    <div className="search-results-label">Tags</div>
                     <ul className="product-search-results">
                         {
                             tagDescriptionsArr.map( (tags, idx) =>{
