@@ -14,22 +14,29 @@ const tagDescriptionsArr = [
 class SearchResults extends React.Component{
     
     // these are the products that will appear or not
+    tagResults(){
+        if(this.props.searchedProductResults.length === 0 && this.props.searchedUsersResults.length === 0){
+            return(
+                <div className="no-response-result-response">
+                    <div className="search-results-label">Tags</div>
+                    <ul className="product-search-results">
+                        {
+                            tagDescriptionsArr.map( (tags, idx) =>{
+                                return(
+                                    <Link className="tag-search-result-link" onClick={() => this.props.closeModal()} to={`/search/tags/${tags[0]}`}>{tags[0]}</Link>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+    }
     productResults(){
         const allProds = this.props.allProducts
         return(
         (this.props.searchedProductResults.length === 0) ? 
-        <div className="no-response-result-response">
-            <div className="search-results-label">Tags</div>
-            <ul className="product-search-results">
-                {
-                    tagDescriptionsArr.map( (tags, idx) =>{
-                        return(
-                            <Link className="tag-search-result-link" onClick={() => this.props.closeModal()} to={`/search/tags/${tags[0]}`}>{tags[0]}</Link>
-                        )
-                    })
-                }
-            </ul>
-        </div>
+            null
         : <div>
             <div className="search-results-label">PRODUCTS</div>
             <ul className="product-search-results">
@@ -89,6 +96,7 @@ class SearchResults extends React.Component{
     render(){
         return(
             <div className="search-results">
+                {this.tagResults()}
                 {this.productResults()}
                 {this.userResults()}
             </div>
