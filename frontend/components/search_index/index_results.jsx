@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductListItem from '../products/product_list_item'
 import {isEmpty} from '../../util/random_util_functions'
+// import image from '../../../app/assets/images/gridFuture.jpg';
+
 
 const tagDescriptions = {
     Tech: 'Something to make us futuristic',
@@ -8,6 +10,18 @@ const tagDescriptions = {
     Music: 'Something pleasent to listen to',
     Productivity: 'Things that can keep us on topic',
     AI: 'Something smarter then us',
+}
+
+const tagBackground = {
+  backgroundImage: 'url(asset_path("gridFuture.jpg")',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  color: 'white',
+  width: '100%',
+  height: '100px',
+  padding: '0px 0px',
+  display: 'flex',
+  alignItems: 'center'
 }
 
 class IndexResults extends React.Component{
@@ -92,7 +106,7 @@ class IndexResults extends React.Component{
   tagDescription(){
     if (this.props.type === 'tags'){
         return(
-            <div className="tag-search-tag-description">
+            <div className="tag-search-tag-description" >
                 <h3>{`${this.props.tag}`}</h3>
                 <p>{tagDescriptions[`${this.props.tag}`]}</p>
             </div>
@@ -101,6 +115,9 @@ class IndexResults extends React.Component{
         return(null)
     }
   }
+
+  
+  
   
 
   render() {

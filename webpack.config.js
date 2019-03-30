@@ -17,6 +17,13 @@ module.exports = {
             presets: ['env', 'react']
           }
         },
+      },
+      {
+        test: /\.(png|jpg)$/,
+        user: {
+          loader: 'url-loader'
+
+        }
       }
     ]
   },
